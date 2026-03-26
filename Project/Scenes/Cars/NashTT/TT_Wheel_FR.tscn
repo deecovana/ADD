@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://vlpwdedkc4rd"]
+
+[ext_resource type="AudioStream" uid="uid://l0njrpj6bcwf" path="res://Sounds/Cars/slip.wav" id="1_wn1uy"]
+[ext_resource type="PackedScene" uid="uid://b0205kolxplh8" path="res://Scenes/Cars/NashTT/Export/NashTT.Wheel.glb" id="2_wn1uy"]
+
+[node name="Wheel3D" type="VehicleWheel3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+use_as_steering = true
+wheel_radius = 0.6
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_wn1uy")
+volume_db = -6.0
+max_db = 6.0
+pitch_scale = 0.55
+max_distance = 100.0
+max_polyphony = 4
+panning_strength = 5.0
+
+[node name="NashTT_Wheel" parent="." instance=ExtResource("2_wn1uy")]
+transform = Transform3D(2.36041e-07, 0, -1.8, 0, 1.8, 0, 1.8, 0, 2.36041e-07, 0, 0, 0)

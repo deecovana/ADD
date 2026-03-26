@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b7clkj0x8tukw"]
+
+[ext_resource type="FontFile" uid="uid://drjfrxi8t0x3f" path="res://Themes/Fonts/Belanosima-Regular.ttf" id="1_wk0ys"]
+
+[resource]
+font = ExtResource("1_wk0ys")
+font_size = 100
+outline_size = 5
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_offset = Vector2(5, 5)

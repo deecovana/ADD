@@ -1,0 +1,28 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dacrbv0u7t12p"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ib2f"]
+load_path = "res://.godot/imported/armazones-road-7200.jpg-bcda4536fc99eda11b025247351e41e7.ctex"
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0ukbj"]
+panorama = SubResource("CompressedTexture2D_8ib2f")
+
+[sub_resource type="Sky" id="Sky_ncbjr"]
+sky_material = SubResource("PanoramaSkyMaterial_0ukbj")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_ncbjr")
+sky_rotation = Vector3(0, 0.872665, 0)
+tonemap_mode = 2
+fog_light_color = Color(0.737067, 0.783462, 0.932358, 1)
+fog_sky_affect = 0.95
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0025
+volumetric_fog_albedo = Color(0.744221, 0.772391, 0.868131, 1)
+volumetric_fog_emission = Color(0.580042, 0.620164, 0.762106, 1)
+volumetric_fog_emission_energy = 0.25
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_anisotropy = 0.9
+volumetric_fog_length = 550.0
+volumetric_fog_ambient_inject = 8.0
+volumetric_fog_sky_affect = 0.5

@@ -1,0 +1,35 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkjnnk1es6igt"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_tno3l"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="2_4ibrv"]
+[ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="3_jko7w"]
+[ext_resource type="Material" uid="uid://by0psqhptlnte" path="res://Scenes/Tracks/Square/Materials/snow_material_3d.tres" id="4_a1p4w"]
+[ext_resource type="Material" uid="uid://cwdhl0lgfxana" path="res://Scenes/Tracks/Square/Materials/ice_material_3d.tres" id="5_p38dw"]
+[ext_resource type="PackedScene" uid="uid://bkl2ds2d77lwl" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/snow_rally_node_smooth_normals.tscn" id="6_ttuip"]
+[ext_resource type="PackedScene" uid="uid://2ql0pbd6ehe7" path="res://Scenes/Sky/DarkSkyDarkNoShadow.tscn" id="7_5kejg"]
+[ext_resource type="PackedScene" uid="uid://cldcmkn2ae22h" path="res://Scenes/Cars/NashTT/vehicle_TT_1000.tscn" id="8_skhav"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xjybs"]
+material = ExtResource("5_p38dw")
+size = Vector3(2, 2, 2)
+
+[node name="snow rally 600m Low" type="Node3D"]
+script = ExtResource("1_tno3l")
+
+[node name="CameraGimbal" parent="." instance=ExtResource("2_4ibrv")]
+transform = Transform3D(0.439767, 0, -0.898112, 0, 1, 0, 0.898112, 0, 0.439767, -121.79, 5, -151.488)
+
+[node name="Flat_Objects" parent="." instance=ExtResource("3_jko7w")]
+transform = Transform3D(0.983763, 0, -0.179472, 0, 1, 0, 0.179472, 0, 0.983763, -191.896, 0, -38.3358)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.986618, 0, -0.16305, 0, 1, 0, 0.16305, 0, 0.986618, -216.965, 10, -42.0563)
+material_override = ExtResource("4_a1p4w")
+mesh = SubResource("BoxMesh_xjybs")
+
+[node name="Snow Rally Node Mixed Normals" parent="." instance=ExtResource("6_ttuip")]
+
+[node name="DarkSkyDarkNoShadow" parent="." instance=ExtResource("7_5kejg")]
+
+[node name="Vehicle" parent="." instance=ExtResource("8_skhav")]
+transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, -130.537, 5.03755, -149.441)

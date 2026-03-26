@@ -1,0 +1,17 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://b2q2831c430vc"]
+
+[ext_resource type="Texture2D" uid="uid://dvlma1f123240" path="res://Scenes/Sky/Images/armazones-road-7200.jpg" id="1_ecpid"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ecpid"]
+panorama = ExtResource("1_ecpid")
+
+[sub_resource type="Sky" id="Sky_blyp5"]
+sky_material = SubResource("PanoramaSkyMaterial_ecpid")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_blyp5")
+ambient_light_source = 3
+fog_light_color = Color(0.72, 0.6336, 0.432, 1)
+fog_aerial_perspective = 0.7
+fog_sky_affect = 0.4

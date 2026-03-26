@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://dpck45j2g08ma"]
+
+[ext_resource type="Script" uid="uid://de8x62k3oo3ki" path="res://Scenes/Cars/Fanta/Scripts/VehicleFanta1000.gd" id="1_oq0fq"]
+[ext_resource type="Curve" uid="uid://dnniu5gm1ahhm" path="res://Scenes/Cars/Fanta/Fanta 1000 curve.tres" id="2_ls4b6"]
+[ext_resource type="AudioStream" uid="uid://d32nahn6656wp" path="res://Sounds/Cars/eng run start.wav" id="3_3d2ru"]
+[ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/Cars/eng run idle.wav" id="4_eayo3"]
+[ext_resource type="AudioStream" uid="uid://g2vvom06rwsx" path="res://Sounds/Cars/eng run overpower.wav" id="5_erafi"]
+[ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="6_0ys8y"]
+[ext_resource type="AudioStream" uid="uid://dqtjormxmfsnx" path="res://Sounds/Cars/Gear.wav" id="7_711e1"]
+[ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Cars/Fanta/Fanta_Wheel_L.tscn" id="7_tqtuo"]
+[ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Cars/Fanta/Fanta_Wheel_R.tscn" id="8_7x5y1"]
+[ext_resource type="PackedScene" uid="uid://d2jm6nxhrm5rc" path="res://Scenes/Cars/Fanta/GLBs/FantaCar6600.export..CARblend.glb" id="9_4b4x0"]
+[ext_resource type="Script" uid="uid://bn2vvwlgnjuak" path="res://Scenes/Cars/Fanta/Scripts/engine_controller.gd" id="10_myfjw"]
+[ext_resource type="Script" uid="uid://dp54wm0r2sonc" path="res://Scenes/Cars/Fanta/Scripts/wheels_controller.gd" id="11_7w06g"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="12_mo36k"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xdbfd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jw1n1"]
+points = PackedVector3Array(2.23926, 0.929478, 3.79569, 2.23882, 1.42224, -3.4094, 2.23882, 1.47896, -3.01159, 2.23882, 1.47896, 2.99697, 2.23882, 1.42224, 3.41446, 2.23882, 1.1138, 3.79569, 2.19191, 0.855095, 5.26572, 2.23882, 0.490157, 2.19928, 2.23882, 0.490157, -3.80721, 2.23882, 1.1138, -3.80721, 2.12615, 1.63078, -3.51403, 2.08319, 1.09024, -4.87321, 1.99639, 1.50339, -4.68467, 1.68163, 2.24744, -4.93019, 2.12615, 1.68728, -3.01159, 2.07179, 1.93595, 1.17886, 2.12615, 1.68728, 2.99697, 2.12615, 1.63078, 3.52323, 1.86312, 1.32256, 5.01398, 1.73775, 0.769804, 5.44908, 2.09591, 0.69433, 5.26675, 2.12615, 0.490157, 4.00392, 1.9999, 1.52564, 4.35614, 1.86312, 1.60395, 4.55401, 1.9999, 0.490157, -4.76236, 2.08319, 0.724651, -4.90015, 1.76843, 0.959144, -5.02964, 1.46595, 0.959363, -5.07833, 1.01749, 2.27209, -5.00478, 0.816268, 2.68, -0.794643, 1.26473, 2.56068, -1.57161, 1.26473, 2.5886, -0.789463, 1.26473, 2.50811, 0.605973, 1.86312, 1.73177, 4.00392, 1.59922, 1.52433, 4.90624, 1.00258, 1.64518, 4.98704, 0.99995, 1.49532, 5.09996, 0.99995, 0.733594, 5.47601, 1.5545, 0.63827, 5.44908, 1.76887, 0.490157, 4.9052, 1.59264, 1.82448, 4.3375, 1.76887, 0.490157, -4.88461, 1.76887, 0.5809, -4.96438, 1.76843, 0.730758, -5.02964, 1.46595, 0.730977, -5.07626, 1.16347, 0.959363, -5.10216, 1.01222, 0.959363, -5.1063, -2.38419e-07, 2.31812, -5.00996, -2.38419e-07, 2.71839, -0.788427, 0.818898, 2.6078, 0.476479, 0.818898, 2.59079, 0.774835, 1.16171, 2.54301, 0.371847, 0.657573, 2.11351, 4.24944, 0.53921, 2.0917, 4.496, -2.38419e-07, 2.14623, 4.496, -1.00302, 1.64518, 4.98704, -1.00039, 1.49532, 5.09996, -1.00039, 0.733594, 5.47601, 0.830734, 0.61842, 5.47601, 0.99995, 0.490157, 5.00569, -1.76931, 0.490157, -4.88461, 1.00214, 0.581119, -5.02239, 1.15558, 0.581119, -5.02135, 1.46244, 0.581119, -5.00581, 1.16347, 0.73054, -5.09801, 1.01222, 0.731413, -5.10216, 0.607159, 0.731195, -5.10216, -1.01266, 0.959363, -5.1063, -1.01792, 2.27209, -5.00478, -0.816706, 2.68, -0.794643, -0.819337, 2.6078, 0.476479, -0.819337, 2.59079, 0.774835, -2.38419e-07, 2.62503, 0.832848, -0.539649, 2.0917, 4.496, -1.59966, 1.52433, 4.90624, -1.86356, 1.32256, 5.01398, -1.73819, 0.769804, 5.44908, -1.55494, 0.63827, 5.44908, -0.831173, 0.61842, 5.47601, -2.38419e-07, 0.602059, 5.47601, -1.00039, 0.490157, 5.00569, -2.00034, 0.490157, -4.76236, -1.76931, 0.5809, -4.96438, -1.46288, 0.581119, -5.00581, -1.15601, 0.581119, -5.02135, -1.00258, 0.581119, -5.02239, -0.607598, 0.731195, -5.10216, -1.01266, 0.731413, -5.10216, -1.16391, 0.73054, -5.09801, -1.16391, 0.959363, -5.10216, -1.46639, 0.959363, -5.07833, -1.68207, 2.24744, -4.93019, -1.26517, 2.56068, -1.57161, -1.26517, 2.5886, -0.789463, -1.16215, 2.54301, 0.371847, -1.26517, 2.50811, 0.605973, -0.658012, 2.11351, 4.24944, -1.59308, 1.82448, 4.3375, -1.86356, 1.60395, 4.55401, -2.19235, 0.855095, 5.26572, -2.09634, 0.69433, 5.26675, -1.76931, 0.490157, 4.9052, -2.08363, 0.724651, -4.90015, -2.23926, 0.490157, -3.80721, -1.76887, 0.730758, -5.02964, -1.46639, 0.730977, -5.07626, -1.76887, 0.959144, -5.02964, -2.08363, 1.09024, -4.87321, -1.99683, 1.50339, -4.68467, -2.23926, 1.42224, -3.4094, -2.12659, 1.63078, -3.51403, -2.12659, 1.68728, -3.01159, -2.07223, 1.93595, 1.17886, -2.12659, 1.63078, 3.52323, -1.86356, 1.73177, 4.00392, -2.00034, 1.52564, 4.35614, -2.23926, 1.42224, 3.41446, -2.23926, 1.1138, 3.79569, -2.23926, 0.929478, 3.79569, -2.23926, 0.490157, 2.19928, -2.12659, 0.490157, 4.00392, -2.23926, 1.1138, -3.80721, -2.23926, 1.47896, -3.01159, -2.23926, 1.47896, 2.99697, -2.12659, 1.68728, 2.99697)
+
+[node name="Vehicle Fanta_1000" type="VehicleBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_xdbfd")
+center_of_mass_mode = 1
+continuous_cd = true
+script = ExtResource("1_oq0fq")
+scale_curve = ExtResource("2_ls4b6")
+
+[node name="CenterOfMass" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.3)
+
+[node name="Start" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45305e-08, 0, 0.852529)
+stream = ExtResource("3_3d2ru")
+volume_db = -9.0
+max_db = 0.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Idle" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45305e-08, 0, 0.852529)
+stream = ExtResource("4_eayo3")
+volume_db = -6.0
+max_db = 0.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Pow" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87738e-07, 0, 0.852529)
+stream = ExtResource("5_erafi")
+volume_db = -6.0
+max_db = 0.0
+pitch_scale = 1.2
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Scrap" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87738e-07, 0, 0.852529)
+stream = ExtResource("6_0ys8y")
+volume_db = -6.0
+max_db = -6.0
+pitch_scale = 2.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Gear" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87738e-07, 0, 0.852529)
+stream = ExtResource("7_711e1")
+volume_db = -12.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Wheel3DFL" parent="." instance=ExtResource("7_tqtuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.0647894, 1.508)
+use_as_steering = true
+
+[node name="Wheel3DFR" parent="." instance=ExtResource("8_7x5y1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.0651054, 1.508)
+use_as_steering = true
+
+[node name="Wheel3DRR" parent="." instance=ExtResource("8_7x5y1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.0651054, -1.5)
+use_as_traction = true
+
+[node name="Wheel3DRL" parent="." instance=ExtResource("7_tqtuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.0651054, -1.5)
+use_as_traction = true
+
+[node name="FantaCar6600_export__CARblend" parent="." instance=ExtResource("9_4b4x0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.85199e-10, -0.3, 0.00784004)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.455, 0, 0, 0, 0.5, 0, -0.19, 0.008)
+shape = SubResource("ConvexPolygonShape3D_jw1n1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="EngineController" type="Node" parent="."]
+script = ExtResource("10_myfjw")
+
+[node name="WheelsController" type="Node" parent="."]
+script = ExtResource("11_7w06g")
+
+[node name="UI" parent="." instance=ExtResource("12_mo36k")]

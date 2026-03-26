@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://126yicuwavhn"]
+
+[ext_resource type="Script" uid="uid://cnneyv5j7tjh" path="res://Scenes/Utils/Scripts/TabInstanceScript.gd" id="1_4el8h"]
+[ext_resource type="Material" uid="uid://cwwrckcmefikt" path="res://Scenes/Utils/Materials/Curved_Blue_Metal.tres" id="1_bun3e"]
+[ext_resource type="FontFile" uid="uid://djfsvawybk7ho" path="res://Themes/Fonts/ShareTechMono.ttf" id="2_bun3e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7nink"]
+material = ExtResource("1_bun3e")
+size = Vector3(0.2, 5, 10)
+
+[node name="Tab" type="MeshInstance3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_7nink")
+script = ExtResource("1_4el8h")
+
+[node name="LabelLeft" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, 0, -3.15055)
+pixel_size = 0.01
+text = "Time:
+
+Best:"
+font = ExtResource("2_bun3e")
+font_size = 64
+horizontal_alignment = 2
+
+[node name="LabelTop" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, 1.8, 4.78278)
+pixel_size = 0.01
+text = "Current        Last"
+font = ExtResource("2_bun3e")
+font_size = 62
+horizontal_alignment = 2
+
+[node name="LabelBott" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, -1.8, 4.78278)
+pixel_size = 0.01
+text = "Your        Beat"
+font = ExtResource("2_bun3e")
+font_size = 62
+horizontal_alignment = 2
+
+[node name="CurrTime" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, 0.755552, 0.816117)
+pixel_size = 0.01
+text = "0.00.00
+"
+font = ExtResource("2_bun3e")
+font_size = 86
+horizontal_alignment = 2
+
+[node name="LastTime" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, 0.755552, 4.77925)
+pixel_size = 0.01
+text = "0.00.00
+"
+font = ExtResource("2_bun3e")
+font_size = 86
+horizontal_alignment = 2
+
+[node name="BestTime" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, -0.700001, 0.816117)
+pixel_size = 0.01
+text = "0.00.00
+"
+font = ExtResource("2_bun3e")
+font_size = 86
+horizontal_alignment = 2
+
+[node name="BeatTime" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.124512, -0.700001, 4.78195)
+pixel_size = 0.01
+text = "0.00.00
+"
+font = ExtResource("2_bun3e")
+font_size = 86
+horizontal_alignment = 2

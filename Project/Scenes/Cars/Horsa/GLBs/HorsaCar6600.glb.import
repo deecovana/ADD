@@ -1,0 +1,68 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://lolglockqvm"
+path="res://.godot/imported/HorsaCar6600.glb-5a0393df582950042c92b5625b28f1ff.scn"
+
+[deps]
+
+source_file="res://Scenes/Cars/Horsa/GLBs/HorsaCar6600.glb"
+dest_files=["res://.godot/imported/HorsaCar6600.glb-5a0393df582950042c92b5625b28f1ff.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Material.002": {
+"use_external/enabled": false,
+"use_external/fallback_path": "",
+"use_external/path": "uid://cbf42h82p8i17"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Cars/Horsa/Materials/red_light_material_3d.tres",
+"use_external/path": "uid://tqq1ndxmr5jr"
+}
+},
+"nodes": {
+"PATH:Sketchfab_model/root/Car/Body/Metal": {
+"physics/layer": 2,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/root/Car/WheelFL": {
+"import/skip_import": true
+},
+"PATH:Sketchfab_model/root/Car/WheelFR": {
+"import/skip_import": true
+},
+"PATH:Sketchfab_model/root/Car/WheelRL": {
+"import/skip_import": true
+},
+"PATH:Sketchfab_model/root/Car/WheelRR": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

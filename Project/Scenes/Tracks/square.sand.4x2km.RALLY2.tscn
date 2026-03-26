@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://h1yn7j8txwup"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_f0rwx"]
+[ext_resource type="PackedScene" uid="uid://dg8h7rjvl0sgb" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY2.tscn" id="3_f0rwx"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="3_m8hra"]
+[ext_resource type="PackedScene" uid="uid://1k36a7mekeg" path="res://Scenes/Sky/DarkSkyLightNoShadow.tscn" id="5_5pjae"]
+[ext_resource type="PlaneMesh" uid="uid://d340eucos3t4w" path="res://Scenes/Tracks/Square/Materials/sand_landscape_mesh_A.tres" id="5_p0v86"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jnhu"]
+size = Vector3(4400, 0, 2200)
+
+[node name="Square Sand 4x2km Cowl Track" type="Node3D"]
+script = ExtResource("1_f0rwx")
+
+[node name="CameraGimbal" parent="." instance=ExtResource("3_m8hra")]
+transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0, 1, 0)
+
+[node name="Vehicle" parent="." instance=ExtResource("3_f0rwx")]
+transform = Transform3D(-1, 0, 2.98024e-07, 0, 1, 0, -2.98024e-07, 0, -1, 0, 1, 0)
+
+[node name="Sand" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sand"]
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 600)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -600)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1400, 0, 0)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1400, 0, 600)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1400, 0, -600)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, 0)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, 600)
+mesh = ExtResource("5_p0v86")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Sand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, -600)
+mesh = ExtResource("5_p0v86")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sand"]
+shape = SubResource("BoxShape3D_7jnhu")
+debug_color = Color(0.960784, 0, 1, 1)
+
+[node name="DarkSkyLight" parent="." instance=ExtResource("5_5pjae")]

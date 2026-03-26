@@ -1,0 +1,46 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://logn8hbm7ttb"]
+
+[ext_resource type="Shader" uid="uid://drch0s3q6w3li" path="res://Scenes/Tracks/Square/Materials/sand_100m.gdshader" id="1_gdgot"]
+
+[sub_resource type="Gradient" id="Gradient_gdgot"]
+offsets = PackedFloat32Array(0, 0.195531, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.530726, 0.530726, 0.530726, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_umdhb"]
+noise_type = 0
+frequency = 0.0094
+fractal_gain = 0.995
+fractal_weighted_strength = 0.45
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jp1xv"]
+seamless = true
+seamless_blend_skirt = 0.516
+as_normal_map = true
+bump_strength = 4.3
+color_ramp = SubResource("Gradient_gdgot")
+noise = SubResource("FastNoiseLite_umdhb")
+
+[sub_resource type="Gradient" id="Gradient_r8phw"]
+offsets = PackedFloat32Array(0.106145, 0.156425, 0.731844)
+colors = PackedColorArray(0, 0, 0, 1, 0.610687, 0.610687, 0.610687, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jscot"]
+noise_type = 0
+frequency = 0.0174
+fractal_octaves = 4
+fractal_lacunarity = 2.5
+fractal_gain = 0.59
+fractal_weighted_strength = 0.22
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rs3mk"]
+invert = true
+seamless = true
+seamless_blend_skirt = 0.578
+color_ramp = SubResource("Gradient_r8phw")
+noise = SubResource("FastNoiseLite_jscot")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gdgot")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_jp1xv")
+shader_parameter/texturemap = SubResource("NoiseTexture2D_rs3mk")

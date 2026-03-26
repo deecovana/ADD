@@ -1,0 +1,225 @@
+[gd_scene load_steps=24 format=3 uid="uid://cldcmkn2ae22h"]
+
+[ext_resource type="Script" uid="uid://kra7q3xm5uk1" path="res://Scenes/Cars/NashTT/Scripts/TT1000.gd" id="1_fb2rk"]
+[ext_resource type="PackedScene" uid="uid://dlwvlhoopw0ia" path="res://Scenes/Cars/NashTT/Export/NashTT.Body.glb" id="2_6m3fw"]
+[ext_resource type="Curve" uid="uid://ggdhhbly2h4a" path="res://Scenes/Cars/NashTT/TT_Rally_curve.tres" id="2_r0gnp"]
+[ext_resource type="PackedScene" uid="uid://dh8dx1jh3ysj4" path="res://Scenes/Cars/NashTT/Export/NashTT.ArcFL.glb" id="3_ltw3c"]
+[ext_resource type="PackedScene" uid="uid://c1u2kifke4rca" path="res://Scenes/Cars/NashTT/Export/NashTT.ArcFR.glb" id="4_olxi8"]
+[ext_resource type="PackedScene" uid="uid://dhghmgxb8simh" path="res://Scenes/Cars/NashTT/Export/NashTT.ArcRL.glb" id="5_cqx2e"]
+[ext_resource type="PackedScene" uid="uid://c36abndpatdoj" path="res://Scenes/Cars/NashTT/Export/NashTT.ArcRR.glb" id="6_r0gnp"]
+[ext_resource type="PackedScene" uid="uid://fo7p87yhqy7t" path="res://Scenes/Cars/NashTT/TT_Wheel_FL.tscn" id="7_6m3fw"]
+[ext_resource type="PackedScene" uid="uid://vlpwdedkc4rd" path="res://Scenes/Cars/NashTT/TT_Wheel_FR.tscn" id="8_ltw3c"]
+[ext_resource type="AudioStream" uid="uid://dpiyljugbcrje" path="res://Sounds/Cars/eng ran start.wav" id="9_60fxh"]
+[ext_resource type="PackedScene" uid="uid://dovp6om45x658" path="res://Scenes/Cars/NashTT/TT_Wheel_RL.tscn" id="9_cqx2e"]
+[ext_resource type="AudioStream" uid="uid://dqtjormxmfsnx" path="res://Sounds/Cars/Gear.wav" id="10_07uew"]
+[ext_resource type="PackedScene" uid="uid://htj8pkrpr50f" path="res://Scenes/Cars/NashTT/TT_Wheel_RR.tscn" id="10_r0gnp"]
+[ext_resource type="AudioStream" uid="uid://cq28arq158j28" path="res://Sounds/Cars/GearAir.wav" id="11_cvhxk"]
+[ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/Cars/eng run idle.wav" id="12_pfxga"]
+[ext_resource type="AudioStream" uid="uid://b0hpvi1rdkc2d" path="res://Sounds/Cars/eng ran overpower.wav" id="13_nbvq7"]
+[ext_resource type="Script" uid="uid://1qp3wgdunsqh" path="res://Scenes/Cars/NashTT/Scripts/TTEngine.gd" id="14_nrgpg"]
+[ext_resource type="AudioStream" uid="uid://dqiu1x6rs2gub" path="res://Sounds/Cars/eng ran run.wav" id="14_xtjvq"]
+[ext_resource type="Script" uid="uid://mesch5mmdjgf" path="res://Scenes/Cars/NashTT/Scripts/TTWheels.gd" id="15_elc2j"]
+[ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="15_g6qeb"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="18_dtgb6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8y6q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cqx2e"]
+radius = 0.8
+height = 5.0
+
+[node name="Vehicle TT1000" type="VehicleBody3D"]
+transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0, 0, 0)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_p8y6q")
+continuous_cd = true
+script = ExtResource("1_fb2rk")
+scale_curve = ExtResource("2_r0gnp")
+
+[node name="NashTT_Body" parent="." instance=ExtResource("2_6m3fw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30664, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 1.48735e-07, -1.39936e-07, -1.48735e-07, 0.0609092, -0.998143, -1.39936e-07, 0.998143, 0.0609092, 2.75056e-08, 0.347224, 0.184586)
+shape = SubResource("CapsuleShape3D_cqx2e")
+debug_color = Color(0, 1, 0, 1)
+
+[node name="NashTT_ArcFL" parent="." instance=ExtResource("3_ltw3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.224014, 0)
+
+[node name="NashTT_ArcFR" parent="." instance=ExtResource("4_olxi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.224014, 0)
+
+[node name="NashTT_ArcRL" parent="." instance=ExtResource("5_cqx2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140821, 0)
+
+[node name="NashTT_ArcRR" parent="." instance=ExtResource("6_r0gnp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140821, 0)
+
+[node name="Wheel3DFL" parent="." instance=ExtResource("7_6m3fw")]
+transform = Transform3D(0.999385, -0.0348993, -0.00349065, 0.0348995, 0.999391, 0, 0.00348853, -0.000121822, 0.999994, 1.1, 0.0240137, 2.333)
+use_as_steering = true
+wheel_roll_influence = 0.01
+
+[node name="Wheel3DFR" parent="." instance=ExtResource("8_ltw3c")]
+transform = Transform3D(0.999377, -0.034899, 0.00523596, 0.0348995, 0.999391, 0, -0.00523277, 0.000182733, 0.999986, -1.1, 0.0240137, 2.33)
+wheel_roll_influence = 0.01
+
+[node name="Wheel3DRL" parent="." instance=ExtResource("9_cqx2e")]
+transform = Transform3D(0.999701, -0.0244322, 0, 0.0244322, 0.999701, 0, 0, 0, 1, 1.1, -0.128505, -1.6)
+use_as_traction = true
+wheel_roll_influence = 0.01
+
+[node name="Wheel3DRR" parent="." instance=ExtResource("10_r0gnp")]
+transform = Transform3D(0.999701, 0.0244322, 0, -0.0244322, 0.999701, 0, 0, 0, 1, -1.1, -0.128505, -1.6)
+use_as_traction = true
+use_as_steering = false
+wheel_roll_influence = 0.01
+
+[node name="Start" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6525e-07, 0.939561, 1.78006)
+stream = ExtResource("9_60fxh")
+volume_db = 6.0
+unit_size = 24.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Gear" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48004e-08, 0.645743, 0.501976)
+stream = ExtResource("10_07uew")
+volume_db = -6.0
+unit_size = 12.0
+max_db = -6.0
+pitch_scale = 0.75
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="GearAir" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48004e-08, 0.504209, 0.501976)
+stream = ExtResource("11_cvhxk")
+unit_size = 24.0
+max_db = 0.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Idle" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17038e-07, 1.16397, 0.785425)
+stream = ExtResource("12_pfxga")
+unit_size = 24.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Pow" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.781478, -0.157305, 0.0681911)
+stream = ExtResource("13_nbvq7")
+volume_db = 6.0
+unit_size = 32.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="PowR" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.757238, -0.157305, 0.068191)
+stream = ExtResource("13_nbvq7")
+volume_db = 6.0
+unit_size = 24.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 4.0
+
+[node name="Val" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137152, 0.543267, -1.4147)
+stream = ExtResource("14_xtjvq")
+volume_db = 6.0
+unit_size = 24.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 4.0
+
+[node name="Scrap" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21893e-07, 0.25526, -2.16018)
+stream = ExtResource("15_g6qeb")
+volume_db = 6.0
+unit_size = 16.0
+max_db = 6.0
+pitch_scale = 2.0
+max_polyphony = 2
+panning_strength = 4.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="EngineController" type="Node" parent="."]
+script = ExtResource("14_nrgpg")
+
+[node name="WheelsController" type="Node" parent="."]
+script = ExtResource("15_elc2j")
+
+[node name="UI" parent="." instance=ExtResource("18_dtgb6")]
+metadata/_edit_vertical_guides_ = [433.0]
+
+[node name="CenterOfMass" type="Node3D" parent="."]
+transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 7.00958e-08, 0.25, 0.800404)
+
+[node name="CenterOfAero" type="Node3D" parent="."]
+transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 0, 0.8, -0.6)
+
+[node name="FarLigh" type="SpotLight3D" parent="."]
+transform = Transform3D(1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, 6.25971e-08, 0.55, 2.52008)
+light_energy = 4.0
+light_indirect_energy = 2.0
+light_specular = 5.0
+light_bake_mode = 0
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 200.0
+spot_attenuation = 0.4
+spot_angle_attenuation = 3.03143
+
+[node name="CloseLightLeft" type="SpotLight3D" parent="."]
+transform = Transform3D(0.866025, -7.57104e-08, -0.5, -8.74228e-08, -1, -1.06581e-14, -0.5, 4.37114e-08, -0.866025, 1.135, 0.252398, 3.18005)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_specular = 5.0
+light_bake_mode = 0
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 80.0
+spot_attenuation = 0.4
+spot_angle = 60.0
+spot_angle_attenuation = 2.0
+
+[node name="CloseLightRight" type="SpotLight3D" parent="."]
+transform = Transform3D(0.866025, -7.57104e-08, 0.5, -8.74228e-08, -1, 1.51582e-14, 0.5, -4.37114e-08, -0.866025, -1.135, 0.252398, 3.18005)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_specular = 5.0
+light_bake_mode = 0
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 80.0
+spot_attenuation = 0.4
+spot_angle = 60.0
+spot_angle_attenuation = 2.0
+
+[node name="Cam" type="Camera3D" parent="."]
+transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
+fov = 45.0
+far = 500.0
+
+[node name="Cam1" type="Marker3D" parent="."]
+transform = Transform3D(-0.999998, -0.00174534, 8.70901e-08, -0.00173869, 0.996193, 0.0871557, -0.000152203, 0.0871556, -0.996194, 0.00387646, 1.20166, 1.95259)
+metadata/FOV = 30.0
+
+[node name="Cam2" type="Marker3D" parent="."]
+transform = Transform3D(-0.999998, -0.00174534, 8.69439e-08, -0.00173577, 0.99452, 0.104528, -0.000182524, 0.104528, -0.994522, 0.00499994, 1.29669, -0.50295)
+metadata/FOV = 35.0
+
+[node name="Cam3" type="Marker3D" parent="."]
+transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0.00427707, 1.84279, -2.06515)
+metadata/FOV = 40.0

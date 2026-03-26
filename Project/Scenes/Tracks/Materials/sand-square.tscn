@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://c70mmk1kdnfeb"]
+
+[ext_resource type="PlaneMesh" uid="uid://d340eucos3t4w" path="res://Scenes/Tracks/Square/Materials/sand_landscape_mesh_A.tres" id="1_vmwxu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jnhu"]
+size = Vector3(4400, 0, 2200)
+
+[node name="Sand" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 700)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -700)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1400, 0, 0)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1400, 0, 700)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1400, 0, -700)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, 0)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, 700)
+mesh = ExtResource("1_vmwxu")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 0, -700)
+mesh = ExtResource("1_vmwxu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7jnhu")
+debug_color = Color(0.960784, 0, 1, 1)

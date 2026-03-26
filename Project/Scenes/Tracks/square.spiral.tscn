@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://rp0egfs4wss8"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_h8ntv"]
+[ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="2_qrn8k"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="3_63ajs"]
+[ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="4_h8ntv"]
+[ext_resource type="PackedScene" uid="uid://c4awr8j1qsj2f" path="res://Scenes/Tracks/Square/GLBs/snow.200.00.glb" id="5_8hfdj"]
+[ext_resource type="PackedScene" uid="uid://mskywaff6ld4" path="res://Scenes/Tracks/Square/GLBs/snow.200.0l.glb" id="6_ymjt8"]
+[ext_resource type="Material" uid="uid://by0psqhptlnte" path="res://Scenes/Tracks/Square/Materials/snow_material_3d.tres" id="7_30t3i"]
+[ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="8_5uio7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vlvk5"]
+material = ExtResource("7_30t3i")
+
+[node name="Blank Square Snow200" type="Node3D"]
+script = ExtResource("1_h8ntv")
+
+[node name="DarkSkyLight" parent="." instance=ExtResource("2_qrn8k")]
+
+[node name="CameraGimbal" parent="." instance=ExtResource("3_63ajs")]
+transform = Transform3D(-0.777497, 0, -0.628886, 0, 1, 0, 0.628886, 0, -0.777497, -19.0095, 2, -14.5045)
+
+[node name="Vehicle" parent="." instance=ExtResource("4_h8ntv")]
+transform = Transform3D(-0.155882, 0, 0.987776, 0, 1, 0, -0.987776, 0, -0.155882, -19.0095, 2, -14.5045)
+
+[node name="snow_200_00" parent="." instance=ExtResource("5_8hfdj")]
+
+[node name="snow_200_01" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 400, 0, 0)
+
+[node name="snow_200_02" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -400, 0, 0)
+
+[node name="snow_200_03" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 400)
+
+[node name="snow_200_04" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -400, 0, 400)
+
+[node name="snow_200_05" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 400, 0, 400)
+
+[node name="snow_200_06" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -400)
+
+[node name="snow_200_07" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -400, 0, -400)
+
+[node name="snow_200_08" parent="." instance=ExtResource("5_8hfdj")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 400, 0, -400)
+
+[node name="snow_200_0l" parent="." instance=ExtResource("6_ymjt8")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.777497, 0, -0.628886, 0, 1, 0, 0.628886, 0, -0.777497, 29.7018, 2, -5.14724)
+mesh = SubResource("BoxMesh_vlvk5")
+skeleton = NodePath("../CameraGimbal")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.777497, 0, -0.628886, 0, 1, 0, 0.628886, 0, -0.777497, -82.2749, 2, 175.883)
+mesh = SubResource("BoxMesh_vlvk5")
+skeleton = NodePath("../CameraGimbal")
+
+[node name="Flat_Objects" parent="." instance=ExtResource("8_5uio7")]
+transform = Transform3D(-0.641985, 0, 0.766717, 0, 1, 0, -0.766717, 0, -0.641985, 29.2964, 0, -5.45293)

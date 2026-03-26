@@ -1,0 +1,583 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2u3c52wwav41"]
+
+[ext_resource type="Script" uid="uid://bxgxdgj8xpxwf" path="res://Scenes/UI/Scripts/ui_canvas.gd" id="1_nf4gj"]
+[ext_resource type="Script" uid="uid://cwhmf0iu4u1ho" path="res://Scenes/UI/Scripts/draw_graph.gd" id="2_qdvrb"]
+[ext_resource type="FontFile" uid="uid://drjfrxi8t0x3f" path="res://Themes/Fonts/Belanosima-Regular.ttf" id="3_hqwk7"]
+[ext_resource type="Theme" uid="uid://c8m6i742fxd8v" path="res://Themes/MinimalUI44/MinimalUI.tres" id="3_nf4gj"]
+[ext_resource type="LabelSettings" uid="uid://b7clkj0x8tukw" path="res://Themes/ui-title.tres" id="4_vy225"]
+[ext_resource type="Script" uid="uid://dmbpm6olsbfk2" path="res://Scenes/UI/Scripts/analometer.gd" id="5_mmixe"]
+[ext_resource type="Texture2D" uid="uid://gvy0ceh2vadg" path="res://Scenes/UI/Images/SpeedometerBG.png" id="5_smcll"]
+[ext_resource type="Texture2D" uid="uid://43a0m001neks" path="res://Scenes/UI/Images/SpeedometarPointer.png" id="6_mmixe"]
+[ext_resource type="Texture2D" uid="uid://c264l56f7huv0" path="res://Scenes/UI/Images/TachometerBG.png" id="6_ryf15"]
+[ext_resource type="Texture2D" uid="uid://b2cb0mc3qto1e" path="res://Scenes/UI/Images/SpeedometerPointer.png" id="7_mmixe"]
+[ext_resource type="FontFile" uid="uid://dlgkspckhvbp4" path="res://Themes/Fonts/Xolonium-Regular.ttf" id="10_nt8jn"]
+[ext_resource type="Texture2D" uid="uid://ben725ndss1tx" path="res://Images/Wheel.png" id="12_vy225"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_038pu"]
+content_margin_left = 50.0
+content_margin_top = 30.0
+content_margin_right = 50.0
+content_margin_bottom = 30.0
+bg_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmixe"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+
+[node name="UI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_nf4gj")
+metadata/_edit_vertical_guides_ = [511.0, 1022.0, -1.0]
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." groups=["Torpedos"]]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Message" type="Label" parent="HBoxContainer"]
+z_index = 999
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("3_nf4gj")
+theme_override_fonts/font = ExtResource("3_hqwk7")
+text = "Get Ready!"
+label_settings = ExtResource("4_vy225")
+horizontal_alignment = 1
+
+[node name="Help" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_nf4gj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_038pu")
+text = "WASD -- Drive
+Alt, Cotrol, Shift + WASD - Alternative steering
+X -- Reverse
+R -- Restore Car
+1,2,3 -- Lights
+C - Change camera
+H -- Hide UI
+[F12] Show [F11] Hide Info
+Hold RMB, Arrow keys -- Pan camera
+MouseScroll, PageUp/PageDown  -- Zoom
+Alt+Enter -- Full Screen"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Topline" type="Label" parent="MarginContainer"]
+top_level = true
+z_index = 80
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_nf4gj")
+theme_override_constants/shadow_outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mmixe")
+text = "XX fps [F1] help [F5] restart [F6] view modes [C] camera [H] hide UI"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" groups=["Torpedos"]]
+layout_mode = 2
+
+[node name="PFG" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 120)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+script = ExtResource("2_qdvrb")
+
+[node name="Speedometer" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Speedometer"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 15
+text = "ACCCELERATING FIRST"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." groups=["Torpedos"]]
+layout_mode = 2
+alignment = 2
+
+[node name="Info" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logs" type="RichTextLabel" parent="VBoxContainer/Info"]
+z_index = 60
+clip_contents = false
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/normal_font_size = 16
+text = "Oops... 
+Logs are somewhere 
+But not here o.0"
+fit_content = true
+vertical_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Rotation" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(334.265, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Left" type="Label" parent="VBoxContainer/VBoxContainer2/Rotation"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 18
+text = "<<"
+horizontal_alignment = 2
+
+[node name="LeftA" type="Label" parent="VBoxContainer/VBoxContainer2/Rotation"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
+
+[node name="RightA" type="Label" parent="VBoxContainer/VBoxContainer2/Rotation"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 18
+text = "XXd(XX)"
+
+[node name="Right" type="Label" parent="VBoxContainer/VBoxContainer2/Rotation"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 18
+text = ">>"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="WheelsFrontSleep" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(75, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="FL" type="Control" parent="VBoxContainer/WheelsFrontSleep"]
+custom_minimum_size = Vector2(35, 30)
+layout_mode = 2
+
+[node name="SleepFL" type="ProgressBar" parent="VBoxContainer/WheelsFrontSleep/FL"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+tooltip_text = "SleepFL"
+theme = ExtResource("3_nf4gj")
+fill_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/WheelsFrontSleep"]
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+
+[node name="FR" type="Control" parent="VBoxContainer/WheelsFrontSleep"]
+custom_minimum_size = Vector2(35, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SleepFR" type="ProgressBar" parent="VBoxContainer/WheelsFrontSleep/FR"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+tooltip_text = "SleepFR"
+theme = ExtResource("3_nf4gj")
+fill_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+
+[node name="WheelsRearSleep" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Brake" type="ProgressBar" parent="VBoxContainer/WheelsRearSleep"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+step = 1.0
+value = 20.0
+fill_mode = 3
+show_percentage = false
+
+[node name="HS1" type="HSeparator" parent="VBoxContainer/WheelsRearSleep"]
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+
+[node name="RL" type="Control" parent="VBoxContainer/WheelsRearSleep"]
+custom_minimum_size = Vector2(35, 30)
+layout_mode = 2
+tooltip_text = "SleepRL"
+
+[node name="SleepRL" type="ProgressBar" parent="VBoxContainer/WheelsRearSleep/RL"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+tooltip_text = "SleepRL"
+theme = ExtResource("3_nf4gj")
+fill_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/WheelsRearSleep"]
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+
+[node name="RR" type="Control" parent="VBoxContainer/WheelsRearSleep"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+tooltip_text = "SleepRR"
+
+[node name="SleepRR" type="ProgressBar" parent="VBoxContainer/WheelsRearSleep/RR"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+tooltip_text = "SleepRR"
+theme = ExtResource("3_nf4gj")
+fill_mode = 3
+
+[node name="HS2" type="HSeparator" parent="VBoxContainer/WheelsRearSleep"]
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+
+[node name="Accelerate" type="ProgressBar" parent="VBoxContainer/WheelsRearSleep"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme = ExtResource("3_nf4gj")
+step = 1.0
+value = 20.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Analometer" type="Control" parent="VBoxContainer"]
+modulate = Color(1, 1, 0.705882, 1)
+self_modulate = Color(1, 1, 1, 0.6)
+z_index = -100
+layout_mode = 2
+script = ExtResource("5_mmixe")
+
+[node name="Speed" type="Label" parent="VBoxContainer/Analometer"]
+z_index = 50
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -178.0
+offset_right = 40.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 20)
+size_flags_horizontal = 4
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 44
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gear" type="Label" parent="VBoxContainer/Analometer"]
+z_index = 50
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -239.0
+offset_right = 40.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 20)
+size_flags_horizontal = 4
+theme = ExtResource("3_nf4gj")
+theme_override_font_sizes/font_size = 66
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedBG" type="TextureRect" parent="VBoxContainer/Analometer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 40
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -288.9
+offset_top = -187.375
+offset_right = 791.1
+offset_bottom = 892.625
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_smcll")
+
+[node name="SpeedPT" type="TextureRect" parent="VBoxContainer/Analometer"]
+z_index = 40
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -721.9
+offset_top = -652.375
+offset_right = 358.1
+offset_bottom = 427.625
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.215, 0.215)
+pivot_offset = Vector2(540, 575)
+texture = ExtResource("7_mmixe")
+
+[node name="SpeedPS" type="TextureRect" parent="VBoxContainer/Analometer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 40
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -721.9
+offset_top = -652.375
+offset_right = 358.1
+offset_bottom = 427.625
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(540, 575)
+texture = ExtResource("6_mmixe")
+
+[node name="TachoBG" type="TextureRect" parent="VBoxContainer/Analometer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 40
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 74.41
+offset_top = -187.375
+offset_right = 1154.41
+offset_bottom = 892.625
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_ryf15")
+
+[node name="TachoPT" type="TextureRect" parent="VBoxContainer/Analometer"]
+z_index = 40
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -357.9
+offset_top = -652.4
+offset_right = 722.1
+offset_bottom = 427.6
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.215, 0.215)
+pivot_offset = Vector2(540, 575)
+texture = ExtResource("7_mmixe")
+
+[node name="TachoPS" type="TextureRect" parent="VBoxContainer/Analometer"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 40
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -357.9
+offset_top = -652.4
+offset_right = 722.1
+offset_bottom = 427.6
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(540, 575)
+texture = ExtResource("6_mmixe")
+
+[node name="Speed Label" type="Label" parent="VBoxContainer/Analometer"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -70.0
+offset_right = -142.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.720002, 0.720002)
+pivot_offset = Vector2(39.5, 22)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 24
+text = "Speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Delta Label" type="Label" parent="VBoxContainer/Analometer"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.645
+offset_top = -50.0
+offset_right = -143.645
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.720002, 0.720002)
+pivot_offset = Vector2(38, 0)
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 20
+text = "Delta"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RPM Label" type="Label" parent="VBoxContainer/Analometer"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = -70.0
+offset_right = 226.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.76, 0.76)
+pivot_offset = Vector2(35, 26)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 24
+text = "RPM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Power Label" type="Label" parent="VBoxContainer/Analometer"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 146.685
+offset_top = -50.0
+offset_right = 224.685
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.76, 0.76)
+pivot_offset = Vector2(33.5, 4)
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_fonts/font = ExtResource("10_nt8jn")
+theme_override_font_sizes/font_size = 20
+text = "Power"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." groups=["Torpedos"]]
+z_index = 555
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Wheel" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.501961)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -135.01
+offset_right = 420.0
+offset_bottom = 704.99
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(420, 420)
+texture = ExtResource("12_vy225")

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dd5ggbf8laeeo"]
+
+[resource]
+resource_name = "snow"
+albedo_color = Color(0.930925, 1, 1, 1)
+metallic = 0.2
+roughness = 0.800331

@@ -1,0 +1,131 @@
+[gd_scene load_steps=21 format=3 uid="uid://mhe403u16b1"]
+
+[ext_resource type="Script" uid="uid://buhmatk8mfnss" path="res://Scenes/Cars/Horsa/Scripts/Horsa1000.gd" id="1_t15ts"]
+[ext_resource type="Curve" uid="uid://brdf45a5bsihd" path="res://Scenes/Cars/Horsa/Horsa_curve_1000.tres" id="2_p8y6q"]
+[ext_resource type="AudioStream" uid="uid://dpiyljugbcrje" path="res://Sounds/Cars/eng ran start.wav" id="3_ws0kp"]
+[ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/Cars/eng run idle.wav" id="4_og0y5"]
+[ext_resource type="AudioStream" uid="uid://b0hpvi1rdkc2d" path="res://Sounds/Cars/eng ran overpower.wav" id="5_cbk8q"]
+[ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="6_03jdd"]
+[ext_resource type="Script" uid="uid://b5lt02iodyf5b" path="res://Scenes/Cars/Horsa/Scripts/HorsaEngine.gd" id="6_orkkl"]
+[ext_resource type="AudioStream" uid="uid://dqiu1x6rs2gub" path="res://Sounds/Cars/eng ran run.wav" id="6_pe4wk"]
+[ext_resource type="Script" uid="uid://d1tnlqjqnh03c" path="res://Scenes/Cars/Horsa/Scripts/HorsaWheels.gd" id="7_mgf7a"]
+[ext_resource type="AudioStream" uid="uid://dqtjormxmfsnx" path="res://Sounds/Cars/Gear.wav" id="7_ws0kp"]
+[ext_resource type="PackedScene" uid="uid://bl7oeudi87qs" path="res://Scenes/Cars/Horsa/Horsa_Wheel_FL.tscn" id="8_p8y6q"]
+[ext_resource type="PackedScene" uid="uid://b6wedoqflqcfb" path="res://Scenes/Cars/Horsa/Horsa_Wheel_FR.tscn" id="9_ws0kp"]
+[ext_resource type="PackedScene" uid="uid://cshnqujnxuh57" path="res://Scenes/Cars/Horsa/Horsa_Wheel_RL.tscn" id="10_pe4wk"]
+[ext_resource type="PackedScene" uid="uid://dftgfjlwgve6d" path="res://Scenes/Cars/Horsa/Horsa_Wheel_RR.tscn" id="11_cbk8q"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="12_ceeiv"]
+[ext_resource type="PackedScene" uid="uid://lolglockqvm" path="res://Scenes/Cars/Horsa/GLBs/HorsaCar6600.glb" id="12_w8lsr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8y6q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ws0kp"]
+size = Vector3(2.23, 0.875, 4.16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pe4wk"]
+size = Vector3(1.52, 1, 2.62)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cbk8q"]
+size = Vector3(2.12, 0.525, 0.795)
+
+[node name="Vehicle Horsa1000" type="VehicleBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_p8y6q")
+continuous_cd = true
+script = ExtResource("1_t15ts")
+scale_curve = ExtResource("2_p8y6q")
+
+[node name="Start" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ws0kp")
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Idle" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_og0y5")
+pitch_scale = 2.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Pow" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 0)
+stream = ExtResource("5_cbk8q")
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Run" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 0)
+stream = ExtResource("6_pe4wk")
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Scrap" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 0)
+stream = ExtResource("6_03jdd")
+volume_db = -6.0
+max_db = -6.0
+pitch_scale = 2.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Gear" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 0)
+stream = ExtResource("7_ws0kp")
+volume_db = -6.0
+max_db = -6.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.6
+one_shot = true
+
+[node name="EngineController" type="Node" parent="."]
+script = ExtResource("6_orkkl")
+
+[node name="WheelsController" type="Node" parent="."]
+script = ExtResource("7_mgf7a")
+
+[node name="Wheel3DFL" parent="." instance=ExtResource("8_p8y6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, -0.18, 1.72)
+use_as_steering = true
+wheel_roll_influence = 0.1
+
+[node name="Wheel3DFR" parent="." instance=ExtResource("9_ws0kp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, -0.18, 1.72)
+use_as_steering = true
+wheel_roll_influence = 0.1
+
+[node name="Wheel3DRL" parent="." instance=ExtResource("10_pe4wk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, -0.1388, -1.37025)
+use_as_traction = true
+wheel_roll_influence = 0.1
+
+[node name="Wheel3DRR" parent="." instance=ExtResource("11_cbk8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, -0.1388, -1.37025)
+use_as_traction = true
+wheel_roll_influence = 0.1
+
+[node name="HorsaCar6600" parent="." instance=ExtResource("12_w8lsr")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+
+[node name="UI" parent="." instance=ExtResource("12_ceeiv")]
+
+[node name="CenterOfMass" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.066, 0.33)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.25)
+shape = SubResource("BoxShape3D_ws0kp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, -0.16)
+shape = SubResource("BoxShape3D_pe4wk")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.936819, -0.349815, 0, 0.349815, 0.936819, -5.55112e-16, 0.0995655, -2.12163)
+shape = SubResource("BoxShape3D_cbk8q")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.978347, 0.206973, 0, -0.206973, 0.978347, -2.89074e-14, -0.0144133, 2.43888)
+shape = SubResource("BoxShape3D_cbk8q")

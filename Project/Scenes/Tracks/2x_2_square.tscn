@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://chn4gy2qxtfrj"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_spnbv"]
+[ext_resource type="PackedScene" uid="uid://cetsfs5pgqv7t" path="res://Scenes/Tracks/GLBs/2x2/2x2.Bottom.glb" id="2_gs7k7"]
+[ext_resource type="PackedScene" uid="uid://bhyx1dm0628cg" path="res://Scenes/Tracks/GLBs/2x2/2x2.Top.glb" id="3_x0k7m"]
+[ext_resource type="PackedScene" uid="uid://2ql0pbd6ehe7" path="res://Scenes/Sky/DarkSkyDarkNoShadow.tscn" id="4_xql3g"]
+[ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="5_d2d41"]
+[ext_resource type="Material" uid="uid://cwdhl0lgfxana" path="res://Scenes/Tracks/Square/Materials/ice_material_3d.tres" id="5_x0k7m"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="6_l6xji"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xql3g"]
+material = ExtResource("5_x0k7m")
+top_radius = 2.0
+bottom_radius = 0.0
+height = 4.0
+radial_segments = 16
+
+[node name="2x2 Square" type="Node3D"]
+script = ExtResource("1_spnbv")
+
+[node name="2x2_Bottom" parent="." instance=ExtResource("2_gs7k7")]
+
+[node name="2x2_Top" parent="." instance=ExtResource("3_x0k7m")]
+
+[node name="DarkSkyDarkNoShadow" parent="." instance=ExtResource("4_xql3g")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -470.839, 40, 401.119)
+mesh = SubResource("CylinderMesh_xql3g")
+skeleton = NodePath("../Vehicle")
+
+[node name="Vehicle" parent="." instance=ExtResource("5_d2d41")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -475.409, 14.7659, 409.034)
+
+[node name="CameraGimbal" parent="." instance=ExtResource("6_l6xji")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -475.409, 14.7659, 409.034)

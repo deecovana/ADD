@@ -1,0 +1,66 @@
+extends Node
+
+## Copied from Fanta1000
+@export var sleep_start = 0.2
+@export var sleep_start_rear = 0.4
+
+var track: Node3D
+var vehicle: VehicleBody3D
+var UI: CanvasLayer
+var front_slip_bar: HBoxContainer
+var rear_slip_bar: HBoxContainer
+var wheel_fl = VehicleWheel3D
+var wheel_fr = VehicleWheel3D
+var wheel_rl = VehicleWheel3D
+var wheel_rr = VehicleWheel3D
+var sleep_fl_bar = ProgressBar
+var sleep_fr_bar = ProgressBar
+var sleep_rl_bar = ProgressBar
+var sleep_rr_bar = ProgressBar
+var handbrake_pressed = false
+
+func _ready() -> void:
+	vehicle = get_parent()
+	UI = $"../UI"
+	wheel_fl = $"../Wheel3DFL"
+	wheel_fr = $"../Wheel3DFR"
+	wheel_rl = $"../Wheel3DRL"
+	wheel_rr = $"../Wheel3DRR"
+	var find_sleep_fl = UI.find_children("SleepFL")
+	var find_sleep_fr= UI.find_children("SleepFR")
+	var find_sleep_rl = UI.find_children("SleepRL")
+	var find_sleep_rr= UI.find_children("SleepRR")
+	sleep_fl_bar = find_sleep_fl[0]
+	sleep_fr_bar = find_sleep_fr[0]
+	sleep_rl_bar = find_sleep_rl[0]
+	sleep_rr_bar = find_sleep_rr[0]
+	
+func _input(event: InputEvent) -> void:
+	handbrake_pressed = event.is_action_pressed("handbrake")
+
+func _physics_process(_delta: float) -> void:
+	sleep_fl_bar.set_value(val_sleep(wheel_fl, sleep_start))
+	sleep_fr_bar.set_value(val_sleep(wheel_fr, sleep_start))
+	sleep_rl_bar.set_value(val_sleep(wheel_rl, sleep_start_rear))
+	sleep_rr_bar.set_value(val_sleep(wheel_rr, sleep_start_rear))
+
+func val_sleep(target: VehicleWheel3D, sleep_value) -> float:
+	var val = target.get_skidinfo()
+	if (val > 0 and val < sleep_value) or \
+		## Used HandBrake
+		handbrake_pressed: 
+			play_sleep(target, sleep_value / (val + sleep_value))
+			return (100 - val * (100 / sleep_value))
+	else: stop_sleep(target)
+	return 0
+	
+func play_sleep(target: VehicleWheel3D, volume: float) -> void:
+	var find_target_player = target.find_children("AudioStreamPlayer3D")
+	var target_player: AudioStreamPlayer3D = find_target_player[0]
+	target_player.volume_db = volume * 32 - 32
+	if (!target_player.playing): target_player.play()
+
+func stop_sleep(target: VehicleWheel3D) -> void:
+	var find_target_player = target.find_children("AudioStreamPlayer3D")
+	var target_player: AudioStreamPlayer3D = find_target_player[0]
+	target_player.stop()

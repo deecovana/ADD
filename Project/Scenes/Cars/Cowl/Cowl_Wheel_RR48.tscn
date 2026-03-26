@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjt6h3yu8ukld"]
+
+[ext_resource type="AudioStream" uid="uid://l0njrpj6bcwf" path="res://Sounds/Cars/slip.wav" id="1_684jm"]
+[ext_resource type="PackedScene" uid="uid://bvc5rq62q2q22" path="res://Scenes/Cars/Cowl/GLBs/Cowl.04.wheel.glb" id="2_qh7t5"]
+
+[node name="Wheel3DRR48" type="VehicleWheel3D"]
+wheel_roll_influence = 0.01
+wheel_radius = 0.484
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_684jm")
+volume_db = -6.0
+max_db = 6.0
+pitch_scale = 0.45
+max_distance = 100.0
+max_polyphony = 4
+panning_strength = 5.0
+bus = &"Engines"
+
+[node name="Cowl_04_wheel" parent="." instance=ExtResource("2_qh7t5")]
+transform = Transform3D(-5.24537e-08, 4.58564e-15, 1.2, -1.04907e-07, 1.2, -9.17129e-15, -1.2, -1.04907e-07, -5.24537e-08, 0.075, 0, 0)

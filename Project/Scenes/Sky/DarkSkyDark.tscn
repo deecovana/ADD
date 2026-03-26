@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ie4lghu7pv4"]
+
+[ext_resource type="Environment" uid="uid://b2q2831c430vc" path="res://Scenes/Sky/DarkSkyDark.tres" id="1_5fuqk"]
+[ext_resource type="Script" uid="uid://dmr2bji4fhegp" path="res://Scenes/Sky/timerDark.gd" id="2_m3cqv"]
+[ext_resource type="Texture2D" uid="uid://cstjt20t34qv0" path="res://Scenes/Sky/Images/sun-a.png" id="3_1x7ki"]
+
+[node name="DarkSkyDark" type="WorldEnvironment"]
+environment = ExtResource("1_5fuqk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.583541, 0.812084, 0, 0.812084, 0.583541, -1, -2.89118e-07, -2.61579e-07, 0, 0, 0)
+light_color = Color(0.760046, 0.874381, 1, 1)
+light_energy = 1.1
+light_indirect_energy = 1.5
+light_volumetric_fog_energy = 1.5
+light_bake_mode = 1
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="LightTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
+autostart = true
+script = ExtResource("2_m3cqv")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(-2.81462e-08, -0.765101, -0.64391, -3.34436e-08, 0.64391, -0.765101, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_mask = 0
+spring_length = 900.0
+margin = 0.0
+
+[node name="Sun" type="Sprite3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
+modulate = Color(0.873993, 0.906789, 1, 1)
+pixel_size = 0.5
+texture = ExtResource("3_1x7ki")
+
+[connection signal="timeout" from="LightTimer" to="LightTimer" method="_on_timeout"]

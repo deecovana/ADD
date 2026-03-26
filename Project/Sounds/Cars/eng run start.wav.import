@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d32nahn6656wp"
+path="res://.godot/imported/eng run start.wav-3a0f4254b5ffbf08e9d9d77130a91758.sample"
+
+[deps]
+
+source_file="res://Sounds/Cars/eng run start.wav"
+dest_files=["res://.godot/imported/eng run start.wav-3a0f4254b5ffbf08e9d9d77130a91758.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

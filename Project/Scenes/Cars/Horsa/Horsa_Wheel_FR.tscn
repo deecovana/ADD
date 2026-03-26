@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6wedoqflqcfb"]
+
+[ext_resource type="PackedScene" uid="uid://btdp20g7ihate" path="res://Scenes/Cars/Horsa/GLBs/HorsaCar6600WheelRL.glb" id="1_vj4yu"]
+[ext_resource type="AudioStream" uid="uid://l0njrpj6bcwf" path="res://Sounds/Cars/slip.wav" id="2_kmjcj"]
+
+[node name="Wheel3D" type="VehicleWheel3D"]
+wheel_roll_influence = 0.01
+wheel_radius = 0.4
+
+[node name="HorsaCar6600WheelRL" parent="." instance=ExtResource("1_vj4yu")]
+transform = Transform3D(-0.45, 0, -6.79481e-08, 0, 0.45, 0, 6.79481e-08, 0, -0.45, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_kmjcj")
+volume_db = -6.0
+pitch_scale = 0.5
+max_distance = 100.0
+max_polyphony = 4
+panning_strength = 2.0

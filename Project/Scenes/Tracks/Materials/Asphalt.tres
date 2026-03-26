@@ -1,0 +1,8 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://c6hx4r66uu8wi"]
+
+[ext_resource type="Material" path="res://Scenes/Tracks/Materials/Asphalt_Material.tres" id="1_v30uo"]
+
+[resource]
+lightmap_size_hint = Vector2i(104, 57)
+material = ExtResource("1_v30uo")
+size = Vector3(8, 0.19, 8)

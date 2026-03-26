@@ -1,0 +1,532 @@
+[gd_scene load_steps=12 format=3 uid="uid://c04ue4ip50qe2"]
+
+[ext_resource type="Script" uid="uid://c38lgq0jf848d" path="res://Scenes/Script/Loader.gd" id="1_tt5f1"]
+[ext_resource type="Theme" uid="uid://b70j3wnt2ujlc" path="res://Themes/Loader.tres" id="2_ttvog"]
+[ext_resource type="FontFile" uid="uid://drjfrxi8t0x3f" path="res://Themes/Fonts/Belanosima-Regular.ttf" id="2_xm1ns"]
+[ext_resource type="PackedScene" uid="uid://m83ggcicw34u" path="res://Scenes/Tracks/square.snow.2x2.tscn" id="3_toe5v"]
+[ext_resource type="FontFile" uid="uid://dtui5cu3vg7f1" path="res://Themes/Fonts/Habbo.ttf" id="4_xm1ns"]
+[ext_resource type="LabelSettings" uid="uid://b7clkj0x8tukw" path="res://Themes/ui-title.tres" id="8_qcf16"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+resource_name = "white_button_hover"
+bg_color = Color(0.98, 0.98, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.6, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.4, 0.6, 1, 0.2)
+shadow_size = 8
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+resource_name = "white_button_normal"
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.85, 0.85, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.08)
+shadow_size = 6
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3"]
+resource_name = "white_button_pressed"
+bg_color = Color(0.92, 0.94, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.5, 0.9, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.3, 0.5, 0.9, 0.15)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="Theme" id="Theme_1"]
+Button/styles/focus = SubResource("StyleBoxFlat_2")
+Button/styles/hover = SubResource("StyleBoxFlat_2")
+Button/styles/normal = SubResource("StyleBoxFlat_1")
+Button/styles/pressed = SubResource("StyleBoxFlat_3")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tt5f1"]
+color = Color(0, 0, 0, 0)
+
+[node name="Loader" type="Node2D" node_paths=PackedStringArray("canvas", "button", "title", "game_menu", "drive_menu", "circle_menu", "car_menu")]
+script = ExtResource("1_tt5f1")
+canvas = NodePath("Canvas")
+button = NodePath("Canvas/Control/Button")
+title = NodePath("Canvas/Control/Title")
+game_menu = NodePath("Canvas/Control/GameMenu")
+drive_menu = NodePath("Canvas/Control/DriveMenu")
+circle_menu = NodePath("Canvas/Control/CircleMenu")
+car_menu = NodePath("Canvas/Control/CarMenu")
+spa = ExtResource("3_toe5v")
+spa_back = ExtResource("3_toe5v")
+airbag = ExtResource("3_toe5v")
+airbag_back = ExtResource("3_toe5v")
+metadata/_edit_vertical_guides_ = [30.0, 973.0]
+metadata/_edit_horizontal_guides_ = [22.0, 580.0, 123.0]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Canvas"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_ttvog")
+
+[node name="Title" type="Label" parent="Canvas/Control"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -472.0
+offset_top = 2.0
+offset_right = -41.0
+offset_bottom = 152.0
+grow_horizontal = 0
+text = "AdD Free"
+label_settings = ExtResource("8_qcf16")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Canvas/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -434.0
+offset_top = 22.0
+offset_right = -26.0
+offset_bottom = 130.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_xm1ns")
+theme_override_font_sizes/font_size = 92
+text = " >> PLAY >> "
+
+[node name="GameMenu" type="Panel" parent="Canvas/Control" groups=["menus"]]
+visible = false
+z_index = 300
+layout_mode = 1
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 300.0
+offset_bottom = 347.0
+pivot_offset = Vector2(133, 5)
+
+[node name="MenuButtons" type="VBoxContainer" parent="Canvas/Control/GameMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 284.0
+grow_horizontal = 2
+scale = Vector2(1.01934, 1.00797)
+theme = SubResource("Theme_1")
+alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="Canvas/Control/GameMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="Select Action" type="Label" parent="Canvas/Control/GameMenu/MenuButtons"]
+layout_mode = 2
+text = "Select action"
+horizontal_alignment = 1
+
+[node name="PlayGameBtn" type="Button" parent="Canvas/Control/GameMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+theme_override_colors/font_color = Color(0, 0.4, 0, 1)
+text = "DRIVE"
+
+[node name="VSeparator3" type="VSeparator" parent="Canvas/Control/GameMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="JoinGameBtn" type="Button" parent="Canvas/Control/GameMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+disabled = true
+text = "JOIN"
+
+[node name="HostGameBtn" type="Button" parent="Canvas/Control/GameMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+disabled = true
+text = "HOST
+"
+
+[node name="VSeparator" type="VSeparator" parent="Canvas/Control/GameMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="SettingsBtn" type="Button" parent="Canvas/Control/GameMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+theme_override_colors/font_color = Color(0, 0, 0.4, 1)
+text = "SETTINGS"
+
+[node name="VSeparator2" type="VSeparator" parent="Canvas/Control/GameMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="QuitBtn" type="Button" parent="Canvas/Control/GameMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+theme_override_colors/font_color = Color(0.4, 0, 0, 1)
+text = "QUIT"
+
+[node name="DriveMenu" type="Panel" parent="Canvas/Control" groups=["menus"]]
+z_index = 299
+layout_mode = 1
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 300.0
+offset_bottom = 234.0
+pivot_offset = Vector2(133, 5)
+
+[node name="MenuButtons" type="VBoxContainer" parent="Canvas/Control/DriveMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 172.0
+grow_horizontal = 2
+scale = Vector2(1.01934, 1.00797)
+theme = SubResource("Theme_1")
+
+[node name="VSeparator3" type="VSeparator" parent="Canvas/Control/DriveMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="Select Style" type="Label" parent="Canvas/Control/DriveMenu/MenuButtons"]
+layout_mode = 2
+text = "Select style"
+horizontal_alignment = 1
+
+[node name="Square Land" type="Button" parent="Canvas/Control/DriveMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+disabled = true
+text = "Square Land"
+
+[node name="Circle Tracks" type="Button" parent="Canvas/Control/DriveMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "Circle Tracks"
+
+[node name="VSeparator2" type="VSeparator" parent="Canvas/Control/DriveMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="HomeBtn" type="Button" parent="Canvas/Control/DriveMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "HOME
+"
+
+[node name="CircleMenu" type="Panel" parent="Canvas/Control" groups=["menus"]]
+visible = false
+z_index = 298
+layout_mode = 1
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 300.0
+offset_bottom = 399.0
+pivot_offset = Vector2(133, 5)
+
+[node name="MenuButtons" type="VBoxContainer" parent="Canvas/Control/CircleMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 172.0
+grow_horizontal = 2
+scale = Vector2(1.01934, 1.00797)
+theme = SubResource("Theme_1")
+
+[node name="VSeparator3" type="VSeparator" parent="Canvas/Control/CircleMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="Select Circle" type="Label" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+text = "Select circle"
+horizontal_alignment = 1
+
+[node name="AirBag Base" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "AirBag Base
+"
+
+[node name="AirBag Back" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "AirBag Back
+"
+
+[node name="Spa Short" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "Spa Short
+"
+
+[node name="Thor Circus" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+disabled = true
+text = "Thor Circus"
+
+[node name="Curve Roads" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+disabled = true
+text = "Curve Roads
+"
+
+[node name="Cup Circus" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+disabled = true
+text = "Cup Circus"
+
+[node name="VSeparator2" type="VSeparator" parent="Canvas/Control/CircleMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="HomeBtn" type="Button" parent="Canvas/Control/CircleMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "HOME
+"
+
+[node name="CarMenu" type="Panel" parent="Canvas/Control" groups=["menus"]]
+visible = false
+z_index = 297
+layout_mode = 1
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 300.0
+offset_bottom = 309.0
+pivot_offset = Vector2(133, 5)
+
+[node name="MenuButtons" type="VBoxContainer" parent="Canvas/Control/CarMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 214.0
+grow_horizontal = 2
+scale = Vector2(1.01934, 1.00797)
+theme = SubResource("Theme_1")
+
+[node name="VSeparator3" type="VSeparator" parent="Canvas/Control/CarMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="Select Vehicle" type="Label" parent="Canvas/Control/CarMenu/MenuButtons"]
+layout_mode = 2
+text = "Select vehicle"
+horizontal_alignment = 1
+
+[node name="Cowl Base 6600" type="Button" parent="Canvas/Control/CarMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "Cowl Base 6600"
+
+[node name="Cowl Back 6600" type="Button" parent="Canvas/Control/CarMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "Cowl Back 6600"
+
+[node name="Fanta 6600" type="Button" parent="Canvas/Control/CarMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+text = "Fanta 6600"
+
+[node name="VSeparator2" type="VSeparator" parent="Canvas/Control/CarMenu/MenuButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="HomeBtn" type="Button" parent="Canvas/Control/CarMenu/MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_ttvog")
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "HOME
+"
+
+[node name="PlayerInfoPanel" type="Panel" parent="Canvas/Control" groups=["panels"]]
+visible = false
+z_index = 100
+custom_minimum_size = Vector2(270, 130)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme = ExtResource("2_ttvog")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Control/PlayerInfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerNameLabel" type="Label" parent="Canvas/Control/PlayerInfoPanel/VBoxContainer"]
+layout_mode = 2
+text = "Player Name:"
+
+[node name="PlayerNameInput" type="LineEdit" parent="Canvas/Control/PlayerInfoPanel/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter your name..."
+
+[node name="VSeparator" type="VSeparator" parent="Canvas/Control/PlayerInfoPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_tt5f1")
+
+[node name="StatusLabel" type="Label" parent="Canvas/Control/PlayerInfoPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xm1ns")
+theme_override_font_sizes/font_size = 24
+text = "Status: Offline"
+
+[node name="ConnectionStatusIcon" type="ColorRect" parent="Canvas/Control/PlayerInfoPanel/VBoxContainer/StatusLabel"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -8.5
+offset_right = 16.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0, 0, 1)
+
+[node name="NetworkInfoPanel" type="Panel" parent="Canvas/Control" groups=["panels"]]
+visible = false
+custom_minimum_size = Vector2(270, 130)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = -29.9995
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_ttvog")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Control/NetworkInfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NetworkLabel" type="Label" parent="Canvas/Control/NetworkInfoPanel/VBoxContainer"]
+layout_mode = 2
+text = "Network Info:"
+horizontal_alignment = 2
+
+[node name="IPLabel" type="Label" parent="Canvas/Control/NetworkInfoPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xm1ns")
+theme_override_font_sizes/font_size = 24
+text = "IP: 127.0.0.1"
+horizontal_alignment = 2
+
+[node name="PortLabel" type="Label" parent="Canvas/Control/NetworkInfoPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xm1ns")
+theme_override_font_sizes/font_size = 24
+text = "Port: 7000"
+horizontal_alignment = 2
+
+[node name="PlayersLabel" type="Label" parent="Canvas/Control/NetworkInfoPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xm1ns")
+theme_override_font_sizes/font_size = 24
+text = "Players: 0/8"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="Canvas/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Canvas/Control/GameMenu/MenuButtons/PlayGameBtn" to="." method="_on_play_game_btn_pressed"]
+[connection signal="pressed" from="Canvas/Control/GameMenu/MenuButtons/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="Canvas/Control/DriveMenu/MenuButtons/Square Land" to="." method="_on_square_land_pressed"]
+[connection signal="pressed" from="Canvas/Control/DriveMenu/MenuButtons/Circle Tracks" to="." method="_on_circle_tracks_pressed"]
+[connection signal="pressed" from="Canvas/Control/DriveMenu/MenuButtons/HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/AirBag Base" to="." method="_on_air_bag_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/AirBag Back" to="." method="_on_air_bag_back_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/Spa Short" to="." method="_on_spa_flat_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/Thor Circus" to="." method="_on_thor_circus_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/Curve Roads" to="." method="_on_curve_roads_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/Cup Circus" to="." method="_on_cup_circus_pressed"]
+[connection signal="pressed" from="Canvas/Control/CircleMenu/MenuButtons/HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="Canvas/Control/CarMenu/MenuButtons/Cowl Base 6600" to="." method="_on_cowl_base_6600_pressed"]
+[connection signal="pressed" from="Canvas/Control/CarMenu/MenuButtons/Cowl Back 6600" to="." method="_on_cowl_back_6600_pressed"]
+[connection signal="pressed" from="Canvas/Control/CarMenu/MenuButtons/Fanta 6600" to="." method="_on_fanta_6600_pressed"]
+[connection signal="pressed" from="Canvas/Control/CarMenu/MenuButtons/HomeBtn" to="." method="_on_home_btn_pressed"]

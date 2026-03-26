@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6qy850qbqc3f"]
+
+[ext_resource type="PackedScene" uid="uid://c4awr8j1qsj2f" path="res://Scenes/Tracks/Square/GLBs/snow.200.00.glb" id="1_j6321"]
+[ext_resource type="PackedScene" uid="uid://d4iabdqajwbwm" path="res://Scenes/Tracks/Square/GLBs/snow.200.01.glb" id="2_0t5g3"]
+[ext_resource type="PackedScene" uid="uid://d2r3j83l11mdk" path="res://Scenes/Tracks/Square/GLBs/snow.200.02.glb" id="3_vqnrf"]
+[ext_resource type="PackedScene" uid="uid://djpsrjwe7djuw" path="res://Scenes/Tracks/Square/GLBs/snow.200.03.glb" id="4_qbwyj"]
+
+[node name="SnowSquare_800m" type="Node3D"]
+
+[node name="Squares1" type="MeshInstance3D" parent="."]
+skeleton = NodePath("")
+
+[node name="snow_200_00" parent="Squares1" instance=ExtResource("1_j6321")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, -200)
+
+[node name="snow_200_01" parent="Squares1" instance=ExtResource("2_0t5g3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, -200)
+
+[node name="snow_200_02" parent="Squares1" instance=ExtResource("3_vqnrf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, 200)
+
+[node name="snow_200_03" parent="Squares1" instance=ExtResource("4_qbwyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 200)

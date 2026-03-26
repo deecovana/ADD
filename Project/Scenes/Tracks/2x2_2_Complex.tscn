@@ -1,0 +1,87 @@
+[gd_scene load_steps=16 format=3 uid="uid://7x00pjmyx1bd"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_i3f8a"]
+[ext_resource type="PackedScene" uid="uid://drnf35ogrxoq6" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Complex.001.glb" id="5_i3f8a"]
+[ext_resource type="PackedScene" uid="uid://1yandedh81b0" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Complex.002.glb" id="6_1wtw5"]
+[ext_resource type="PackedScene" uid="uid://b8o60olxdeb3j" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Complex.003.glb" id="7_ph4ax"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="8_1wtw5"]
+[ext_resource type="PackedScene" uid="uid://oq4pbxsvo1od" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Complex.004.glb" id="8_y1ocv"]
+[ext_resource type="PackedScene" uid="uid://b6lbo6h1edci" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Complex.005.glb" id="9_hw5yo"]
+[ext_resource type="PackedScene" uid="uid://dg8h7rjvl0sgb" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY2.tscn" id="9_i3f8a"]
+[ext_resource type="PackedScene" uid="uid://bltejdnu5q7h5" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Complex.006.glb" id="10_15hxy"]
+[ext_resource type="PackedScene" uid="uid://64sg4vibt2m6" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_4_Curve1L.glb" id="11_ph4ax"]
+[ext_resource type="PackedScene" uid="uid://b5lqtr67oycgd" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_4_Curve1R.glb" id="12_y1ocv"]
+[ext_resource type="PackedScene" uid="uid://fm6hvns5huts" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Curve1.002L.glb" id="13_hw5yo"]
+[ext_resource type="PackedScene" uid="uid://dbmiiucxpwxmt" path="res://Scenes/Tracks/GLBs/2_Complex/Export/2x2.2_Curve1.002R.glb" id="14_15hxy"]
+[ext_resource type="PackedScene" uid="uid://6anqgink7t08" path="res://Scenes/Sky/DarkSkyFog.tscn" id="14_hw5yo"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_hw5yo"]
+exposure_multiplier = 1.5
+dof_blur_far_enabled = true
+dof_blur_far_distance = 500.0
+dof_blur_far_transition = -1.0
+dof_blur_near_distance = 50.0
+
+[node name="2x2 2nd Complex" type="Node3D"]
+script = ExtResource("1_i3f8a")
+
+[node name="CameraGimbal" parent="." instance=ExtResource("8_1wtw5")]
+transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, -1785.93, 16.4612, 1523.92)
+
+[node name="SpotLight3D" parent="CameraGimbal" index="0"]
+spot_angle = 75.0
+
+[node name="GimbalInner" parent="CameraGimbal" index="1"]
+margin = 0.01
+
+[node name="Vehicle" parent="." instance=ExtResource("9_i3f8a")]
+transform = Transform3D(4.47036e-07, 0, 1, 0, 1, 0, -1, 0, 4.47036e-07, -1785.93, 16.4612, 1523.92)
+
+[node name="2x2_2_Complex_001" parent="." instance=ExtResource("5_i3f8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1150, 0, 0)
+
+[node name="2x2_2_Complex_002" parent="." instance=ExtResource("6_1wtw5")]
+
+[node name="2x2_2_Complex_003" parent="." instance=ExtResource("7_ph4ax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1150, 0, 0)
+
+[node name="2x2_2_Complex_004" parent="." instance=ExtResource("8_y1ocv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1150, 0, 1150)
+
+[node name="2x2_2_Complex_005" parent="." instance=ExtResource("9_hw5yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1150)
+
+[node name="2x2_2_Complex_006" parent="." instance=ExtResource("10_15hxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1150, 0, 1150)
+
+[node name="2x2_2_4_Curve1L" parent="." instance=ExtResource("11_ph4ax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 577.33)
+
+[node name="2x2_2_4_Curve1R" parent="." instance=ExtResource("12_y1ocv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 577.33)
+
+[node name="2x2_2_Curve1_002L" parent="." instance=ExtResource("13_hw5yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 577.33)
+
+[node name="2x2_2_Curve1_002R" parent="." instance=ExtResource("14_15hxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 577.33)
+
+[node name="DarkSkyFog" parent="." instance=ExtResource("14_hw5yo")]
+camera_attributes = SubResource("CameraAttributesPractical_hw5yo")
+
+[node name="DirectionalLight3D" parent="DarkSkyFog" index="0"]
+light_color = Color(0.587575, 0.785992, 1, 1)
+
+[node name="LightTimer" parent="DarkSkyFog" index="1"]
+e_min = 0.5
+
+[node name="SpringArm3D" parent="DarkSkyFog" index="2"]
+spring_length = 500.0
+
+[node name="Sun" parent="DarkSkyFog/SpringArm3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+cast_shadow = 0
+modulate = Color(0.804379, 0.852507, 1, 1)
+
+[editable path="CameraGimbal"]
+[editable path="DarkSkyFog"]

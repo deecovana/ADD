@@ -1,0 +1,101 @@
+[gd_scene load_steps=17 format=3 uid="uid://edhdlt8oenrd"]
+
+[ext_resource type="Script" uid="uid://ce8lpbb36xm5v" path="res://Scenes/Cars/Chero/Scripts/Chero1000.gd" id="1_smxuy"]
+[ext_resource type="Curve" uid="uid://c6y7eiume2e45" path="res://Scenes/Cars/Chero/Chero_curve_1000.tres" id="2_aj31l"]
+[ext_resource type="AudioStream" uid="uid://d32nahn6656wp" path="res://Sounds/Cars/eng run start.wav" id="3_vr8cc"]
+[ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/Cars/eng run idle.wav" id="4_v16e4"]
+[ext_resource type="AudioStream" uid="uid://g2vvom06rwsx" path="res://Sounds/Cars/eng run overpower.wav" id="5_ugump"]
+[ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="6_w5uuw"]
+[ext_resource type="Script" uid="uid://b5lt02iodyf5b" path="res://Scenes/Cars/Horsa/Scripts/HorsaEngine.gd" id="7_mh7dr"]
+[ext_resource type="Script" uid="uid://d1tnlqjqnh03c" path="res://Scenes/Cars/Horsa/Scripts/HorsaWheels.gd" id="8_3l3kh"]
+[ext_resource type="PackedScene" uid="uid://clrvk4gih6ajh" path="res://Scenes/Cars/Chero/GLBs/Chero.body.glb" id="9_aj31l"]
+[ext_resource type="PackedScene" uid="uid://dnd80bp3ntxqv" path="res://Scenes/Cars/Chero/Chero_Wheel_FL.tscn" id="10_3qo0w"]
+[ext_resource type="PackedScene" uid="uid://bjdqyekcfalyd" path="res://Scenes/Cars/Chero/Chero_Wheel_FR.tscn" id="11_gg87u"]
+[ext_resource type="PackedScene" uid="uid://fjf7ja25pmnq" path="res://Scenes/Cars/Chero/Chero_Wheel_RL.tscn" id="12_jnh4f"]
+[ext_resource type="PackedScene" uid="uid://otofltrk3m0w" path="res://Scenes/Cars/Chero/Chero_Wheel_RR.tscn" id="13_wvqe0"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="14_vejgm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aj31l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aj31l"]
+size = Vector3(2.36255, 1, 5.60632)
+
+[node name="Vehicle Chero1000" type="VehicleBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_aj31l")
+center_of_mass_mode = 1
+continuous_cd = true
+script = ExtResource("1_smxuy")
+steer_control_speed = 0.8
+scale_curve = ExtResource("2_aj31l")
+
+[node name="Start" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_vr8cc")
+volume_db = -9.0
+max_db = 0.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Idle" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_v16e4")
+volume_db = -6.0
+max_db = 0.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Pow" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 0)
+stream = ExtResource("5_ugump")
+volume_db = -6.0
+max_db = 0.0
+pitch_scale = 1.2
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Scrap" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 0)
+stream = ExtResource("6_w5uuw")
+volume_db = -6.0
+max_db = -6.0
+pitch_scale = 2.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="EngineController" type="Node" parent="."]
+script = ExtResource("7_mh7dr")
+
+[node name="WheelsController" type="Node" parent="."]
+script = ExtResource("8_3l3kh")
+
+[node name="Chero_body" parent="." instance=ExtResource("9_aj31l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.150469, 0)
+
+[node name="Wheel3DFL" parent="." instance=ExtResource("10_3qo0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.015, -0.347702, 1.94841)
+use_as_steering = true
+
+[node name="Wheel3DFR" parent="." instance=ExtResource("11_gg87u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.015, -0.347702, 1.94841)
+use_as_steering = true
+
+[node name="Wheel3DRL" parent="." instance=ExtResource("12_jnh4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.015, -0.283933, -1.47328)
+use_as_traction = true
+
+[node name="Wheel3DRR" parent="." instance=ExtResource("13_wvqe0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.015, -0.283933, -1.47328)
+use_as_traction = true
+
+[node name="CenterOfMass" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0.6)
+
+[node name="UI" parent="." instance=ExtResource("14_vejgm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183107, 0, 0.137146)
+shape = SubResource("BoxShape3D_aj31l")

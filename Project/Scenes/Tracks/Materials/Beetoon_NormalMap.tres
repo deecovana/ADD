@@ -1,0 +1,12 @@
+[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://b3yp2o4yvdwnb"]
+
+[ext_resource type="Gradient" uid="uid://dtsqyueiloc7b" path="res://Scenes/Tracks/Materials/Beetoon_ColorRamp.tres" id="1_ww06b"]
+[ext_resource type="FastNoiseLite" uid="uid://b0y1a0mh6estb" path="res://Scenes/Tracks/Materials/Beetoon_FastNoise.tres" id="2_2q8kb"]
+
+[resource]
+width = 1024
+height = 1024
+as_normal_map = true
+bump_strength = 7.0
+color_ramp = ExtResource("1_ww06b")
+noise = ExtResource("2_2q8kb")

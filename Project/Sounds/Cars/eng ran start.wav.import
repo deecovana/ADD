@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpiyljugbcrje"
+path="res://.godot/imported/eng ran start.wav-94486f58ca189734cf8e91337015d006.sample"
+
+[deps]
+
+source_file="res://Sounds/Cars/eng ran start.wav"
+dest_files=["res://.godot/imported/eng ran start.wav-94486f58ca189734cf8e91337015d006.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,10 @@
+{Intel/Intel(R) HD Graphics 520/4.6.0 - Build 31.0.101.2115}=SUPPORTED
+{Intel/Intel(R) HD Graphics 520/4.6.0 - Build 30.0.100.9865}=SUPPORTED
+{Intel/Intel(R) HD Graphics 520/4.6.0 - Build 30.0.101.1340}=SUPPORTED
+{ATI Technologies Inc./AMD Radeon(TM) Graphics/4.6.0 Core Profile Context 24.10.39.01.240827}=SUPPORTED
+{ATI Technologies Inc./AMD Radeon(TM) Graphics/4.6.0 Core Profile Context 25.10.30.05.251006}=SUPPORTED
+{ATI Technologies Inc./AMD Radeon(TM) Graphics/4.6.0 Core Profile Context 24.30.58.04.250822}=SUPPORTED
+{ATI Technologies Inc./AMD Radeon(TM) Graphics/4.6.0 Core Profile Context 26.1.1.260108}=SUPPORTED
+{Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.1.1 (AMD proprietary shader compiler)}=SUPPORTED
+{Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.2.2 (AMD proprietary shader compiler)}=SUPPORTED
+{Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.3.1 (AMD proprietary shader compiler)}=SUPPORTED

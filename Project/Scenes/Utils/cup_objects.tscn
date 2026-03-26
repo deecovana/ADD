@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8nm56t7rwidi"]
+
+[ext_resource type="PackedScene" uid="uid://126yicuwavhn" path="res://Scenes/Utils/CupTab.tscn" id="1_04sc4"]
+[ext_resource type="Script" uid="uid://bc1qofxs23th0" path="res://Scenes/Utils/Scripts/TabAreaScript.gd" id="2_oop61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_07yu2"]
+size = Vector3(1, 15, 40)
+
+[node name="Cup Objects" type="Node3D"]
+
+[node name="Tab" parent="." instance=ExtResource("1_04sc4")]
+transform = Transform3D(1.49999, 0, 2.62267e-07, 0, 1.5, 0, -2.62267e-07, 0, 1.49999, 100, 8, 99.1067)
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, -1, 50, 0, 99.1067)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_oop61")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 50, 3, -9.69334)
+shape = SubResource("BoxShape3D_07yu2")
+
+[node name="collision_timer" type="Timer" parent="Area3D"]
+wait_time = 10.0
+one_shot = true
+
+[node name="construction-light2" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.619028, -0.00930351, 88.53)
+
+[node name="construction-light3" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.619028, -0.00930351, 87.53)
+
+[node name="construction-light4" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.619028, -0.00930351, 88.0088)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
