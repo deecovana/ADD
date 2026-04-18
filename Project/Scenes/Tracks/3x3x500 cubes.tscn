@@ -44,8 +44,9 @@ script = ExtResource("1_gfrbv")
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -10.6954, 73.3912, 49.8765)
 MAX_POWER = 4400.0
 MAX_SPEED = 50.0
-brake_control_speed = 0.75
+brake_control_speed = 1.0
 front_brake_force = 1.0
+pedal_brake_speed = 1.0
 hand_brake_force = 1.0
 fric_slip_rear_hb_mult = 2.0
 damp_relax_front = 2.4
@@ -60,3 +61,5 @@ travel_rear = 0.5
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -10.6954, 73.3912, 49.8765)
 
 [node name="DarkSkyFog" parent="." instance=ExtResource("14_gxca3")]
+
+[editable path="DarkSkyFog"]

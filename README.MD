@@ -6,6 +6,7 @@
 - Add 2 more Blender terrains 
   - Needs to snap borders
 - Compare and fix Rally and Rally2
+  - Tested Compared on 3x3 maps
 - Try Terrain3D
 
 ## New @deecovana account
