@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="4_wisnh"]
 [ext_resource type="Material" uid="uid://by0psqhptlnte" path="res://Scenes/Tracks/Square/Materials/snow_material_3d.tres" id="5_it5vb"]
 [ext_resource type="Material" uid="uid://cwdhl0lgfxana" path="res://Scenes/Tracks/Square/Materials/ice_material_3d.tres" id="6_iajgx"]
-[ext_resource type="PackedScene" uid="uid://bkl2ds2d77lwl" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/snow_rally_node_smooth_normals.tscn" id="7_bhj8q"]
+[ext_resource type="PackedScene" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/snow_rally_node_smooth_normals.tscn" id="7_bhj8q"]
 [ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="8_fjsi5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d5i1w"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkl2ds2d77lwl"]
+[gd_scene load_steps=27 format=3 uid="uid://l5x34cn3kjyv"]
 
 [ext_resource type="PackedScene" uid="uid://4y4r1cuu8l8w" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/Smooth/_RallyLand_00.glb" id="1_3jsjy"]
 [ext_resource type="PackedScene" uid="uid://d3gyo0hvysebq" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/Smooth/_RallyLand_00_BC_.glb" id="2_4gn8y"]

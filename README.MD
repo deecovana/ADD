@@ -1,13 +1,11 @@
 # @deecovana ADD GitHub repo 
 
-## @TODO Fix Cowl Rally 1000 with Rally2 changes
-
-## Play with Terrains
-- Add 2 more Blender terrains 
+## Play with Terrains and shaders
+- Added 2 more Blender terrains 
   - Needs to snap borders
-- Compare and fix Rally and Rally2
+- Compared and fixed Rally and Rally2
   - Tested Compared on 3x3 maps
-- Try Terrain3D
+- Added Height-based shader
 
 ## New @deecovana account
 - deecovana@gmail.com 

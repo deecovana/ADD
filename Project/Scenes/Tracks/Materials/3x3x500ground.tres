@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c5m5pxqo1gnak"]
+
+[ext_resource type="Shader" uid="uid://12o4ftw4rkq7" path="res://Scenes/Tracks/Materials/3x3x500ground.gdshader" id="1_areel"]
+
+[sub_resource type="Gradient" id="Gradient_areel"]
+offsets = PackedFloat32Array(0.411765, 0.494118, 0.535294)
+colors = PackedColorArray(0.146225, 0.0584338, 6.01634e-09, 1, 0.49, 0.285833, 0, 1, 0.0413333, 0.31, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5nbyu"]
+gradient = SubResource("Gradient_areel")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_areel")
+shader_parameter/terrain_color = SubResource("GradientTexture2D_5nbyu")
+shader_parameter/min_height = 0.1
+shader_parameter/max_height = 1.25
