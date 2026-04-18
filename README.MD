@@ -6,6 +6,7 @@
 - Compared and fixed Rally and Rally2
   - Tested Compared on 3x3 maps
 - Added Height-based shader
+  - Texture-based shader not working
 
 ## New @deecovana account
 - deecovana@gmail.com 

@@ -47,8 +47,7 @@ script = ExtResource("1_gfrbv")
 [node name="2x2_3_cubes_500m_009" parent="Land" instance=ExtResource("11_ta4cp")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Land"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -40.1953, 70.2461, 88.7727)
-visible = false
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -40.1953, 70.2697, 88.7727)
 mesh = SubResource("SphereMesh_sqquf")
 
 [node name="Vehicle" parent="." instance=ExtResource("12_ek6ht")]
