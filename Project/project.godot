@@ -239,5 +239,4 @@ lightsAll={
 
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 environment/glow/upscale_mode=0
-environment/defaults/default_clear_color=Color(0.775212, 0.612274, 0.302599, 1)
 anti_aliasing/quality/use_taa=true

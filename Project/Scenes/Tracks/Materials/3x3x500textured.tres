@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://d15nx1oqwwcrr"]
+
+[ext_resource type="Shader" uid="uid://cdagjc7hs1ya0" path="res://Scenes/Tracks/Materials/3x3x500textured.gdshader" id="1_3djl4"]
+[ext_resource type="Texture2D" uid="uid://bs7grs5rg7ly8" path="res://Scenes/Tracks/Materials/rock.jpg" id="2_7xore"]
+[ext_resource type="Texture2D" uid="uid://ciye50hfcu0k6" path="res://Scenes/Tracks/Materials/grass.jpg" id="3_uavpx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3djl4")
+shader_parameter/use_textures = true
+shader_parameter/top_color = Color(0.243137, 0.470588, 0.180392, 1)
+shader_parameter/side_color = Color(0.635294, 0.541176, 0.435294, 1)
+shader_parameter/top_texture = ExtResource("3_uavpx")
+shader_parameter/side_texture = ExtResource("2_7xore")
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = 1.0
+shader_parameter/slope_sharpness = 0.2
+shader_parameter/slope_angle = 0.8

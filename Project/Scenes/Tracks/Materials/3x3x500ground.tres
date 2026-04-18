@@ -1,14 +1,17 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c5m5pxqo1gnak"]
 
-[ext_resource type="Shader" uid="uid://cdagjc7hs1ya0" path="res://Scenes/Tracks/Materials/3x3x500textured.gdshader" id="1_qdl0h"]
-[ext_resource type="Texture2D" uid="uid://ciye50hfcu0k6" path="res://Scenes/Tracks/Materials/grass.jpg" id="2_kob4m"]
-[ext_resource type="Texture2D" uid="uid://kxgm4rffxxvh" path="res://Scenes/Tracks/Materials/Textures/asphalt.png" id="3_qdl0h"]
+[ext_resource type="Shader" uid="uid://12o4ftw4rkq7" path="res://Scenes/Tracks/Materials/3x3x500ground.gdshader" id="1_areel"]
+
+[sub_resource type="Gradient" id="Gradient_areel"]
+offsets = PackedFloat32Array(0.5, 0.535294, 0.558824)
+colors = PackedColorArray(0.0496644, 0.0939399, 0.152318, 1, 0.623529, 0.643137, 1, 1, 0.741385, 0.741385, 0.741385, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5nbyu"]
+gradient = SubResource("Gradient_areel")
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_qdl0h")
-shader_parameter/terrain_grass = ExtResource("2_kob4m")
-shader_parameter/terrain_rock = ExtResource("3_qdl0h")
-shader_parameter/min_grass_height = 5.0
-shader_parameter/max_rock_height = 10.0
-shader_parameter/uvscale = Vector2(1, 1)
+shader = ExtResource("1_areel")
+shader_parameter/terrain_color = SubResource("GradientTexture2D_5nbyu")
+shader_parameter/min_height = 0.1
+shader_parameter/max_height = 1.2

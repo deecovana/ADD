@@ -15,7 +15,6 @@ void fragment() {
 	float height = vertex_y;
 	float position = inverseLerp(min_height, max_height, height);
 	ALBEDO = texture(terrain_color, vec2(position,0.0)).rgb;
-	ROUGHNESS = 0.75;
 }
 
 void vertex() {

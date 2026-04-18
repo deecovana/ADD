@@ -36,7 +36,7 @@ _subresources={
 "materials": {
 "Ground": {
 "use_external/enabled": true,
-"use_external/path": "uid://c5m5pxqo1gnak"
+"use_external/path": "uid://d15nx1oqwwcrr"
 }
 },
 "nodes": {

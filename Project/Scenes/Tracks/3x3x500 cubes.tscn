@@ -12,12 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://d24uwfvp4u56v" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_008.glb" id="10_qr0vj"]
 [ext_resource type="PackedScene" uid="uid://0c4atnp65610" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_009.glb" id="11_ta4cp"]
 [ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="12_ek6ht"]
+[ext_resource type="Material" uid="uid://d15nx1oqwwcrr" path="res://Scenes/Tracks/Materials/3x3x500textured.tres" id="12_xsbxe"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="13_wmvq3"]
-[ext_resource type="Material" uid="uid://c5m5pxqo1gnak" path="res://Scenes/Tracks/Materials/3x3x500ground.tres" id="13_xsbxe"]
 [ext_resource type="PackedScene" uid="uid://6anqgink7t08" path="res://Scenes/Sky/DarkSkyFog.tscn" id="14_gxca3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_sqquf"]
-material = ExtResource("13_xsbxe")
+material = ExtResource("12_xsbxe")
 radius = 10.0
 height = 10.0
 
@@ -47,7 +47,7 @@ script = ExtResource("1_gfrbv")
 [node name="2x2_3_cubes_500m_009" parent="Land" instance=ExtResource("11_ta4cp")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Land"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -40.1953, 70.2697, 88.7727)
+transform = Transform3D(0.707107, 0.342812, -0.61845, 0, 0.87462, 0.48481, 0.707107, -0.342812, 0.61845, -40.195, 79.93, 88.773)
 mesh = SubResource("SphereMesh_sqquf")
 
 [node name="Vehicle" parent="." instance=ExtResource("12_ek6ht")]
@@ -71,5 +71,3 @@ travel_rear = 0.5
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -10.6954, 73.3912, 49.8765)
 
 [node name="DarkSkyFog" parent="." instance=ExtResource("14_gxca3")]
-
-[editable path="DarkSkyFog"]
