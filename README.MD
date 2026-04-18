@@ -5,6 +5,7 @@
 ## Play with Terrains
 - Add 2 more Blender terrains 
   - Needs to snap borders
+- Compare and fix Rally and Rally2
 - Try Terrain3D
 
 ## New @deecovana account

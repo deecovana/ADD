@@ -86,7 +86,7 @@ var rotate_wheel_sens
 ## Front wheels friction slip ratio ## 0.65
 #@export var fric_slip_front = 1.0 
 ## Because of 60 FPS
-@export var fric_slip_front = 1.1 
+@export var fric_slip_front = 1.1
 ## Because of 30 FPS
 ## Rear wheels friction slip ratio ## 0.65
 #@export var fric_slip_rear = 1.0
@@ -97,12 +97,13 @@ var rotate_wheel_sens
 ## Handbrake Rear wheels Friction demultiplier
 @export var fric_slip_rear_hb_mult = 1.75
 ## Relax must higher than Compression 
+
+## Rest, Travel, Stiff, MaxV
 ## !!!> RALLY version
 @export var damp_compr_front = 2.0
 @export var damp_relax_front = 2.5
 @export var damp_compr_rear = 2.0
 @export var damp_relax_rear = 2.5
-## Rest, Travel, Stiff, MaxV
 @export var rest_front = 0.24
 @export var rest_rear = 0.26
 @export var travel_front = 0.34
@@ -132,7 +133,9 @@ enum Indices { Rear, Neutral,
 	First, Second, Third, Fourth, Fifth, Sixth, 
 	Seventh, Eighth, Ninth, Tenth, Infinity }
 @export var engine_index: Indices = Indices.Neutral
+
 ## Arrays for Settings
+
 ## 1. Long for TRACK
 # var engine_index_up = [-1.0, 0.0, 1.0, 
 	# 60.0, 110.0, 150.0, 170.0, 180.0, 200.0, 220.0, 
@@ -144,7 +147,7 @@ enum Indices { Rear, Neutral,
 	# 0.20, 0.40, 0.425, 0.45, 0.475, 0.50, 0.50, 
 	# 1.0, 1.0, 1.0, 1.0, 1.0, ]
 	
-### 2. Short for 200 9 gears (rally+)
+## 2. Short for 200 9 gears (rally+)
 #var engine_index_up = [-1.0, 0.0, 1.0, 
 	#50.0, 90.0, 130.0, 160.0, 185.0, 205.0, 
 	#220.0, 230.0, 240.0, 300.0, 300.0, 300.0]
@@ -165,7 +168,7 @@ enum Indices { Rear, Neutral,
 	#0.30, 0.40, 0.50, 0.55, 0.60, 0.65, 
 	#0.70, 0.70, 0.70, 0.70, 0.70, 0.70]
 	
-# 3. Short for 160 6th gear (rally 2) Tested
+## 3. Short for 160 6th gear (rally 1000) Tested
 var engine_index_up = [-1.0, 0.0, 1.0, 
 	50.0, 80.0, 110.0, 130.0, 145.0, 160.0, 
 	170.0, 180.0, 300.0, 300.0]
@@ -176,6 +179,17 @@ var eng_min_rpm = [    0.25, 0.0,
 	0.40, 0.45, 0.49, 0.53, 0.55, 0.62, 
 	0.68, 0.68, 1.00, 1.00]
 
+## 4. Shorter for 5500's engine with 0.9 peak (RALLY2)
+# 140 7th gear (rally 2) Tested
+# var engine_index_up = [-1.0, 0.0, 1.0, 
+	# 50.0, 80.0, 105.0, 115.0, 125.0, 135.0, 
+	# 170.0, 180.0, 300.0, 300.0]
+# var engine_index_down = [-1.0, 0.0, 1.0, 
+	# 45.0, 75.0, 100.0, 110.0, 120.0, 130.0, 
+	# 165.0, 175.0, 300.0, 300.0]
+# var eng_min_rpm = [    0.25, 0.0,
+	# 0.40, 0.45, 0.49, 0.53, 0.56, 0.56, 
+	# 0.68, 0.68, 1.00, 1.00]
 
 
 #############################################
@@ -475,7 +489,7 @@ func _physics_process(delta: float) -> void:
 		## Now restore handbrake rear friction
 		set_fric_slip_rear(fric_slip_rear)
 		
-	## GearBox switcher
+	## @TODO move to function!!! GearBox switcher
 	## If not playing switching sound
 	engine_index = get_engine_index((linear_vel))
 	## @NEW engine's gearbox coefficients applied to curve's values
@@ -503,13 +517,6 @@ func _physics_process(delta: float) -> void:
 	## @FINAL Update engine_force using RPM
 	engine_force = scale_curve.sample_baked(s_scale_rpm) * MAX_POWER * ACCELERATING
 
-	if false and !scene.DEBUG_SHOW: ## Forced output
-		UI.logs_clr_text()
-		UI.logs_add_text("\n SPEED.Z(speed_cur): %6.2f" % speed_cur)
-		UI.logs_add_text("\n engine_force......: %8.2f" % engine_force)
-		UI.logs_add_text("\n rpm_moving.: %8.2f" % engine_force)
-		UI.logs_add_text("\n s_scale_rpm: %8.2f" % s_scale_rpm)
-		UI.show_info()
 
 	## Update UI visuals
 	UI.set_speedometer_label(
@@ -517,12 +524,30 @@ func _physics_process(delta: float) -> void:
 			States.keys()[engine_state], 
 			Indices.keys()[engine_index]]
 		)
+	
+	if false and !scene.DEBUG_SHOW: ## Forced output
+		UI.logs_clr_text()
+		UI.logs_add_text("\n SPEED.Z(speed_cur): %6.2f" % speed_cur)
+		UI.logs_add_text("\n engine_force......: %8.2f" % engine_force)
+		UI.logs_add_text("\n rpm_moving.: %8.2f" % engine_force)
+		UI.logs_add_text("\n s_scale_rpm: %8.2f" % s_scale_rpm)
+		UI.show_info()
 		
 	## Reverse last
-	# @NEW Update Revers, Neutral, Drive[x] Gear
+	# Set Reverse, Update, Neutral, Drive[x] Gear
 	var engine_index_text
 	if engine_index == 0 or REVERSE:
 		engine_index_text = 'R'
+		
+		## @FIX RESTORED Reverse processing 
+		engine_state = States.REVERSING
+		#Limit REVERSE
+		if abs(speed_cur) > engine_index_down[3]:
+			engine_force = 0
+		## Else Rear Gear has 50% of maximum power
+		else:
+			engine_force = - clamp(abs(engine_force), 0, MAX_POWER * 0.5)
+
 	elif engine_index == 1:
 		engine_index_text = 'N'
 	else:

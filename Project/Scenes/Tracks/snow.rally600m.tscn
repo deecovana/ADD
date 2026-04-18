@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="5_6boli"]
 [ext_resource type="Material" uid="uid://by0psqhptlnte" path="res://Scenes/Tracks/Square/Materials/snow_material_3d.tres" id="6_g8idk"]
 [ext_resource type="Material" uid="uid://cwdhl0lgfxana" path="res://Scenes/Tracks/Square/Materials/ice_material_3d.tres" id="7_tbhg0"]
-[ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="8_3rk63"]
-[ext_resource type="PackedScene" uid="uid://bkl2ds2d77lwl" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/snow_rally_node_smooth_normals.tscn" id="8_4xubv"]
+[ext_resource type="PackedScene" uid="uid://6anqgink7t08" path="res://Scenes/Sky/DarkSkyFog.tscn" id="8_3rk63"]
+[ext_resource type="PackedScene" path="res://Scenes/Tracks/GLBs/Rally.Snow/Export/snow_rally_node_smooth_normals.tscn" id="8_4xubv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d5i1w"]
 material = ExtResource("7_tbhg0")
@@ -32,4 +32,4 @@ mesh = SubResource("BoxMesh_d5i1w")
 
 [node name="Snow Rally Node Smoothed Normals" parent="." instance=ExtResource("8_4xubv")]
 
-[node name="DarkSkyLight" parent="." instance=ExtResource("8_3rk63")]
+[node name="DarkSkyFog" parent="." instance=ExtResource("8_3rk63")]
