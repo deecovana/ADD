@@ -8,8 +8,6 @@ Face (Ctrl F) ▸ Triangulate Faces|Ctrl T
 Generate ▸ Mirror
   Landscape.09
   Landscape
-  Landscape.002
-  Landscape.003
   Landscape.00a
 Gravel
 Mesh ▸ Shading ▸ Smooth Vertices
@@ -41,7 +39,6 @@ Mesh ▸ Shading ▸ Flat Faces
 Face (Ctrl F) ▸ Shade Smooth
 Vertex (Ctrl V) ▸ Smooth Vertices
   Landscape.000
-Material.004
 _snow
 Object ▸ Shade Flat
 Blender ▸ System ▸ Clean Up Space Data
@@ -66,13 +63,39 @@ Object ▸ Modifiers ▸ Add Modifier ▸ Deform ▸ Smooth
 Object ▸ Modifiers ▸ Add Modifier ▸ Normals ▸ Smooth by Angle
 Object ▸ Set Origin ▸ Geometry to Origin
 Object ▸ Set Origin ▸ Origin to 3D Cursor
-Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
 Mesh ▸ Shading ▸ Smooth Faces
-Mesh ▸ Shading ▸ Smooth Edges
 Mesh ▸ Weights ▸ Smooth
 Edge (Ctrl E) ▸ Subdivide
-Object ▸ Shade Smooth
-
 Snap (Shift S) ▸ Selection to Cursor
 Mesh ▸ Transform ▸ Randomize
 Segments ▸ Subdivide
+Material.004
+Ground
+Deform ▸ Smooth Corrective
+Water
+Normals ▸ Smooth by Angle
+  Landscape_plane.002
+  Landscape.001
+  Landscape.002
+  Landscape.003
+  Landscape.004
+  Landscape.005
+  Landscape.006
+  Landscape.007
+  Landscape.008
+  Landscape.009
+Object ▸ Quick Effects ▸ Quick Smoke
+Object ▸ Shade Smooth
+Mesh ▸ Shading ▸ Smooth Edges
+Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
+  Landscape.010
+  Landscape.014
+  Landscape.013
+  Landscape.012
+  Landscape.011
+  Landscape.015
+  Landscape.016
+  Landscape.017
+
+  Landscape.018
+  Landscape_plane.001

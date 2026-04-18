@@ -1,5 +1,12 @@
 # @deecovana ADD GitHub repo 
 
+## @TODO Fix Cowl Rally 1000 with Rally2 changes
+
+## Play with Terrains
+- Add 2 more Blender terrains 
+  - Needs to snap borders
+- Try Terrain3D
+
 ## New @deecovana account
 - deecovana@gmail.com 
 

@@ -1,0 +1,64 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3olp7julj8rm"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_3w155"]
+[ext_resource type="PackedScene" uid="uid://dkltba6ajhtxr" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_000.glb" id="2_vp6os"]
+[ext_resource type="PackedScene" uid="uid://m5r4pwfjys4i" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_001.glb" id="3_hvpuk"]
+[ext_resource type="PackedScene" uid="uid://bl8wndb5crd06" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_002.glb" id="4_slsi0"]
+[ext_resource type="PackedScene" uid="uid://c2qxlldpesjmi" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_003.glb" id="5_mfm1n"]
+[ext_resource type="PackedScene" uid="uid://bgjwd7rvhc6q1" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_004.glb" id="6_2cgno"]
+[ext_resource type="PackedScene" uid="uid://dxbxswkrulpeb" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_005.glb" id="7_wegkv"]
+[ext_resource type="PackedScene" uid="uid://5bijlw67l065" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_006.glb" id="8_xbjws"]
+[ext_resource type="PackedScene" uid="uid://r3hr12yg7t6d" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_007.glb" id="9_0f3nb"]
+[ext_resource type="PackedScene" uid="uid://b1kwogjxbmuyk" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_008.glb" id="10_7oj1d"]
+[ext_resource type="PackedScene" uid="uid://darge255ib8fv" path="res://Scenes/Tracks/GLBs/3x3/2x2.3_Squares_200m_009.glb" id="11_pfwox"]
+[ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="12_7dfgh"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="13_4hyfl"]
+[ext_resource type="PackedScene" uid="uid://6anqgink7t08" path="res://Scenes/Sky/DarkSkyFog.tscn" id="14_epqgv"]
+
+[node name="3x3x500" type="Node3D"]
+script = ExtResource("1_3w155")
+
+[node name="Land" type="Node3D" parent="."]
+
+[node name="2x2_3_Squares_200m_000" parent="Land" instance=ExtResource("2_vp6os")]
+
+[node name="2x2_3_Squares_200m_001" parent="Land" instance=ExtResource("3_hvpuk")]
+
+[node name="2x2_3_Squares_200m_002" parent="Land" instance=ExtResource("4_slsi0")]
+
+[node name="2x2_3_Squares_200m_003" parent="Land" instance=ExtResource("5_mfm1n")]
+
+[node name="2x2_3_Squares_200m_004" parent="Land" instance=ExtResource("6_2cgno")]
+
+[node name="2x2_3_Squares_200m_005" parent="Land" instance=ExtResource("7_wegkv")]
+
+[node name="2x2_3_Squares_200m_006" parent="Land" instance=ExtResource("8_xbjws")]
+
+[node name="2x2_3_Squares_200m_007" parent="Land" instance=ExtResource("9_0f3nb")]
+
+[node name="2x2_3_Squares_200m_008" parent="Land" instance=ExtResource("10_7oj1d")]
+
+[node name="2x2_3_Squares_200m_009" parent="Land" instance=ExtResource("11_pfwox")]
+
+[node name="CameraGimbal" parent="." instance=ExtResource("13_4hyfl")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -31.0764, 41.3912, 104.645)
+
+[node name="Vehicle" parent="." instance=ExtResource("12_7dfgh")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -31.0764, 39.8967, 104.645)
+MAX_POWER = 4400.0
+MAX_SPEED = 50.0
+brake_control_speed = 0.75
+front_brake_force = 1.0
+hand_brake_force = 1.0
+fric_slip_rear_hb_mult = 2.0
+damp_relax_front = 2.4
+damp_compr_rear = 2.2
+damp_relax_rear = 2.6
+rest_front = 0.3
+rest_rear = 0.3
+travel_front = 0.4
+travel_rear = 0.5
+
+[node name="DarkSkyFog" parent="." instance=ExtResource("14_epqgv")]
+
+[editable path="DarkSkyFog"]

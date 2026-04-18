@@ -86,7 +86,7 @@ var rotate_wheel_sens
 ## Front wheels friction slip ratio ## 0.65
 #@export var fric_slip_front = 1.0 
 ## Because of 60 FPS
-@export var fric_slip_front = 1.0 
+@export var fric_slip_front = 1.1 
 ## Because of 30 FPS
 ## Rear wheels friction slip ratio ## 0.65
 #@export var fric_slip_rear = 1.0

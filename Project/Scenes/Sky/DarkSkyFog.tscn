@@ -14,10 +14,10 @@ script/source = "extends Timer ## timerDark
 
 @export var power: float = 2.0 ## Affect Light Energy
 @export var intensity = 32000 ## Affect Env. Background Light Max
-@export var intensity_min = 3200 ## Affect Env. Background Light Min
+@export var intensity_min = 1600 ## Affect Env. Background Light Min
 
 @export var e_step = 0.1 ## Affect Global Explosure
-@export var e_min = 0.66 ## Affect Explosure Minimum
+@export var e_min = 0.44 ## Affect Explosure Minimum
 
 @export var p_norm: float
 @export var p_min: float = 0.1 ## Affect Global Sky Nigh Power 
