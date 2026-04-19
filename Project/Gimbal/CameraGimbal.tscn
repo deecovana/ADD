@@ -21,7 +21,7 @@ spot_angle = 90.0
 spot_angle_attenuation = 2.0
 
 [node name="GimbalInner" type="SpringArm3D" parent="."]
-transform = Transform3D(-1, 7.6194e-09, -8.70901e-08, 0, 0.996195, 0.0871558, 8.74228e-08, 0.0871558, -0.996195, 0, 1.5, 0)
+transform = Transform3D(-1, -1.89218e-08, 8.53505e-08, 0, 0.976296, 0.21644, -8.74228e-08, 0.21644, -0.976296, 0, 2, 0)
 collision_mask = 253
 shape = SubResource("SphereShape3D_t5xco")
 spring_length = 12.0

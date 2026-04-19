@@ -2,7 +2,7 @@ extends Node3D
 
 ## Keyboard controlled Rotation and Zoom
 @export var camera_speed = 1
-@export var zoom = 1
+@export var zoom = 1.2
 @export var camera_FOV = 40
 @export var FOV_min = 20
 @export var FOV_max = 80

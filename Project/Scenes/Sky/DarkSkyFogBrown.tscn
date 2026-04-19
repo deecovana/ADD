@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2daq1pbadc1k"]
+
+[ext_resource type="Environment" uid="uid://beor087ro0lik" path="res://Scenes/Sky/DarkSkyFogBrown.tres" id="1_kov7q"]
+[ext_resource type="Texture2D" uid="uid://cstjt20t34qv0" path="res://Scenes/Sky/Images/sun-a.png" id="2_0from"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e2206"]
+exposure_multiplier = 1.25
+
+[sub_resource type="GDScript" id="GDScript_e2206"]
+script/source = "extends Timer ## timerDark
+
+@export var step = 0.0001 # Step Frequency
+@export var wait_time_sec = 0.0001 # Step TimeOut
+
+@export var power: float = 2.0 ## Affect Light Energy
+@export var intensity = 32000 ## Affect Env. Background Light Max
+@export var intensity_min = 1600 ## Affect Env. Background Light Min
+
+@export var e_step = 0.1 ## Affect Global Explosure
+@export var e_min = 0.44 ## Affect Explosure Minimum
+
+@export var p_norm: float
+@export var p_min: float = 0.1 ## Affect Global Sky Nigh Power 
+
+var p: float
+var q: float
+var sky: WorldEnvironment
+var light: DirectionalLight3D
+var cam: Camera3D
+var gimbal: SpringArm3D
+var sun: Sprite3D
+var vehicle: VehicleBody3D
+
+func _ready() -> void:
+	sky = get_parent()
+	cam = get_viewport().get_camera_3d()
+	vehicle = get_tree().get_root().find_child(\"Vehicle\")
+	light = $\"../DirectionalLight3D\"
+	gimbal = $\"../SpringArm3D\"
+	sun = $\"../SpringArm3D/Sun\"
+	wait_time = wait_time_sec
+	autostart = true
+	start()
+	p_norm = update_sky(p, p * intensity, p_norm, step)
+
+## Update sky and Warp \"p\" var if p>1
+## Added normalization for intensity_min and p_min
+func update_sky(_p, _intensity, _p_norm, _step) -> float:
+	## Normalize minimums
+	if _intensity < intensity_min:
+		_intensity = intensity_min
+	if _p < p_min:
+		_p = p_min
+	sky.environment.adjustment_brightness = _p
+	sky.environment.adjustment_saturation = _p
+	sky.environment.background_energy_multiplier = _p
+	sky.environment.tonemap_exposure = e_min + _p * e_step
+	sky.environment.background_intensity = _intensity
+	## Warp P if need
+	_p_norm += _step
+	if  _p_norm >= 1.0:
+		_p_norm = -1.0
+	return _p_norm
+
+func set_light(_p, _q) -> void:
+	light.rotation.x = -p
+	light.rotation.y = 2 * q
+	light.rotation.z = p - q
+	light.light_specular = p
+	var sp = (0.5 + p) * (0.5 + p) / 4 + 0.5
+	light.light_energy = power * sp
+	light.light_indirect_energy = power * sp / 2
+	if cam.position:
+		var tween = create_tween()
+		tween.tween_property(gimbal, \"global_position\", cam.global_position, wait_time_sec)
+		tween.tween_property(gimbal, \"global_rotation\", light.global_rotation, wait_time_sec)
+		light.position = sun.position
+
+func _on_timeout() -> void:
+	p = sin( PI * p_norm )
+	q = cos( PI * p_norm )
+	var sp = (1 + p) * (1 + p) / 4
+	p_norm = update_sky(sp, sp * intensity, p_norm, step)
+	set_light(p * 2, q * 2)
+
+	
+"
+
+[node name="DarkSkyFogBrown" type="WorldEnvironment"]
+environment = ExtResource("1_kov7q")
+camera_attributes = SubResource("CameraAttributesPractical_e2206")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.583541, 0.812084, 0, 0.812084, 0.583541, -1, -2.89118e-07, -2.61579e-07, 0, 0, 0)
+light_color = Color(1, 0.770581, 0.374874, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="LightTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
+autostart = true
+script = SubResource("GDScript_e2206")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(-2.81462e-08, -0.765101, -0.64391, -3.34436e-08, 0.64391, -0.765101, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_mask = 0
+spring_length = 900.0
+margin = 0.0
+
+[node name="Sun" type="Sprite3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
+modulate = Color(0.87451, 0.905882, 1, 1)
+pixel_size = 0.25
+texture = ExtResource("2_0from")
+
+[connection signal="timeout" from="LightTimer" to="LightTimer" method="_on_timeout"]

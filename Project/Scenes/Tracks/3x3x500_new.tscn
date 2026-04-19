@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3lrrgbdr8iid"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_eotkv"]
+[ext_resource type="PackedScene" uid="uid://bnwmnvqpsjjnm" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-0.glb" id="2_kudle"]
+[ext_resource type="PackedScene" uid="uid://kh7a6xlcebhk" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-1.glb" id="3_lcu1s"]
+[ext_resource type="PackedScene" uid="uid://rpps7rs3pxj6" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-2.glb" id="4_w311h"]
+[ext_resource type="PackedScene" uid="uid://sbnle440hlk7" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-3.glb" id="5_g4m5o"]
+[ext_resource type="PackedScene" uid="uid://c8tsw7u25q6br" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-5.glb" id="6_dobmc"]
+[ext_resource type="PackedScene" uid="uid://cef4jo4h8t4vr" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-6.glb" id="7_eotkv"]
+[ext_resource type="PackedScene" uid="uid://c2daq1pbadc1k" path="res://Scenes/Sky/DarkSkyFogBrown.tscn" id="10_kudle"]
+[ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="13_u4mls"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="14_3ftfv"]
+
+[node name="3x3x500 new" type="Node3D"]
+script = ExtResource("1_eotkv")
+
+[node name="Land" type="Node3D" parent="."]
+
+[node name="3x3x500-0" parent="Land" instance=ExtResource("2_kudle")]
+
+[node name="3x3x500-1" parent="Land" instance=ExtResource("3_lcu1s")]
+
+[node name="3x3x500-2" parent="Land" instance=ExtResource("4_w311h")]
+
+[node name="3x3x500-3" parent="Land" instance=ExtResource("5_g4m5o")]
+
+[node name="3x3x500-5" parent="Land" instance=ExtResource("6_dobmc")]
+
+[node name="3x3x500-6" parent="Land" instance=ExtResource("7_eotkv")]
+
+[node name="Vehicle" parent="." instance=ExtResource("13_u4mls")]
+transform = Transform3D(0.304183, 0, 0.952614, 0, 1, 0, -0.952614, 0, 0.304183, 438.224, 102.486, -524.349)
+MAX_POWER = 4400.0
+MAX_SPEED = 50.0
+brake_control_speed = 1.0
+front_brake_force = 1.0
+pedal_brake_speed = 1.0
+hand_brake_force = 1.0
+fric_slip_rear_hb_mult = 2.0
+damp_relax_front = 2.4
+damp_compr_rear = 2.2
+damp_relax_rear = 2.6
+rest_front = 0.3
+rest_rear = 0.3
+travel_front = 0.4
+travel_rear = 0.5
+
+[node name="CameraGimbal" parent="." instance=ExtResource("14_3ftfv")]
+transform = Transform3D(0.304183, 0, 0.952614, 0, 1, 0, -0.952614, 0, 0.304183, 438.224, 102.486, -524.349)
+
+[node name="DarkSkyFogBrown" parent="." instance=ExtResource("10_kudle")]

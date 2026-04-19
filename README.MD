@@ -2,6 +2,8 @@
 
 ## Blender Materials and Sculpting 3x3x500
 - 5 segments of 9
+- 2 High Camps
+- New Water pane
 
 ## Play with Terrains and shaders
 - Added 2 more Blender terrains 
