@@ -1,5 +1,8 @@
 # @deecovana ADD GitHub repo 
 
+## Blender Materials and Sculpting 3x3x500
+- 5 segments of 9
+
 ## Play with Terrains and shaders
 - Added 2 more Blender terrains 
   - Needs to snap borders

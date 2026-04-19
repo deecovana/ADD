@@ -7,7 +7,6 @@ Mesh ▸ Normals (Alt N) ▸ Merge
 Face (Ctrl F) ▸ Triangulate Faces|Ctrl T
 Generate ▸ Mirror
   Landscape.09
-  Landscape
   Landscape.00a
 Gravel
 Mesh ▸ Shading ▸ Smooth Vertices
@@ -67,7 +66,6 @@ Mesh ▸ Shading ▸ Smooth Faces
 Mesh ▸ Weights ▸ Smooth
 Edge (Ctrl E) ▸ Subdivide
 Snap (Shift S) ▸ Selection to Cursor
-Mesh ▸ Transform ▸ Randomize
 Segments ▸ Subdivide
 Material.004
 Ground
@@ -96,6 +94,14 @@ Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
   Landscape.015
   Landscape.016
   Landscape.017
-
   Landscape.018
   Landscape_plane.001
+Mesh ▸ Transform ▸ Randomize
+  Landscape
+
+  0
+  1
+  2
+  3
+  5
+  6
