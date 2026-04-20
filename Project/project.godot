@@ -19,7 +19,7 @@ config/version="0.4.4.1"
 run/main_scene="uid://c04ue4ip50qe2"
 config/features=PackedStringArray("4.4", "4.4.1", "Forward Plus")
 run/max_fps=60
-boot_splash/bg_color=Color(0.760784, 0.552941, 0.137255, 1)
+boot_splash/bg_color=Color(1, 0.8, 0.4, 1)
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
 boot_splash/stretch_mode=0
@@ -235,8 +235,10 @@ lightsAll={
 
 [rendering]
 
-reflections/sky_reflections/fast_filter_high_quality=true
-environment/glow/upscale_mode=0
-environment/screen_space_reflection/roughness_quality=2
-environment/defaults/default_clear_color=Color(0.760784, 0.552941, 0.137255, 1)
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+scaling_3d/mode=2
+global_illumination/sdfgi/frames_to_converge=2
+environment/defaults/default_clear_color=Color(1, 0.8, 0.4, 1)
 anti_aliasing/quality/use_taa=true
+environment/bg_color=Color(1, 0.8, 0.4, 1)

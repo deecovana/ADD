@@ -1,5 +1,8 @@
 # @deecovana ADD GitHub repo 
 
+## New SimpleFog 
+- Need BRIGHTER ground
+
 ## Blender Materials and Sculpting 3x3x500
 - 5 segments of 9
 - 2 High Camps

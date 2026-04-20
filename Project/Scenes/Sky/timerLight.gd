@@ -1,11 +1,11 @@
 extends Timer ## timerDark
 
 @export var step = 0.0001 # Step Frequency
-@export var wait_time_sec = 0.0001 # Step TimeOut
+@export var wait_time_sec = 0.01 # Step TimeOut
 
 @export var power: float = 2.0 ## Affect Light Energy
 @export var intensity = 32000 ## Affect Env. Background Light Max
-@export var intensity_min = 3200 ## Affect Env. Background Light Min
+@export var intensity_min = 1600 ## Affect Env. Background Light Min
 
 @export var e_step = 0.1 ## Affect Global Explosure
 @export var e_min = 0.66 ## Affect Explosure Minimum
