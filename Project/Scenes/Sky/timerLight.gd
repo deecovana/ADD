@@ -1,17 +1,17 @@
 extends Timer ## timerDark
 
-@export var step = 0.0001 # Step Frequency
-@export var wait_time_sec = 0.01 # Step TimeOut
+@export var step = 0.0005 # Step Frequency
+@export var wait_time_sec = 0.0001 # Step TimeOut
 
 @export var power: float = 2.0 ## Affect Light Energy
 @export var intensity = 32000 ## Affect Env. Background Light Max
-@export var intensity_min = 1600 ## Affect Env. Background Light Min
+@export var intensity_min = 800 ## Affect Env. Background Light Min
 
 @export var e_step = 0.1 ## Affect Global Explosure
-@export var e_min = 0.66 ## Affect Explosure Minimum
+@export var e_min = 0.05 ## Affect Explosure Minimum
 
 @export var p_norm: float
-@export var p_min: float = 0.1 ## Affect Global Sky Nigh Power 
+@export var p_min: float = 0.05 ## Affect Global Sky Nigh Power 
 
 var p: float
 var q: float
@@ -45,7 +45,9 @@ func update_sky(_p, _intensity, _p_norm, _step) -> float:
 	sky.environment.adjustment_brightness = _p
 	sky.environment.adjustment_saturation = _p
 	sky.environment.background_energy_multiplier = _p
-	sky.environment.tonemap_exposure = e_min + _p * e_step
+	var p_e = e_min + _p * e_step
+	sky.environment.tonemap_exposure = p_e
+	sky.environment.fog_light_energy = p_e ## @NEW!!!
 	sky.environment.background_intensity = _intensity
 	## Warp P if need
 	_p_norm += _step

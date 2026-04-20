@@ -2,6 +2,9 @@
 
 ## New SimpleFog 
 - Need BRIGHTER ground
+- New ground
+- New SimpleFog sky
+- New video: Racing Simulator in Godot New location New sun
 
 ## Blender Materials and Sculpting 3x3x500
 - 5 segments of 9

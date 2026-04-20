@@ -54,11 +54,11 @@ shadow_enabled = false
 [node name="CameraGimbal" parent="." instance=ExtResource("14_3ftfv")]
 transform = Transform3D(0.304183, 0, 0.952614, 0, 1, 0, -0.952614, 0, 0.304183, 438.224, 102.486, -524.349)
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("10_kudle")]
+[node name="SimpleFog" parent="." instance=ExtResource("10_kudle")]
 
-[node name="LightTimer" parent="WorldEnvironment" index="1"]
+[node name="LightTimer" parent="SimpleFog" index="1"]
 intensity_min = 1600
 e_min = 0.66
 
 [editable path="Vehicle"]
-[editable path="WorldEnvironment"]
+[editable path="SimpleFog"]

@@ -9,9 +9,9 @@ extends Node3D
 @export var zoom_min = 0.2
 @export var zoom_max = 4.0
 @export var zoom_speed = 0.2
+@export var arm_spring_length_min: float = 2
+@export var arm_spring_length_max: float = 20
 var arm_spring_length: float
-var arm_spring_length_min: float
-var arm_spring_length_max: float
 @export var arm_spring_length_step = 2
 ## Tween larger values to slow down
 @export var tween_speed = 8.0
@@ -71,7 +71,6 @@ func _input(event):
 	zoom = clamp(zoom, zoom_min, zoom_max)
 	arm_spring_length = clamp(
 		arm_spring_length, arm_spring_length_min, arm_spring_length_max)
-	
 		
 func _process(delta):
 	## Zoom is modified by player's keyboard/mouse
@@ -79,7 +78,6 @@ func _process(delta):
 	tween_zoom.tween_property(arm, "spring_length", 
 		arm_spring_length,
 		delta * tween_speed)
-		
 	var tween_fov = get_tree().create_tween()
 	tween_fov.tween_property(camera, "fov", 
 		clamp(camera_FOV * zoom, FOV_min, FOV_max),
