@@ -1,5 +1,8 @@
 # @deecovana ADD GitHub repo 
 
+## Tested 6 segments
+- Try add CheckPoints and race-routing via NavGraph
+
 ## New SimpleFog 
 - Need BRIGHTER ground
 - New ground

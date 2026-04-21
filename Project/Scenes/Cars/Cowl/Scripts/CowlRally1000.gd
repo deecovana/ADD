@@ -4,7 +4,7 @@ var speedtometer_label
 var REVERSE =  false
 
 ## Next values used for reconfiguring the Vehicle3Ds values
-var car_bounce = 0.25
+var car_bounce = 0.5
 var car_rough = false
 var car_absorb = false
 var car_friction = 0.0

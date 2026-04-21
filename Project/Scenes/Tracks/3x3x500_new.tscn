@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3lrrgbdr8iid"]
+[gd_scene load_steps=12 format=3 uid="uid://c3lrrgbdr8iid"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_eotkv"]
 [ext_resource type="PackedScene" uid="uid://bnwmnvqpsjjnm" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-0.glb" id="2_kudle"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rpps7rs3pxj6" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-2.glb" id="4_w311h"]
 [ext_resource type="PackedScene" uid="uid://sbnle440hlk7" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-3.glb" id="5_g4m5o"]
 [ext_resource type="PackedScene" uid="uid://c8tsw7u25q6br" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-5.glb" id="6_dobmc"]
+[ext_resource type="PackedScene" uid="uid://bx5j83d8ktuu2" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-4.glb" id="6_lcu1s"]
 [ext_resource type="PackedScene" uid="uid://cef4jo4h8t4vr" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-6.glb" id="7_eotkv"]
 [ext_resource type="PackedScene" uid="uid://cbuttc6tvlro2" path="res://Scenes/Sky/SimpleFog.tscn" id="10_kudle"]
 [ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="13_u4mls"]
@@ -23,6 +24,8 @@ script = ExtResource("1_eotkv")
 [node name="3x3x500-2" parent="Land" instance=ExtResource("4_w311h")]
 
 [node name="3x3x500-3" parent="Land" instance=ExtResource("5_g4m5o")]
+
+[node name="3x3x500-4" parent="Land" instance=ExtResource("6_lcu1s")]
 
 [node name="3x3x500-5" parent="Land" instance=ExtResource("6_dobmc")]
 
