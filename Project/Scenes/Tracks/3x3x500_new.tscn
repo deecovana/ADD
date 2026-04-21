@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8tsw7u25q6br" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-5.glb" id="6_dobmc"]
 [ext_resource type="PackedScene" uid="uid://bx5j83d8ktuu2" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-4.glb" id="6_lcu1s"]
 [ext_resource type="PackedScene" uid="uid://cef4jo4h8t4vr" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-6.glb" id="7_eotkv"]
-[ext_resource type="PackedScene" uid="uid://cbuttc6tvlro2" path="res://Scenes/Sky/SimpleFog.tscn" id="10_kudle"]
+[ext_resource type="PackedScene" uid="uid://vf4mfn5jekcq" path="res://Scenes/Sky/SimpleFogNot.tscn" id="11_lcu1s"]
 [ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="13_u4mls"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="14_3ftfv"]
 
@@ -57,11 +57,6 @@ shadow_enabled = false
 [node name="CameraGimbal" parent="." instance=ExtResource("14_3ftfv")]
 transform = Transform3D(0.304183, 0, 0.952614, 0, 1, 0, -0.952614, 0, 0.304183, 438.224, 102.486, -524.349)
 
-[node name="SimpleFog" parent="." instance=ExtResource("10_kudle")]
-
-[node name="LightTimer" parent="SimpleFog" index="1"]
-intensity_min = 1600
-e_min = 0.66
+[node name="SimpleFogNot" parent="." instance=ExtResource("11_lcu1s")]
 
 [editable path="Vehicle"]
-[editable path="SimpleFog"]

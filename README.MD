@@ -3,6 +3,12 @@
 ## Tested 6 segments
 - Try add CheckPoints and race-routing via NavGraph
 
+## Improvements in Fog/Not, RestoreCar, ShiftControl
+- Added SimpleFogNot, separate to SimpleFog environment
+  - Updated Lights and Shadows
+- Added Forward impulse on Restore car (36kph)
+- Added ShiftControl (disables SPEED_STEER, doubles steering_speed)
+
 ## New SimpleFog 
 - Need BRIGHTER ground
 - New ground

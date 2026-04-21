@@ -26,10 +26,11 @@ func _process(_delta):
 			vehicle.position.z +  randf() * 2.0 - 1.0)
 		vehicle.rotation.x = 0.0
 		vehicle.rotation.z = 0.0
-		vehicle.linear_velocity = Vector3(1.0,0.0,0.0)
+		vehicle.linear_velocity = Vector3.ZERO
 		vehicle.angular_velocity = Vector3.ZERO
 		vehicle.constant_force = Vector3.ZERO
 		vehicle.constant_torque = Vector3.ZERO
+		vehicle.push_forward()
 		
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and not event.is_echo():

@@ -356,9 +356,12 @@ func _physics_process(delta: float) -> void:
 			
 	linear_vel = abs(get_local_velocity().z)
 	var alt_control = Input.is_action_pressed("alt_control")
+	var shift_control = Input.is_action_pressed("shift_control")
 	var steer_control_speed_ = steer_control_speed
 	if alt_control:
 		steer_control_speed_ = steer_control_speed / 2
+	if shift_control:
+		steer_control_speed_ = steer_control_speed * 2
 	
 	## Reverse in the simpliest way
 	if Input.is_action_just_pressed("reverse"):
@@ -367,7 +370,7 @@ func _physics_process(delta: float) -> void:
 	## To Use speed steering value 
 	## @NEW with Alternative Control
 	var m_MAX_STEER = MAX_STEER
-	if SPEED_STEER and not alt_control:
+	if SPEED_STEER and not (alt_control or shift_control):
 		m_MAX_STEER = (MAX_SPEED / linear_vel) \
 						* SPEED_STEER_CO * MAX_STEER
 		m_MAX_STEER = clamp(m_MAX_STEER, 0.0, MAX_STEER)
@@ -699,3 +702,8 @@ func get_local_velocity() -> Vector3:
 	# local_velocity.x would be left/right
 	# local_velocity.y would be up/down (if not relying purely on global Y)
 	return local_velocity
+	
+func push_forward() -> void:
+	var strength = 10.0 ## 36 kph
+	var forward_dir = global_transform.basis.z
+	linear_velocity = forward_dir * strength
