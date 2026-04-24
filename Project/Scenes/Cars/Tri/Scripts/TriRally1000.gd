@@ -11,7 +11,8 @@ var car_friction = 0.0
 
 @export_category("Vehicle Constants")
 ## Values for curve Fanta_Curve_1000
-## Real maximum 240 @!!!
+## @NEW Add 100kg plste in the front. Mass 1100
+## Mass distribution 20cm to the front.
 @export var vehicle_mass = 1000.0
 @export var MAX_POWER = 6600.0
 @export var MAX_SPEED = 64.0
@@ -19,7 +20,9 @@ var car_friction = 0.0
 
 @export_category("Vector3 Centers")
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
-@export var CENTER_OF_MASS = Vector3(0.0,0.2,0)
+## @NEW Add 100kg plste in the front. 
+## Mass distribution 20cm to the front.
+@export var CENTER_OF_MASS = Vector3(0.0,0.2,0.0)
 @export var CENTER_OF_AERO = Vector3(0.0,1.0,1.8)
 
 ## Additional Forces
@@ -99,7 +102,7 @@ var rotate_wheel_sens
 ## Relax must higher than Compression 
 
 ## Rest, Travel, Stiff, MaxV
-## !!!> RALLY version
+## !!!> Tri Rally version
 @export var damp_compr_front = 2.0
 @export var damp_relax_front = 2.3
 @export var damp_compr_rear = 2.2
@@ -112,7 +115,7 @@ var rotate_wheel_sens
 @export var stiff_rear = 44
 @export var max_force_front = 20000
 @export var max_force_rear = 20000
-## <!!! RALLY version
+## <!!! Tri Rally  version
 
 @export_category("Coasting")
 ## Coasting starting value
@@ -169,7 +172,7 @@ var eng_min_rpm = [         0.30, 0.0,
 	#0.40, 0.45, 0.49, 0.53, 0.55, 0.62, 
 	#0.68, 0.68, 1.00, 1.00]
 
-## 4. Shorter with 0.9 peak (Tri Proto) 3x3x500
+## 4. Shorter with 0.9 peak (Tri Proto) 3x3x500_new
 #var engine_index_up = [-1.0, 0.0, 1.0, 
 	 #50.0, 80.0, 105.0, 115.0, 125.0, 135.0, 
 	 #170.0, 180.0, 300.0, 300.0]
