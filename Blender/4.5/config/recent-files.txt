@@ -1,12 +1,8 @@
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_5x1_7_fixed.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_5x1_7.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_5x1_fixed-6.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_5x1_edited-6.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500-0.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_5x1_export.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_5x1_assigned.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_4x1_traced.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_4x1.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_3x1.blend
-C:\Projects\blender\lands\3x3x500x1m\3x3x500x1m_base.blend
-C:\Projects\blender\lands\2x2\2x2.3_cubes_3x3_500m-scaled.blend
+C:\Projects\blender\vehicles\Tri\Tri proto wheels.blend
+C:\Projects\blender\vehicles\Tri\Tri proto ass x.blend
+C:\Projects\blender\vehicles\Tri\Tri proto ass y.blend
+C:\Projects\blender\vehicles\Tri\Tri proto ass.blend
+C:\Projects\blender\vehicles\Tri\Tri proto ass z.blend
+C:\Projects\blender\vehicles\Tri\Tri proto body.blend
+C:\Projects\blender\vehicles\Tri\Tri proto mirror.blend
+C:\Projects\blender\vehicles\Tri\Tri proto.blend
