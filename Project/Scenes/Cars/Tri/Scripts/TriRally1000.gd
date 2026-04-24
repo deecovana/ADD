@@ -35,7 +35,7 @@ var car_angular_damp = 0.0
 
 ## !!!> RALLY verssion
 ## Setup AirDynamic Force
-@export var bodyAeroDyn = 0.8
+@export var bodyAeroDyn = 1.0
 ## Add Linear Friction
 ## Constant and Linear friction 
 @export var bodyLinearFricConst = 750.0
@@ -135,28 +135,18 @@ enum Indices { Rear, Neutral,
 @export var engine_index: Indices = Indices.Neutral
 
 ## Arrays for Settings
-
-## 1. Long for TRACK
-# var engine_index_up = [-1.0, 0.0, 1.0, 
-	# 60.0, 110.0, 150.0, 170.0, 180.0, 200.0, 220.0, 
-	# 300.0, 300.0, 300.0, 300.0, 300.0]
-# var engine_index_down = [-1.0, 0.0, 1.0, 
-	# 55.0, 105.0, 145.0, 165.0, 175.0, 195.0, 205.0, 
-	# 300.0, 300.0, 300.0, 300.0, 300.0]
-# var eng_min_rpm = [         0.20, 0.5,
-	# 0.20, 0.40, 0.425, 0.45, 0.475, 0.50, 0.50, 
-	# 1.0, 1.0, 1.0, 1.0, 1.0, ]
 	
-## 2. Short for 200 9 gears (rally+)
-#var engine_index_up = [-1.0, 0.0, 1.0, 
-	#50.0, 90.0, 130.0, 160.0, 185.0, 205.0, 
-	#220.0, 230.0, 240.0, 300.0, 300.0, 300.0]
-#var engine_index_down = [-1.0, 0.0, 1.0, 
-	#40.0, 80.0, 120.0, 150.0, 175.0, 195.0, 
-	#210.0, 220.0, 230.0, 299.0, 299.0, 299.0]
-#var eng_min_rpm = [         0.30, 0.0,
-	#0.30, 0.40, 0.50, 0.60, 0.66, 0.70, 
-	#0.70, 0.70, 0.70, 0.70, 0.70, 0.70]
+## 1. Short for 200 on 6th (Tri Proto) City Short 
+var engine_index_up = [-1.0, 0.0, 1.0, 
+	50.0, 90.0, 130.0, 160.0, 185.0, 200.0, 
+	215.0, 230.0, 240.0, 300.0, 300.0, 300.0]
+var engine_index_down = [-1.0, 0.0, 1.0, 
+	40.0, 80.0, 120.0, 150.0, 175.0, 195.0, 
+	210.0, 225.0, 235.0, 300.0, 300.0, 300.0]
+var eng_min_rpm = [         0.30, 0.0,
+	0.30, 0.40, 0.50, 0.60, 0.66, 0.70, 
+	0.72, 0.73, 0.74, 0.99, 0.99, 0.99]
+	
 ## 3. Short for 240 6 gears (rally)
 #var engine_index_up = [-1.0, 0.0, 1.0, 
 	#50.0, 100.0, 140.0, 180.0, 210.0, 240.0, 
@@ -168,7 +158,7 @@ enum Indices { Rear, Neutral,
 	#0.30, 0.40, 0.50, 0.55, 0.60, 0.65, 
 	#0.70, 0.70, 0.70, 0.70, 0.70, 0.70]
 	
-## 3. Short for 160 6th gear (rally 1000) Tested
+## 3. Short for 160 6th gear (Tri Proto acceleration)
 #var engine_index_up = [-1.0, 0.0, 1.0, 
 	#50.0, 80.0, 110.0, 130.0, 145.0, 160.0, 
 	#170.0, 180.0, 300.0, 300.0]
@@ -179,16 +169,16 @@ enum Indices { Rear, Neutral,
 	#0.40, 0.45, 0.49, 0.53, 0.55, 0.62, 
 	#0.68, 0.68, 1.00, 1.00]
 
-## 4. Shorter with 0.9 peak (Tri Proto)
-var engine_index_up = [-1.0, 0.0, 1.0, 
-	 50.0, 80.0, 105.0, 115.0, 125.0, 135.0, 
-	 170.0, 180.0, 300.0, 300.0]
-var engine_index_down = [-1.0, 0.0, 1.0, 
-	 45.0, 75.0, 100.0, 110.0, 120.0, 130.0, 
-	 165.0, 175.0, 300.0, 300.0]
-var eng_min_rpm = [    0.25, 0.0,
-	 0.40, 0.45, 0.49, 0.53, 0.56, 0.56, 
-	 0.68, 0.68, 1.00, 1.00]
+## 4. Shorter with 0.9 peak (Tri Proto) 3x3x500
+#var engine_index_up = [-1.0, 0.0, 1.0, 
+	 #50.0, 80.0, 105.0, 115.0, 125.0, 135.0, 
+	 #170.0, 180.0, 300.0, 300.0]
+#var engine_index_down = [-1.0, 0.0, 1.0, 
+	 #45.0, 75.0, 100.0, 110.0, 120.0, 130.0, 
+	 #165.0, 175.0, 300.0, 300.0]
+#var eng_min_rpm = [    0.25, 0.0,
+	 #0.40, 0.45, 0.49, 0.53, 0.56, 0.56, 
+	 #0.68, 0.68, 1.00, 1.00]
 	
 ## 5. MORE Shorter for 6600's engine RALLY 1000
 #var engine_index_up = [-1.0, 0.0, 1.0, 
