@@ -1,3 +1,4 @@
+C:\Projects\blender\vehicles\Tri\Tri proto smooth merged.blend
 C:\Projects\blender\vehicles\Tri\Tri proto wheels.blend
 C:\Projects\blender\vehicles\Tri\Tri proto ass x.blend
 C:\Projects\blender\vehicles\Tri\Tri proto ass y.blend

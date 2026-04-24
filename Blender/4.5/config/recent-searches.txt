@@ -39,7 +39,6 @@ Face (Ctrl F) ▸ Shade Smooth
 Vertex (Ctrl V) ▸ Smooth Vertices
   Landscape.000
 _snow
-Object ▸ Shade Flat
 Blender ▸ System ▸ Clean Up Space Data
 Object ▸ Snap ▸ Cursor to Grid
 Mesh ▸ Clean Up ▸ Decimate Geometry
@@ -61,11 +60,9 @@ _snow.004
 Object ▸ Modifiers ▸ Add Modifier ▸ Deform ▸ Smooth
 Object ▸ Modifiers ▸ Add Modifier ▸ Normals ▸ Smooth by Angle
 Object ▸ Set Origin ▸ Geometry to Origin
-Object ▸ Set Origin ▸ Origin to 3D Cursor
 Mesh ▸ Shading ▸ Smooth Faces
 Mesh ▸ Weights ▸ Smooth
 Edge (Ctrl E) ▸ Subdivide
-Snap (Shift S) ▸ Selection to Cursor
 Segments ▸ Subdivide
 Material.004
 Ground
@@ -83,9 +80,6 @@ Normals ▸ Smooth by Angle
   Landscape.008
   Landscape.009
 Object ▸ Quick Effects ▸ Quick Smoke
-Object ▸ Shade Smooth
-Mesh ▸ Shading ▸ Smooth Edges
-Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
   Landscape.010
   Landscape.014
   Landscape.013
@@ -106,3 +100,10 @@ Mesh ▸ Transform ▸ Randomize
   5
   6
   0
+Snap (Shift S) ▸ Selection to Cursor
+Object ▸ Set Origin ▸ Origin to 3D Cursor
+Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
+Mesh ▸ Shading ▸ Smooth Edges
+Object ▸ Shade Flat
+Object ▸ Shade Smooth
+Object ▸ Set Origin ▸ Origin to Geometry
