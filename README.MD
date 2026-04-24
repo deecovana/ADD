@@ -1,5 +1,11 @@
 # @deecovana ADD GitHub repo 
 
+## New car Tri, BackSideEngine with 50cm wheels
+- Exported
+- Imported
+- Fist time tested
+- Continue
+
 ## Tested 6 segments
 - Try add CheckPoints and race-routing via NavGraph
 

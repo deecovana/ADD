@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bx5j83d8ktuu2" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-4.glb" id="6_lcu1s"]
 [ext_resource type="PackedScene" uid="uid://cef4jo4h8t4vr" path="res://Scenes/Tracks/GLBs/3x3x500/3x3x500-6.glb" id="7_eotkv"]
 [ext_resource type="PackedScene" uid="uid://cbuttc6tvlro2" path="res://Scenes/Sky/SimpleFog.tscn" id="10_kudle"]
-[ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="13_u4mls"]
+[ext_resource type="PackedScene" uid="uid://ccr4ibblpbema" path="res://Scenes/Cars/Tri/vehicle_Tri.tscn" id="10_lcu1s"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="14_3ftfv"]
 
 [node name="3x3x500 new" type="Node3D"]
@@ -31,32 +31,10 @@ script = ExtResource("1_eotkv")
 
 [node name="3x3x500-6" parent="Land" instance=ExtResource("7_eotkv")]
 
-[node name="Vehicle" parent="." instance=ExtResource("13_u4mls")]
-transform = Transform3D(0.304183, 0, 0.952614, 0, 1, 0, -0.952614, 0, 0.304183, 438.224, 102.486, -524.349)
-MAX_POWER = 4400.0
-MAX_SPEED = 50.0
-brake_control_speed = 1.0
-front_brake_force = 1.0
-pedal_brake_speed = 1.0
-hand_brake_force = 1.0
-fric_slip_rear_hb_mult = 2.0
-damp_relax_front = 2.4
-damp_compr_rear = 2.2
-damp_relax_rear = 2.6
-rest_front = 0.3
-rest_rear = 0.3
-travel_front = 0.4
-travel_rear = 0.5
-
-[node name="CloseLightLeft" parent="Vehicle" index="24"]
-shadow_enabled = false
-
-[node name="CloseLightRight" parent="Vehicle" index="25"]
-shadow_enabled = false
+[node name="Vehicle" parent="." instance=ExtResource("10_lcu1s")]
+transform = Transform3D(0.540373, 0, 0.841426, 0, 1, 0, -0.841426, 0, 0.540373, 438.224, 102.486, -524.349)
 
 [node name="CameraGimbal" parent="." instance=ExtResource("14_3ftfv")]
 transform = Transform3D(0.304183, 0, 0.952614, 0, 1, 0, -0.952614, 0, 0.304183, 438.224, 102.486, -524.349)
 
 [node name="SimpleFog" parent="." instance=ExtResource("10_kudle")]
-
-[editable path="Vehicle"]

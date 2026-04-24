@@ -1,0 +1,240 @@
+[gd_scene load_steps=27 format=3 uid="uid://ccr4ibblpbema"]
+
+[ext_resource type="Script" uid="uid://c47dv3s35d1dr" path="res://Scenes/Cars/Tri/Scripts/TriRally1000.gd" id="1_l6myv"]
+[ext_resource type="AudioStream" uid="uid://dpiyljugbcrje" path="res://Sounds/Cars/eng ran start.wav" id="2_2hnfr"]
+[ext_resource type="Curve" uid="uid://dymes3fx1ud5s" path="res://Scenes/Cars/Tri/Scripts/TriRallyCurve.tres" id="2_lj3in"]
+[ext_resource type="AudioStream" uid="uid://dqtjormxmfsnx" path="res://Sounds/Cars/Gear.wav" id="3_vstp8"]
+[ext_resource type="AudioStream" uid="uid://cq28arq158j28" path="res://Sounds/Cars/GearAir.wav" id="4_l6myv"]
+[ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/Cars/eng run idle.wav" id="5_lj3in"]
+[ext_resource type="AudioStream" uid="uid://b0hpvi1rdkc2d" path="res://Sounds/Cars/eng ran overpower.wav" id="6_noewx"]
+[ext_resource type="AudioStream" uid="uid://dqiu1x6rs2gub" path="res://Sounds/Cars/eng ran run.wav" id="7_o38t7"]
+[ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="8_x0uyv"]
+[ext_resource type="Script" uid="uid://cojt8fkxmka7t" path="res://Scenes/Cars/Cowl/Scripts/CowlEngine.gd" id="9_g0kej"]
+[ext_resource type="Script" uid="uid://dth1pyid6yfyu" path="res://Scenes/Cars/Cowl/Scripts/CowlWheels.gd" id="10_lg5sk"]
+[ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="11_38ik1"]
+[ext_resource type="PackedScene" uid="uid://dv0es5y0pekj" path="res://Scenes/Cars/Tri/Tri_Wheel_FL_50cm.tscn" id="12_d8mhe"]
+[ext_resource type="PackedScene" uid="uid://cra7fit44m0q2" path="res://Scenes/Cars/Tri/Tri_Wheel_FR_50cm.tscn" id="13_bi2yh"]
+[ext_resource type="PackedScene" uid="uid://du535byqdevkl" path="res://Scenes/Cars/Tri/Tri Body.glb" id="14_u2i4w"]
+[ext_resource type="PackedScene" uid="uid://cj0lrv1t27aoq" path="res://Scenes/Cars/Tri/Tri Wing FL.glb" id="15_vstp8"]
+[ext_resource type="PackedScene" uid="uid://biuohe7otvpf2" path="res://Scenes/Cars/Tri/Tri Wing FR.glb" id="16_l6myv"]
+[ext_resource type="PackedScene" uid="uid://c5ri8vk0wc03k" path="res://Scenes/Cars/Tri/Tri_Wheel_RL_50W.tscn" id="16_o38t7"]
+[ext_resource type="PackedScene" uid="uid://b5x6bnq4m1vg" path="res://Scenes/Cars/Tri/Tri Wing R.glb" id="17_l6myv"]
+[ext_resource type="PackedScene" uid="uid://7oal7fib4dsy" path="res://Scenes/Cars/Tri/Tri_Wheel_RR_50W.tscn" id="17_x0uyv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8y6q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lj3in"]
+radius = 0.865
+height = 2.885
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noewx"]
+radius = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x0uyv"]
+size = Vector3(2.055, 0.74, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o38t7"]
+size = Vector3(2, 0.895, 1.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0kej"]
+size = Vector3(3.655, 2.205, 1)
+
+[node name="Vehicle Tri" type="VehicleBody3D"]
+transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0, 0, 0)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_p8y6q")
+continuous_cd = true
+script = ExtResource("1_l6myv")
+scale_curve = ExtResource("2_lj3in")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 6.03321e-08, 0.503335, 0.404881)
+shape = SubResource("CapsuleShape3D_lj3in")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 1.46509e-07, -1.21813e-07, -1.46509e-07, 0.182527, -0.983201, -1.21813e-07, 0.983201, 0.182527, 2.89753e-07, 0.200018, 1.94449)
+shape = SubResource("CapsuleShape3D_noewx")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -2.77304e-08, -2.60299e-09, 2.77304e-08, 0.982532, 0.186095, -2.60299e-09, -0.186095, 0.982532, 2.74489e-07, 0.181056, 1.84206)
+shape = SubResource("BoxShape3D_x0uyv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90838e-07, 0.14583, -1.95178)
+shape = SubResource("BoxShape3D_o38t7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 3.18395e-09, 0.146863, 0.0213671)
+shape = SubResource("BoxShape3D_g0kej")
+
+[node name="Start" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6525e-07, 0.939561, 1.78006)
+stream = ExtResource("2_2hnfr")
+volume_db = 6.0
+unit_size = 24.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Gear" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7457e-07, 0.504209, -1.17152)
+stream = ExtResource("3_vstp8")
+volume_db = -6.0
+unit_size = 12.0
+max_db = -6.0
+pitch_scale = 0.75
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="GearAir" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74088e-07, 0.504209, -1.16828)
+stream = ExtResource("4_l6myv")
+unit_size = 24.0
+max_db = 0.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Idle" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29457e-07, 1.04034, -2.21094)
+stream = ExtResource("5_lj3in")
+unit_size = 24.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="Pow" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.387376, 0, 0, 0, 1, 0, 0, 0, 1, 0.383544, 1.0485, -1.85155)
+stream = ExtResource("6_noewx")
+volume_db = 6.0
+unit_size = 32.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="PowR" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.387376, 0, 0, 0, 1, 0, 0, 0, 1, -0.384203, 1.0485, -1.85155)
+stream = ExtResource("6_noewx")
+volume_db = 6.0
+unit_size = 24.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 4.0
+
+[node name="Val" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137152, -0.380315, -1.4147)
+stream = ExtResource("7_o38t7")
+volume_db = 6.0
+unit_size = 24.0
+max_db = 6.0
+max_polyphony = 2
+panning_strength = 4.0
+
+[node name="Scrap" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21893e-07, 0.25526, -2.16018)
+stream = ExtResource("8_x0uyv")
+volume_db = 6.0
+unit_size = 16.0
+max_db = 6.0
+pitch_scale = 2.0
+max_polyphony = 2
+panning_strength = 4.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="EngineController" type="Node" parent="."]
+script = ExtResource("9_g0kej")
+
+[node name="WheelsController" type="Node" parent="."]
+script = ExtResource("10_lg5sk")
+
+[node name="UI" parent="." instance=ExtResource("11_38ik1")]
+metadata/_edit_vertical_guides_ = [433.0]
+
+[node name="CenterOfMass" type="Node3D" parent="."]
+transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 0, 0.2, 0)
+
+[node name="CenterOfAero" type="Node3D" parent="."]
+transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 0, 1, 1.8)
+
+[node name="FarLigh" type="SpotLight3D" parent="."]
+transform = Transform3D(1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, 1.31339e-07, 0.417542, 2.9814)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 150.0
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.0
+
+[node name="CloseLightLeft" type="SpotLight3D" parent="."]
+transform = Transform3D(0.866025, -7.57104e-08, -0.5, -8.74228e-08, -1, -1.06581e-14, -0.5, 4.37114e-08, -0.866025, 1.48179, 0.729052, 2.2)
+light_energy = 3.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 100.0
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.0
+
+[node name="CloseLightRight" type="SpotLight3D" parent="."]
+transform = Transform3D(0.866025, -7.57104e-08, 0.5, -8.74228e-08, -1, 1.87109e-14, 0.5, -4.37114e-08, -0.866025, -1.49116, 0.724505, 2.2)
+light_energy = 3.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 100.0
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.0
+
+[node name="Cam" type="Camera3D" parent="."]
+transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
+fov = 45.0
+far = 500.0
+
+[node name="Tri Body" parent="." instance=ExtResource("14_u2i4w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.515, 0)
+
+[node name="Wheel3DFL" parent="." instance=ExtResource("12_d8mhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2)
+use_as_steering = true
+
+[node name="Wheel3DFR" parent="." instance=ExtResource("13_bi2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2)
+use_as_steering = true
+
+[node name="Wheel3DRL" parent="." instance=ExtResource("16_o38t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.07285)
+use_as_traction = true
+
+[node name="Wheel3DRR" parent="." instance=ExtResource("17_x0uyv")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.5, 0, -2.07285)
+use_as_traction = true
+
+[node name="Tri Wing FL" parent="." instance=ExtResource("15_vstp8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0.3, 1.96389)
+
+[node name="Tri Wing FR" parent="." instance=ExtResource("16_l6myv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0.3, 1.96389)
+
+[node name="Tri Wing R" parent="." instance=ExtResource("17_l6myv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.84963e-07, 0.248994, -1.91235)
+
+[node name="Cam1" type="Marker3D" parent="."]
+transform = Transform3D(-0.999998, -0.00174534, 8.70901e-08, -0.00173869, 0.996193, 0.0871557, -0.000152203, 0.0871556, -0.996194, 0.00387655, 0.779326, 2.54693)
+metadata/FOV = 30.0
+
+[node name="Cam2" type="Marker3D" parent="."]
+transform = Transform3D(-0.999998, -0.00174534, 8.69439e-08, -0.00173577, 0.99452, 0.104528, -0.000182524, 0.104528, -0.994522, 0.0050001, 1.2, 0.571853)
+metadata/FOV = 35.0
+
+[node name="Cam3" type="Marker3D" parent="."]
+transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0.00427707, 1.84279, -2.06515)
+metadata/FOV = 40.0
