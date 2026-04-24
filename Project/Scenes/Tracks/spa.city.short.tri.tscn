@@ -712,7 +712,8 @@ transform = Transform3D(-0.926048, 0, -0.377405, 0, 1, 0, 0.377405, 0, -0.926048
 
 [node name="Vehicle" parent="." instance=ExtResource("50_4jbfl")]
 transform = Transform3D(0.205111, 0, -0.978738, 0, 1, 0, 0.978738, 0, 0.205111, 763.445, 1.35289, -197.018)
-CENTER_OF_MASS = Vector3(0, 0.4, 0)
+vehicle_mass = 1100.0
+CENTER_OF_MASS = Vector3(0, 0.4, 0.2)
 bodyLinearFricConst = 600.0
 bodyLinearFricLin = 6.0
 SPEED_STEER_CO = 0.14
