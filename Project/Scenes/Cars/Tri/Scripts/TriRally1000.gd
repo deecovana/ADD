@@ -101,13 +101,13 @@ var rotate_wheel_sens
 ## Rest, Travel, Stiff, MaxV
 ## !!!> RALLY version
 @export var damp_compr_front = 2.0
-@export var damp_relax_front = 2.5
-@export var damp_compr_rear = 2.0
-@export var damp_relax_rear = 2.5
-@export var rest_front = 0.24
-@export var rest_rear = 0.24
-@export var travel_front = 0.28
-@export var travel_rear = 0.28
+@export var damp_relax_front = 2.3
+@export var damp_compr_rear = 2.2
+@export var damp_relax_rear = 2.4
+@export var rest_front = 0.22
+@export var rest_rear = 0.25
+@export var travel_front = 0.26
+@export var travel_rear = 0.32
 @export var stiff_front = 44
 @export var stiff_rear = 44
 @export var max_force_front = 20000
