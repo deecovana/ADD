@@ -238,7 +238,5 @@ shift_control={
 
 [rendering]
 
-rendering_device/driver="d3d12"
-rendering_device/driver.windows="d3d12"
 environment/defaults/default_clear_color=Color(1, 0.8, 0.4, 1)
 environment/bg_color=Color(1, 0.8, 0.4, 1)
