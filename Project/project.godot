@@ -239,6 +239,12 @@ shift_control={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(1, 0.8, 0.4, 1)
+rendering_device/driver="d3d12"
+rendering_device/driver.windows="d3d12"
+environment/ssao/quality=1
+environment/ssil/quality=1
+environment/glow/upscale_mode=0
+environment/volumetric_fog/use_filter=0
+environment/defaults/default_clear_color=Color(0.968627, 0.788235, 0.364706, 1)
 anti_aliasing/quality/use_taa=true
-environment/bg_color=Color(1, 0.8, 0.4, 1)
+environment/bg_color=Color(0.968627, 0.788235, 0.364706, 1)

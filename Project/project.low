@@ -18,7 +18,7 @@ config/name="ADD"
 config/version="0.4.4.1"
 run/main_scene="uid://c04ue4ip50qe2"
 config/features=PackedStringArray("4.4", "4.4.1", "Forward Plus")
-run/max_fps=30
+run/max_fps=60
 boot_splash/bg_color=Color(1, 0.8, 0.4, 1)
 boot_splash/image="uid://bllvjdvktpodv"
 config/icon="uid://bllvjdvktpodv"
@@ -30,6 +30,7 @@ window/size/viewport_width=1024
 window/size/viewport_height=640
 window/size/mode=2
 window/size/initial_position_type=4
+window/size/always_on_top=true
 
 [editor_plugins]
 
@@ -239,4 +240,5 @@ shift_control={
 [rendering]
 
 environment/defaults/default_clear_color=Color(1, 0.8, 0.4, 1)
+anti_aliasing/quality/use_taa=true
 environment/bg_color=Color(1, 0.8, 0.4, 1)

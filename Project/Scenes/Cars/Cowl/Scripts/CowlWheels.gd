@@ -26,6 +26,8 @@ var wing_fl: Node3D
 var wing_fr: Node3D
 var wing_fl_base_rotation: Vector3
 var wing_fr_base_rotation: Vector3
+var wing_fl_base_position: Vector3
+var wing_fr_base_position: Vector3
 
 func _ready() -> void:
 	vehicle = get_parent()
@@ -38,6 +40,8 @@ func _ready() -> void:
 	wing_fr = $"../WingFR"
 	if wing_fl: wing_fl_base_rotation = wing_fl.rotation
 	if wing_fr: wing_fr_base_rotation = wing_fr.rotation
+	if wing_fl: wing_fl_base_position = wing_fl.position
+	if wing_fr: wing_fr_base_position = wing_fr.position
 	
 	var find_sleep_fl = UI.find_children("SleepFL")
 	var find_sleep_fr= UI.find_children("SleepFR")
@@ -56,8 +60,12 @@ func _physics_process(_delta: float) -> void:
 	sleep_fr_bar.set_value(val_sleep(wheel_fr, sleep_start))
 	sleep_rl_bar.set_value(val_sleep(wheel_rl, sleep_start_rear))
 	sleep_rr_bar.set_value(val_sleep(wheel_rr, sleep_start_rear))
-	if wing_fl: wing_fl.rotation.y = wing_fl_base_rotation.y + vehicle.steering
-	if wing_fr: wing_fr.rotation.y = wing_fr_base_rotation.y + vehicle.steering
+	if wing_fl: 
+		wing_fl.rotation.y = wing_fl_base_rotation.y + vehicle.steering
+		wing_fl.position.y = wing_fl_base_position.y + wheel_fl.position.y
+	if wing_fr: 
+		wing_fr.rotation.y = wing_fr_base_rotation.y + vehicle.steering
+		wing_fr.position.y = wing_fr_base_position.y + wheel_fr.position.y
 
 func val_sleep(target: VehicleWheel3D, sleep_value) -> float:
 	var val = target.get_skidinfo()

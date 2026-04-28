@@ -1,5 +1,12 @@
 # @deecovana ADD GitHub repo 
 
+## 26.04.28 Some changes over Tri
+- Changed Rendering Device and Environment
+- Scaled Tri body to 0.9
+- Updated sounds
+- Normalized Tri and Cowl parameters in 
+  - In the City.short.tri scene
+
 ## 26.04.28 New sounds for Tri
 - Tested new
 - Checked old

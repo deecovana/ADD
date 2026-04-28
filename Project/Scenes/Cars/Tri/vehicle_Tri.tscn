@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ccr4ibblpbema"]
+[gd_scene load_steps=31 format=3 uid="uid://ccr4ibblpbema"]
 
 [ext_resource type="Script" uid="uid://c47dv3s35d1dr" path="res://Scenes/Cars/Tri/Scripts/TriRally1000.gd" id="1_l6myv"]
 [ext_resource type="Curve" uid="uid://dymes3fx1ud5s" path="res://Scenes/Cars/Tri/Scripts/TriRallyCurve.tres" id="2_lj3in"]
@@ -21,24 +21,38 @@
 [ext_resource type="PackedScene" uid="uid://c5ri8vk0wc03k" path="res://Scenes/Cars/Tri/Tri_Wheel_RL_50W.tscn" id="16_o38t7"]
 [ext_resource type="PackedScene" uid="uid://b5x6bnq4m1vg" path="res://Scenes/Cars/Tri/Tri Wing R.glb" id="17_l6myv"]
 [ext_resource type="PackedScene" uid="uid://7oal7fib4dsy" path="res://Scenes/Cars/Tri/Tri_Wheel_RR_50W.tscn" id="17_x0uyv"]
+[ext_resource type="Material" uid="uid://xgr653rn1npu" path="res://Scenes/Cars/Tri/Materials/GreenBumped/divan_material_3d.tres" id="22_g0kej"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8y6q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lj3in"]
-radius = 0.865
-height = 2.885
+radius = 0.75
+height = 2.6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noewx"]
-radius = 0.4
+radius = 0.39
+height = 1.47
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x0uyv"]
-size = Vector3(2.055, 0.74, 1.5)
+size = Vector3(2, 0.6, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o38t7"]
-size = Vector3(2, 0.895, 1.75)
+size = Vector3(2, 1.2, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g0kej"]
-size = Vector3(3.655, 2.205, 1)
+size = Vector3(3.333, 1.95, 0.95)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g0kej"]
+lightmap_size_hint = Vector2i(21, 28)
+material = ExtResource("22_g0kej")
+add_uv2 = true
+size = Vector3(1, 1, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lg5sk"]
+lightmap_size_hint = Vector2i(19, 18)
+material = ExtResource("22_g0kej")
+add_uv2 = true
+size = Vector3(1, 0.3, 2)
 
 [node name="Vehicle Tri" type="VehicleBody3D"]
 transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0, 0, 0)
@@ -52,40 +66,40 @@ scale_curve = ExtResource("2_lj3in")
 transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0, 0.515, 0)
 
 [node name="Tri Wing R" parent="." instance=ExtResource("17_l6myv")]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, -2.43255e-07, 0.248994, -1.63245)
+transform = Transform3D(-4.17444e-08, 0, 0.95, 0, 1, 0, -0.955, 0, -4.15258e-08, -2.43255e-07, 0.248994, -1.63245)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 6.03321e-08, 0.503335, 0.404881)
+transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 6.03321e-08, 0.505891, 0.404881)
 shape = SubResource("CapsuleShape3D_lj3in")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 1.46509e-07, -1.21813e-07, -1.46509e-07, 0.182527, -0.983201, -1.21813e-07, 0.983201, 0.182527, 2.89753e-07, 0.200018, 1.94449)
+transform = Transform3D(1, 1.35723e-07, -1.02834e-07, -1.39749e-07, 0.309083, -0.951035, -9.72922e-08, 0.951035, 0.309083, 2.9137e-07, 0.265094, 1.9434)
 shape = SubResource("CapsuleShape3D_noewx")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, -2.77304e-08, -2.60299e-09, 2.77304e-08, 0.982532, 0.186095, -2.60299e-09, -0.186095, 0.982532, 2.74489e-07, 0.181056, 1.84206)
+transform = Transform3D(1, -2.77304e-08, -2.60299e-09, 2.77304e-08, 0.982532, 0.186095, -2.60299e-09, -0.186095, 0.982532, 2.65846e-07, 0.195752, 1.60905)
 shape = SubResource("BoxShape3D_x0uyv")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90838e-07, 0.14583, -1.95178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62733e-07, 0.356163, -1.76317)
 shape = SubResource("BoxShape3D_o38t7")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 3.18395e-09, 0.146863, 0.0213671)
+transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, -7.74337e-09, 0.230058, -0.0519647)
 shape = SubResource("BoxShape3D_g0kej")
 
 [node name="Start" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6525e-07, 0.939561, 1.78006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12311e-07, 0.595543, -2.09588)
 stream = ExtResource("3_o38t7")
 attenuation_model = 2
 
 [node name="Gear" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7457e-07, 0.504209, -1.17152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26972e-07, 0.504209, -1.52318)
 stream = ExtResource("4_x0uyv")
 attenuation_model = 2
 
 [node name="GearAir" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74088e-07, 0.504209, -1.16828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32186e-07, 0.840582, -1.55817)
 stream = ExtResource("5_g0kej")
 attenuation_model = 2
 volume_db = 6.0
@@ -115,12 +129,12 @@ max_polyphony = 2
 panning_strength = 4.0
 
 [node name="Val" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137152, -0.380315, -1.4147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137151, 0.452973, -1.83517)
 stream = ExtResource("8_d8mhe")
 attenuation_model = 2
 
 [node name="Scrap" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21893e-07, 0.25526, -2.16018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33777e-07, -0.2493, 0.897758)
 stream = ExtResource("8_x0uyv")
 attenuation_model = 2
 pitch_scale = 2.0
@@ -140,29 +154,29 @@ script = ExtResource("10_lg5sk")
 metadata/_edit_vertical_guides_ = [433.0]
 
 [node name="CenterOfMass" type="Node3D" parent="."]
-transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 0, 0.2, 0)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -0.00174533, 0, 0.00174533, 0.999998, 0, 0.1, -0.275)
 
 [node name="CenterOfAero" type="Node3D" parent="."]
-transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 0, 1, 1.8)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -0.00174533, 0, 0.00174533, 0.999998, 0, 1, 0.9)
 
 [node name="Cam" type="Camera3D" parent="."]
 transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
 far = 1000.0
 
 [node name="Wheel3DFL" parent="." instance=ExtResource("12_d8mhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 1.58636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 1.5494)
 use_as_steering = true
 
 [node name="Wheel3DFR" parent="." instance=ExtResource("13_bi2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 1.58636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 1.5494)
 use_as_steering = true
 
 [node name="Wheel3DRL" parent="." instance=ExtResource("16_o38t7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0, -1.793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45, 0, -1.85)
 use_as_traction = true
 
 [node name="Wheel3DRR" parent="." instance=ExtResource("17_x0uyv")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.35, 0, -1.793)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.45, 0, -1.85)
 use_as_traction = true
 
 [node name="FarLigh" type="SpotLight3D" parent="."]
@@ -207,13 +221,21 @@ spot_angle = 60.0
 spot_angle_attenuation = 2.0
 
 [node name="Cam1" type="Marker3D" parent="."]
-transform = Transform3D(-0.999998, -0.00174534, 8.70901e-08, -0.00173869, 0.996193, 0.0871557, -0.000152203, 0.0871556, -0.996194, 0.00387655, 0.779326, 2.54693)
+transform = Transform3D(-0.999998, -0.00174534, 8.70901e-08, -0.00173869, 0.996193, 0.0871557, -0.000152203, 0.0871556, -0.996194, 0, 0.78, 2.55)
 metadata/FOV = 30.0
 
 [node name="Cam2" type="Marker3D" parent="."]
-transform = Transform3D(-0.999998, -0.00174534, 8.69439e-08, -0.00173577, 0.99452, 0.104528, -0.000182524, 0.104528, -0.994522, 0.0050001, 1.2, 0.571853)
+transform = Transform3D(-0.999998, -0.00174534, 8.69439e-08, -0.00173577, 0.99452, 0.104528, -0.000182524, 0.104528, -0.994522, 0, 1.24, 0.344)
 metadata/FOV = 35.0
 
 [node name="Cam3" type="Marker3D" parent="."]
-transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0.00427707, 1.84279, -2.06515)
+transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0, 1.85, -2)
 metadata/FOV = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50519e-08, 0.35, -0.903663)
+mesh = SubResource("BoxMesh_g0kej")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
+mesh = SubResource("BoxMesh_lg5sk")

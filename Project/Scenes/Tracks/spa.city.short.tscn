@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://boxepc62oxvbj"]
+[gd_scene load_steps=59 format=3 uid="uid://boxepc62oxvbj"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_l2v5a"]
 [ext_resource type="PackedScene" uid="uid://37273qs1d1ub" path="res://Scenes/Tracks/GLBs/Spa.Full.short.1c.export.glb" id="2_o3ev2"]
@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://mao71dy7p7de" path="res://Scenes/Builds/Suburban/building-type-j.glb" id="49_wwxyr"]
 [ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="50_5hxte"]
 [ext_resource type="PackedScene" uid="uid://bi3euxns5142x" path="res://Scenes/Builds/Suburban/building-type-k.glb" id="50_7wryj"]
+[ext_resource type="Curve" uid="uid://bxrsgt7epd5l1" path="res://Scenes/Cars/Cowl/Scripts/Cowl_curve_track_1000.tres" id="51_5hxte"]
 [ext_resource type="PackedScene" uid="uid://csiapxyaiqaed" path="res://Scenes/Cars/Cowl/vehicle_cowl_TRACK_1000.tscn" id="51_24bly"]
 [ext_resource type="PackedScene" uid="uid://dmp151jh1jam0" path="res://Scenes/Builds/Suburban/building-type-l.glb" id="51_y56kl"]
 [ext_resource type="PackedScene" uid="uid://cbuttc6tvlro2" path="res://Scenes/Sky/SimpleFog.tscn" id="52_24bly"]
@@ -710,9 +711,10 @@ transform = Transform3D(-4.53524, 0, -8.91244, 0, 10, 0, 8.91244, 0, -4.53524, 6
 transform = Transform3D(-0.926048, 0, -0.377405, 0, 1, 0, 0.377405, 0, -0.926048, 579.119, -0.511096, -119.026)
 
 [node name="Vehicle" parent="." instance=ExtResource("51_24bly")]
-transform = Transform3D(0.205111, 0, -0.978738, 0, 1, 0, 0.978738, 0, 0.205111, 763.445, 1.35289, -197.018)
+transform = Transform3D(0.422618, 0, -0.906307, 0, 1, 0, 0.906307, 0, 0.422618, 800, 4, -210)
+scale_curve = ExtResource("51_5hxte")
 
 [node name="CameraGimbal" parent="." instance=ExtResource("16_3x27v")]
-transform = Transform3D(0.819772, 0, -0.57269, 0, 1, 0, 0.57269, 0, 0.819772, 763.46, 1.35289, -197.115)
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 800, 4, -210)
 
 [node name="SimpleFog" parent="." instance=ExtResource("52_24bly")]

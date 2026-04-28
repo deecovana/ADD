@@ -22,8 +22,8 @@ var car_friction = 0.0
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
 ## @NEW Add 100kg plste in the front. 
 ## Mass distribution 20cm to the front.
-@export var CENTER_OF_MASS = Vector3(0.0,0.2,0.0)
-@export var CENTER_OF_AERO = Vector3(0.0,1.0,1.8)
+@export var CENTER_OF_MASS = Vector3(0.0, 0.1,-0.3)
+@export var CENTER_OF_AERO = Vector3(0.0, 1.0, 0.9)
 
 ## Additional Forces
 @export_category("Body Aero")
@@ -75,7 +75,7 @@ var rotate_wheel_sens
 ## Wheel3D braking force and balance
 @export var wheel_brake_force = 100.0
 ## wheel_brake_force multiplier
-@export var front_brake_force = 1.1
+@export var front_brake_force = 1.0
 ## wheel_brake_force multiplier
 @export var rear_brake_force = 1.0
 ## Brake toward speed

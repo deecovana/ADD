@@ -50,7 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://c61o5sm50aju5" path="res://Scenes/Builds/Suburban/building-type-m.glb" id="48_d2mb4"]
 [ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="49_fpyqr"]
 [ext_resource type="PackedScene" uid="uid://ccr4ibblpbema" path="res://Scenes/Cars/Tri/vehicle_Tri.tscn" id="50_4jbfl"]
-[ext_resource type="Curve" uid="uid://ch1w3kb48x1cs" path="res://Scenes/Cars/Tri/Scripts/tri.200.spa.city.short.tres" id="51_6kvku"]
+[ext_resource type="Curve" uid="uid://be21dfet3h4j8" path="res://Scenes/Cars/Tri/Scripts/tri.222.spa.city.short.tres" id="51_2mdjl"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="52_ukc30"]
 [ext_resource type="PackedScene" uid="uid://vf4mfn5jekcq" path="res://Scenes/Sky/SimpleFogNot.tscn" id="53_2mdjl"]
 
@@ -711,28 +711,37 @@ transform = Transform3D(-4.53524, 0, -8.91244, 0, 10, 0, 8.91244, 0, -4.53524, 6
 transform = Transform3D(-0.926048, 0, -0.377405, 0, 1, 0, 0.377405, 0, -0.926048, 579.119, -0.511096, -119.026)
 
 [node name="Vehicle" parent="." instance=ExtResource("50_4jbfl")]
-transform = Transform3D(0.205111, 0, -0.978738, 0, 1, 0, 0.978738, 0, 0.205111, 763.445, 1.35289, -197.018)
+transform = Transform3D(0.417042, 0, -0.908886, 0, 1, 0, 0.908886, 0, 0.417042, 800, 4, -210)
 vehicle_mass = 1100.0
 CENTER_OF_MASS = Vector3(0, 0.4, 0.2)
+bodySquare = 2.2
+bodySquareFill = 1.0
+bodyDrag = 0.75
+bodyAeroDyn = 0.75
 bodyLinearFricConst = 600.0
 bodyLinearFricLin = 6.0
 SPEED_STEER_CO = 0.14
+steer_control_speed = 1.2
 rotate_wheel_sens_max = 240.0
-brake_control_speed = 0.6
+brake_control_speed = 0.9
 front_brake_force = 0.9
-fric_slip_front = 1.45
+fric_slip_front = 1.35
 fric_slip_rear = 1.45
-rest_front = 0.2
-rest_rear = 0.22
-travel_front = 0.22
-travel_rear = 0.24
-stiff_front = 70
-stiff_rear = 90
-max_force_front = 18000
-max_force_rear = 22000
-scale_curve = ExtResource("51_6kvku")
+fric_slip_rear_hb_mult = 1.5
+damp_compr_front = 4.4
+damp_relax_front = 5.2
+damp_compr_rear = 4.0
+damp_relax_rear = 4.6
+rest_front = 0.16
+rest_rear = 0.18
+travel_front = 0.18
+travel_rear = 0.2
+stiff_front = 50
+stiff_rear = 40
+max_force_front = 26000
+scale_curve = ExtResource("51_2mdjl")
 
 [node name="CameraGimbal" parent="." instance=ExtResource("52_ukc30")]
-transform = Transform3D(0.819772, 0, -0.57269, 0, 1, 0, 0.57269, 0, 0.819772, 763.46, 1.35289, -197.115)
+transform = Transform3D(0.906581, 0, 0.422033, 0, 1, 0, -0.422033, 0, 0.906581, 800, 4, -210)
 
 [node name="SimpleFogNOT" parent="." instance=ExtResource("53_2mdjl")]
