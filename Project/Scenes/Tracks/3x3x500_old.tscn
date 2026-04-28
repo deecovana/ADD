@@ -1,0 +1,73 @@
+[gd_scene load_steps=17 format=3 uid="uid://dkq7oo8xm6yd8"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_8fh7r"]
+[ext_resource type="PackedScene" uid="uid://b0oux2w30wb8y" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_000.glb" id="2_3g7b6"]
+[ext_resource type="PackedScene" uid="uid://bkiiat7l2n16j" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_001.glb" id="3_m3unk"]
+[ext_resource type="PackedScene" uid="uid://b8mu8nkvt2spg" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_002.glb" id="4_ojin7"]
+[ext_resource type="PackedScene" uid="uid://nbbb00v3ee6t" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_003.glb" id="5_seyno"]
+[ext_resource type="PackedScene" uid="uid://dkugrnsaqsao6" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_004.glb" id="6_38kb5"]
+[ext_resource type="PackedScene" uid="uid://dlnrlviwbd6sc" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_005.glb" id="7_w8pfw"]
+[ext_resource type="PackedScene" uid="uid://br4ir4ilg67ti" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_006.glb" id="8_un1h6"]
+[ext_resource type="PackedScene" uid="uid://cg7r3a3opu4ai" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_007.glb" id="9_botkc"]
+[ext_resource type="PackedScene" uid="uid://d24uwfvp4u56v" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_008.glb" id="10_r3ii6"]
+[ext_resource type="PackedScene" uid="uid://0c4atnp65610" path="res://Scenes/Tracks/GLBs/3x3-cubes/2x2.3_cubes_500m_009.glb" id="11_mff58"]
+[ext_resource type="Material" uid="uid://d15nx1oqwwcrr" path="res://Scenes/Tracks/Materials/3x3x500textured.tres" id="12_0bfmy"]
+[ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="13_aypca"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="14_uwdth"]
+[ext_resource type="PackedScene" uid="uid://6anqgink7t08" path="res://Scenes/Sky/DarkSkyFog.tscn" id="15_idaff"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_sqquf"]
+material = ExtResource("12_0bfmy")
+radius = 10.0
+height = 10.0
+
+[node name="3x3x500 Old" type="Node3D"]
+script = ExtResource("1_8fh7r")
+
+[node name="Land" type="Node3D" parent="."]
+
+[node name="2x2_3_cubes_500m_000" parent="Land" instance=ExtResource("2_3g7b6")]
+
+[node name="2x2_3_cubes_500m_001" parent="Land" instance=ExtResource("3_m3unk")]
+
+[node name="2x2_3_cubes_500m_002" parent="Land" instance=ExtResource("4_ojin7")]
+
+[node name="2x2_3_cubes_500m_003" parent="Land" instance=ExtResource("5_seyno")]
+
+[node name="2x2_3_cubes_500m_004" parent="Land" instance=ExtResource("6_38kb5")]
+
+[node name="2x2_3_cubes_500m_005" parent="Land" instance=ExtResource("7_w8pfw")]
+
+[node name="2x2_3_cubes_500m_006" parent="Land" instance=ExtResource("8_un1h6")]
+
+[node name="2x2_3_cubes_500m_007" parent="Land" instance=ExtResource("9_botkc")]
+
+[node name="2x2_3_cubes_500m_008" parent="Land" instance=ExtResource("10_r3ii6")]
+
+[node name="2x2_3_cubes_500m_009" parent="Land" instance=ExtResource("11_mff58")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Land"]
+transform = Transform3D(0.707107, 0.342812, -0.61845, 0, 0.87462, 0.48481, 0.707107, -0.342812, 0.61845, -40.195, 79.93, 88.773)
+mesh = SubResource("SphereMesh_sqquf")
+
+[node name="Vehicle" parent="." instance=ExtResource("13_aypca")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -10.6954, 73.3912, 49.8765)
+MAX_POWER = 4400.0
+MAX_SPEED = 50.0
+brake_control_speed = 1.0
+front_brake_force = 1.0
+pedal_brake_speed = 1.0
+hand_brake_force = 1.0
+fric_slip_rear_hb_mult = 2.0
+damp_relax_front = 2.4
+damp_compr_rear = 2.2
+damp_relax_rear = 2.6
+rest_front = 0.3
+rest_rear = 0.3
+travel_front = 0.4
+travel_rear = 0.5
+
+[node name="CameraGimbal" parent="." instance=ExtResource("14_uwdth")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -10.6954, 73.3912, 49.8765)
+
+[node name="DarkSkyFog" parent="." instance=ExtResource("15_idaff")]
