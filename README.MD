@@ -3,6 +3,10 @@
 ## 26.04.28 New sounds for Tri
 - Tested new
 - Checked old
+- Fixed and tested: 
+  - NewCars sound,
+  - SimpleFog,
+  - SimpleFogNot
 
 ## New car Tri, BackSideEngine with 50cm wheels
 - Exported

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://boxepc62oxvbj"]
+[gd_scene load_steps=58 format=3 uid="uid://boxepc62oxvbj"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_l2v5a"]
 [ext_resource type="PackedScene" uid="uid://37273qs1d1ub" path="res://Scenes/Tracks/GLBs/Spa.Full.short.1c.export.glb" id="2_o3ev2"]
@@ -50,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://bi3euxns5142x" path="res://Scenes/Builds/Suburban/building-type-k.glb" id="50_7wryj"]
 [ext_resource type="PackedScene" uid="uid://csiapxyaiqaed" path="res://Scenes/Cars/Cowl/vehicle_cowl_TRACK_1000.tscn" id="51_24bly"]
 [ext_resource type="PackedScene" uid="uid://dmp151jh1jam0" path="res://Scenes/Builds/Suburban/building-type-l.glb" id="51_y56kl"]
+[ext_resource type="PackedScene" uid="uid://cbuttc6tvlro2" path="res://Scenes/Sky/SimpleFog.tscn" id="52_24bly"]
 [ext_resource type="PackedScene" uid="uid://c61o5sm50aju5" path="res://Scenes/Builds/Suburban/building-type-m.glb" id="52_istht"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24bly"]
@@ -713,3 +714,5 @@ transform = Transform3D(0.205111, 0, -0.978738, 0, 1, 0, 0.978738, 0, 0.205111, 
 
 [node name="CameraGimbal" parent="." instance=ExtResource("16_3x27v")]
 transform = Transform3D(0.819772, 0, -0.57269, 0, 1, 0, 0.57269, 0, 0.819772, 763.46, 1.35289, -197.115)
+
+[node name="SimpleFog" parent="." instance=ExtResource("52_24bly")]

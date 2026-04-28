@@ -220,6 +220,9 @@ var gimbal = Node3D
 enum CamStates {Gimbal, Cam1, Cam2, Cam3}
 var cam_state: CamStates
 
+var close_light_Left: Light3D
+var close_light_Right: Light3D
+
 func _ready() -> void:
 	scene = get_parent()
 	cam = $Cam
@@ -313,17 +316,20 @@ func _ready() -> void:
 		scale_array.append(scale_curve.sample_baked(i/100.0))
 	UI.call_draw_curve(scale_array)
 	
+	close_light_Left = $WingFL/CloseLightLeft
+	close_light_Right = $WingFR/CloseLightRight
+	
 func _physics_process(delta: float) -> void:
 	## Switch Lights
 	if Input.is_action_just_pressed("lightsFar"):
 		$FarLigh.visible = !$FarLigh.visible
 	if Input.is_action_just_pressed("lightsClose"):
-		$CloseLightLeft.visible = !$CloseLightLeft.visible
-		$CloseLightRight.visible = !$CloseLightRight.visible
+		close_light_Left.visible = !close_light_Left.visible
+		close_light_Right.visible = !close_light_Right.visible
 	if Input.is_action_just_pressed("lightsAll"):
 		$FarLigh.visible = !$FarLigh.visible
-		$CloseLightLeft.visible = !$CloseLightLeft.visible
-		$CloseLightRight.visible = !$CloseLightRight.visible
+		close_light_Left.visible = !close_light_Left.visible
+		close_light_Right.visible = !close_light_Right.visible
 		
 	## Change active camera onboard/gimbal State Machine
 	if Input.is_action_just_pressed("cameras"):

@@ -1,6 +1,6 @@
 extends Node
+## COWL engine Copied from Fanta1000
 
-## Copied from Fanta1000
 @onready var _timer: Timer  = $"../Timer"
 @onready var _start: AudioStreamPlayer3D  = $"../Start"
 @onready var _idle: AudioStreamPlayer3D  = $"../Idle"

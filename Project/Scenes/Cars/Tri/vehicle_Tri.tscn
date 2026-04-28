@@ -71,54 +71,52 @@ shape = SubResource("BoxShape3D_g0kej")
 [node name="Start" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6525e-07, 0.939561, 1.78006)
 stream = ExtResource("3_o38t7")
-volume_db = 6.0
-unit_size = 24.0
-max_db = 6.0
-max_polyphony = 4
+attenuation_model = 2
 
 [node name="Gear" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7457e-07, 0.504209, -1.17152)
 stream = ExtResource("4_x0uyv")
-volume_db = 5.0
-max_db = 5.0
-max_polyphony = 4
+attenuation_model = 2
 
 [node name="GearAir" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74088e-07, 0.504209, -1.16828)
 stream = ExtResource("5_g0kej")
-max_polyphony = 4
+attenuation_model = 2
+volume_db = 6.0
+max_db = 6.0
 
 [node name="Idle" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29457e-07, 1.04034, -2.21094)
 stream = ExtResource("6_lg5sk")
-unit_size = 6.0
-max_polyphony = 4
+attenuation_model = 2
+unit_size = 24.0
+max_db = 0.0
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.387376, 0, 0, 0, 1, 0, 0, 0, 1, 0.383544, 1.0485, -1.85155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38354, 1.0485, -1.85155)
 stream = ExtResource("7_x0uyv")
+attenuation_model = 2
 unit_size = 32.0
-max_db = 6.0
-max_polyphony = 4
+max_polyphony = 2
+panning_strength = 4.0
 
 [node name="PowR" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.387376, 0, 0, 0, 1, 0, 0, 0, 1, -0.384203, 1.0485, -1.85155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3842, 1.0485, -1.85155)
 stream = ExtResource("8_g0kej")
+attenuation_model = 2
 unit_size = 32.0
-max_db = 6.0
-max_polyphony = 4
+max_polyphony = 2
+panning_strength = 4.0
 
 [node name="Val" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137152, -0.380315, -1.4147)
 stream = ExtResource("8_d8mhe")
-max_polyphony = 4
+attenuation_model = 2
 
 [node name="Scrap" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21893e-07, 0.25526, -2.16018)
 stream = ExtResource("8_x0uyv")
-volume_db = 6.0
-unit_size = 16.0
-max_db = 6.0
+attenuation_model = 2
 pitch_scale = 2.0
 max_polyphony = 4
 
@@ -141,45 +139,9 @@ transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0
 [node name="CenterOfAero" type="Node3D" parent="."]
 transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0.00118033, -0.000385055, 0.00140521, 0.999999, 0, 1, 1.8)
 
-[node name="FarLigh" type="SpotLight3D" parent="."]
-transform = Transform3D(1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, 1.31339e-07, 0.417542, 2.9814)
-light_energy = 4.0
-light_bake_mode = 1
-shadow_bias = 0.25
-shadow_blur = 2.0
-distance_fade_enabled = true
-spot_range = 200.0
-spot_attenuation = 0.5
-spot_angle_attenuation = 2.0
-
-[node name="CloseLightLeft" type="SpotLight3D" parent="."]
-transform = Transform3D(0.866025, -7.57104e-08, -0.5, -8.74228e-08, -1, -1.06581e-14, -0.5, 4.37114e-08, -0.866025, 1.48179, 0.729052, 2.2)
-light_energy = 3.0
-light_bake_mode = 1
-shadow_bias = 0.25
-shadow_blur = 2.0
-distance_fade_enabled = true
-spot_range = 150.0
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.0
-
-[node name="CloseLightRight" type="SpotLight3D" parent="."]
-transform = Transform3D(0.866025, -7.57104e-08, 0.5, -8.74228e-08, -1, 1.87109e-14, 0.5, -4.37114e-08, -0.866025, -1.49116, 0.724505, 2.2)
-light_energy = 3.0
-light_bake_mode = 1
-shadow_bias = 0.25
-shadow_blur = 2.0
-distance_fade_enabled = true
-spot_range = 150.0
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.0
-
 [node name="Cam" type="Camera3D" parent="."]
 transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
-fov = 45.0
-far = 500.0
+far = 1000.0
 
 [node name="Tri Body" parent="." instance=ExtResource("14_u2i4w")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.515, 0)
@@ -200,11 +162,46 @@ use_as_traction = true
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.5, 0, -2.07285)
 use_as_traction = true
 
-[node name="Tri Wing FL" parent="." instance=ExtResource("15_vstp8")]
+[node name="FarLigh" type="SpotLight3D" parent="."]
+transform = Transform3D(1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, 1.31339e-07, 0.417542, 2.9814)
+light_energy = 4.0
+light_bake_mode = 1
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 200.0
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.0
+
+[node name="WingFL" parent="." instance=ExtResource("15_vstp8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0.3, 1.96389)
 
-[node name="Tri Wing FR" parent="." instance=ExtResource("16_l6myv")]
+[node name="CloseLightLeft" type="SpotLight3D" parent="WingFL"]
+transform = Transform3D(0.5, -4.37114e-08, 0.866025, -8.74228e-08, -1, 3.90799e-14, 0.866025, -7.57104e-08, -0.5, -0.23611, 0.429052, -0.0182102)
+light_energy = 3.0
+light_bake_mode = 1
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 100.0
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.0
+
+[node name="WingFR" parent="." instance=ExtResource("16_l6myv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0.3, 1.96389)
+
+[node name="CloseLightRight" type="SpotLight3D" parent="WingFR"]
+transform = Transform3D(-0.5, 4.37114e-08, 0.866025, -8.74228e-08, -1, -4.07379e-14, 0.866025, -7.57104e-08, 0.5, -0.23611, 0.424505, 0.00883985)
+light_energy = 3.0
+light_bake_mode = 1
+shadow_bias = 0.25
+shadow_blur = 2.0
+distance_fade_enabled = true
+spot_range = 100.0
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.0
 
 [node name="Tri Wing R" parent="." instance=ExtResource("17_l6myv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.84963e-07, 0.248994, -1.91235)

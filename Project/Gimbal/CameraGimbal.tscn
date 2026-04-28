@@ -31,6 +31,4 @@ margin = 0.1
 [node name="Camera3D" type="Camera3D" parent="GimbalInner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99382e-07, 0, 8)
 current = true
-fov = 45.0
-near = 0.01
 far = 1000.0

@@ -1,8 +1,8 @@
 extends Node
+## COWL wheels Copied from Fanta1000
 
-## Copied from Fanta1000
-@export var sleep_start = 0.15
-@export var sleep_start_rear = 0.45
+@export var sleep_start = 0.10
+@export var sleep_start_rear = 0.50
 
 var track: Node3D
 var vehicle: VehicleBody3D
@@ -22,6 +22,10 @@ var scale_rpm = 1.0
 var twenty_four = 24.0
 var eleven = 12
 var qwinta = (1.0 + 5.0/12.0)
+var wing_fl: Node3D
+var wing_fr: Node3D
+var wing_fl_base_rotation: Vector3
+var wing_fr_base_rotation: Vector3
 
 func _ready() -> void:
 	vehicle = get_parent()
@@ -30,6 +34,11 @@ func _ready() -> void:
 	wheel_fr = $"../Wheel3DFR"
 	wheel_rl = $"../Wheel3DRL"
 	wheel_rr = $"../Wheel3DRR"
+	wing_fl = $"../WingFL"
+	wing_fr = $"../WingFR"
+	wing_fl_base_rotation = wing_fl.rotation
+	wing_fr_base_rotation = wing_fr.rotation
+	
 	var find_sleep_fl = UI.find_children("SleepFL")
 	var find_sleep_fr= UI.find_children("SleepFR")
 	var find_sleep_rl = UI.find_children("SleepRL")
@@ -47,6 +56,8 @@ func _physics_process(_delta: float) -> void:
 	sleep_fr_bar.set_value(val_sleep(wheel_fr, sleep_start))
 	sleep_rl_bar.set_value(val_sleep(wheel_rl, sleep_start_rear))
 	sleep_rr_bar.set_value(val_sleep(wheel_rr, sleep_start_rear))
+	wing_fl.rotation.y = wing_fl_base_rotation.y + vehicle.steering
+	wing_fr.rotation.y = wing_fr_base_rotation.y + vehicle.steering
 
 func val_sleep(target: VehicleWheel3D, sleep_value) -> float:
 	var val = target.get_skidinfo()
