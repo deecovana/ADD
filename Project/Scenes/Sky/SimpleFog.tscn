@@ -17,17 +17,14 @@ ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(1, 0.8, 0.4, 1)
-fog_light_energy = 2.0
+fog_light_color = Color(1, 0.892626, 0.551913, 1)
 fog_sun_scatter = 0.25
-fog_density = 0.75
+fog_density = 0.25
 fog_aerial_perspective = 0.25
 fog_sky_affect = 0.75
-fog_height = 20.0
-fog_height_density = 2.0
 fog_depth_curve = 2.0
-fog_depth_begin = 100.0
-fog_depth_end = 400.0
+fog_depth_begin = 0.0
+fog_depth_end = 250.0
 
 [node name="SimpleFog" type="WorldEnvironment"]
 environment = SubResource("Environment_im7go")

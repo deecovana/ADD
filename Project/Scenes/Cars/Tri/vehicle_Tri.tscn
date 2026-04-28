@@ -1,13 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccr4ibblpbema"]
+[gd_scene load_steps=28 format=3 uid="uid://ccr4ibblpbema"]
 
 [ext_resource type="Script" uid="uid://c47dv3s35d1dr" path="res://Scenes/Cars/Tri/Scripts/TriRally1000.gd" id="1_l6myv"]
-[ext_resource type="AudioStream" uid="uid://dpiyljugbcrje" path="res://Sounds/Cars/eng ran start.wav" id="2_2hnfr"]
 [ext_resource type="Curve" uid="uid://dymes3fx1ud5s" path="res://Scenes/Cars/Tri/Scripts/TriRallyCurve.tres" id="2_lj3in"]
-[ext_resource type="AudioStream" uid="uid://dqtjormxmfsnx" path="res://Sounds/Cars/Gear.wav" id="3_vstp8"]
-[ext_resource type="AudioStream" uid="uid://cq28arq158j28" path="res://Sounds/Cars/GearAir.wav" id="4_l6myv"]
-[ext_resource type="AudioStream" uid="uid://d0a2tqcfnno11" path="res://Sounds/Cars/eng run idle.wav" id="5_lj3in"]
-[ext_resource type="AudioStream" uid="uid://b0hpvi1rdkc2d" path="res://Sounds/Cars/eng ran overpower.wav" id="6_noewx"]
-[ext_resource type="AudioStream" uid="uid://dqiu1x6rs2gub" path="res://Sounds/Cars/eng ran run.wav" id="7_o38t7"]
+[ext_resource type="AudioStream" uid="uid://d3wed82ch8bxl" path="res://Sounds/NewCars/overpower1start.wav" id="3_o38t7"]
+[ext_resource type="AudioStream" uid="uid://ceo5ct75l7a67" path="res://Sounds/NewCars/overpower2Gear.wav" id="4_x0uyv"]
+[ext_resource type="AudioStream" uid="uid://c33tsgo024fc7" path="res://Sounds/NewCars/overpower2GearAir.wav" id="5_g0kej"]
+[ext_resource type="AudioStream" uid="uid://d4y0k24gvhwr" path="res://Sounds/NewCars/overpower2lo.wav" id="6_lg5sk"]
+[ext_resource type="AudioStream" uid="uid://cmoi4p5iu6rh" path="res://Sounds/NewCars/overpower2hiL.wav" id="7_x0uyv"]
+[ext_resource type="AudioStream" uid="uid://b55itg1b286hv" path="res://Sounds/NewCars/overpower2val.wav" id="8_d8mhe"]
+[ext_resource type="AudioStream" uid="uid://df4agout2hlge" path="res://Sounds/NewCars/overpower2hiR.wav" id="8_g0kej"]
 [ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="8_x0uyv"]
 [ext_resource type="Script" uid="uid://cojt8fkxmka7t" path="res://Scenes/Cars/Cowl/Scripts/CowlEngine.gd" id="9_g0kej"]
 [ext_resource type="Script" uid="uid://dth1pyid6yfyu" path="res://Scenes/Cars/Cowl/Scripts/CowlWheels.gd" id="10_lg5sk"]
@@ -69,64 +70,48 @@ shape = SubResource("BoxShape3D_g0kej")
 
 [node name="Start" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6525e-07, 0.939561, 1.78006)
-stream = ExtResource("2_2hnfr")
+stream = ExtResource("3_o38t7")
 volume_db = 6.0
 unit_size = 24.0
 max_db = 6.0
-max_polyphony = 2
-panning_strength = 2.0
+max_polyphony = 4
 
 [node name="Gear" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7457e-07, 0.504209, -1.17152)
-stream = ExtResource("3_vstp8")
-volume_db = -6.0
-unit_size = 12.0
-max_db = -6.0
-pitch_scale = 0.75
-max_polyphony = 2
-panning_strength = 2.0
+stream = ExtResource("4_x0uyv")
+volume_db = 5.0
+max_db = 5.0
+max_polyphony = 4
 
 [node name="GearAir" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74088e-07, 0.504209, -1.16828)
-stream = ExtResource("4_l6myv")
-unit_size = 24.0
-max_db = 0.0
-max_polyphony = 2
-panning_strength = 2.0
+stream = ExtResource("5_g0kej")
+max_polyphony = 4
 
 [node name="Idle" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29457e-07, 1.04034, -2.21094)
-stream = ExtResource("5_lj3in")
-unit_size = 24.0
-max_polyphony = 2
-panning_strength = 2.0
+stream = ExtResource("6_lg5sk")
+unit_size = 6.0
+max_polyphony = 4
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.387376, 0, 0, 0, 1, 0, 0, 0, 1, 0.383544, 1.0485, -1.85155)
-stream = ExtResource("6_noewx")
-volume_db = 6.0
+stream = ExtResource("7_x0uyv")
 unit_size = 32.0
 max_db = 6.0
-max_polyphony = 2
-panning_strength = 2.0
+max_polyphony = 4
 
 [node name="PowR" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.387376, 0, 0, 0, 1, 0, 0, 0, 1, -0.384203, 1.0485, -1.85155)
-stream = ExtResource("6_noewx")
-volume_db = 6.0
-unit_size = 24.0
+stream = ExtResource("8_g0kej")
+unit_size = 32.0
 max_db = 6.0
-max_polyphony = 2
-panning_strength = 4.0
+max_polyphony = 4
 
 [node name="Val" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137152, -0.380315, -1.4147)
-stream = ExtResource("7_o38t7")
-volume_db = 6.0
-unit_size = 24.0
-max_db = 6.0
-max_polyphony = 2
-panning_strength = 4.0
+stream = ExtResource("8_d8mhe")
+max_polyphony = 4
 
 [node name="Scrap" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21893e-07, 0.25526, -2.16018)
@@ -135,8 +120,7 @@ volume_db = 6.0
 unit_size = 16.0
 max_db = 6.0
 pitch_scale = 2.0
-max_polyphony = 2
-panning_strength = 4.0
+max_polyphony = 4
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -164,7 +148,7 @@ light_bake_mode = 1
 shadow_bias = 0.25
 shadow_blur = 2.0
 distance_fade_enabled = true
-spot_range = 150.0
+spot_range = 200.0
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.0
 
@@ -175,7 +159,7 @@ light_bake_mode = 1
 shadow_bias = 0.25
 shadow_blur = 2.0
 distance_fade_enabled = true
-spot_range = 100.0
+spot_range = 150.0
 spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.0
@@ -187,7 +171,7 @@ light_bake_mode = 1
 shadow_bias = 0.25
 shadow_blur = 2.0
 distance_fade_enabled = true
-spot_range = 100.0
+spot_range = 150.0
 spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.0

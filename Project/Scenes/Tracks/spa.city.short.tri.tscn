@@ -52,7 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://ccr4ibblpbema" path="res://Scenes/Cars/Tri/vehicle_Tri.tscn" id="50_4jbfl"]
 [ext_resource type="Curve" uid="uid://ch1w3kb48x1cs" path="res://Scenes/Cars/Tri/Scripts/tri.200.spa.city.short.tres" id="51_6kvku"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="52_ukc30"]
-[ext_resource type="PackedScene" uid="uid://6anqgink7t08" path="res://Scenes/Sky/DarkSkyFog.tscn" id="53_1jkd4"]
+[ext_resource type="PackedScene" uid="uid://cbuttc6tvlro2" path="res://Scenes/Sky/SimpleFog.tscn" id="53_2mdjl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24bly"]
 
@@ -733,4 +733,4 @@ scale_curve = ExtResource("51_6kvku")
 [node name="CameraGimbal" parent="." instance=ExtResource("52_ukc30")]
 transform = Transform3D(0.819772, 0, -0.57269, 0, 1, 0, 0.57269, 0, 0.819772, 763.46, 1.35289, -197.115)
 
-[node name="DarkSkyFog" parent="." instance=ExtResource("53_1jkd4")]
+[node name="SimpleFog" parent="." instance=ExtResource("53_2mdjl")]
