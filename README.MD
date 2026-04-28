@@ -6,6 +6,7 @@
 - Updated sounds
 - Normalized Tri and Cowl parameters in 
   - In the City.short.tri scene
+- Video saved
 
 ## 26.04.28 New sounds for Tri
 - Tested new

@@ -276,7 +276,7 @@ transform = Transform3D(-8.74228e-07, 0, -20, 0, 20, 0, 20, 0, -8.74228e-07, 448
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -232.785, 0, -132.365)
 
 [node name="low-detail-building-a2" parent="Builds" instance=ExtResource("19_mld21")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -222.574, -1.79218, -132.267)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -222.574, -1.99864, -132.267)
 
 [node name="building-skyscraper-a2" parent="Builds" instance=ExtResource("20_tttdp")]
 transform = Transform3D(4.63525, 0, -14.2658, 0, 15, 0, 14.2658, 0, 4.63525, -260.679, 0.00012207, -111.505)
@@ -712,7 +712,7 @@ transform = Transform3D(-0.926048, 0, -0.377405, 0, 1, 0, 0.377405, 0, -0.926048
 
 [node name="Vehicle" parent="." instance=ExtResource("50_4jbfl")]
 transform = Transform3D(0.417042, 0, -0.908886, 0, 1, 0, 0.908886, 0, 0.417042, 800, 4, -210)
-CENTER_OF_MASS = Vector3(0, 0.4, 0.2)
+CENTER_OF_MASS = Vector3(0, 0.1, 0.275)
 bodySquare = 2.2
 bodySquareFill = 1.0
 bodyDrag = 0.7

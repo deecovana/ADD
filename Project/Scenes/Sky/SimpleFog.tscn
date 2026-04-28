@@ -52,7 +52,7 @@ margin = 0.0
 
 [node name="Sun" type="Sprite3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
-pixel_size = 0.5
+pixel_size = 0.25
 texture = ExtResource("3_im7go")
 
 [connection signal="timeout" from="LightTimer" to="LightTimer" method="_on_timeout"]

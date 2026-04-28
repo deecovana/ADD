@@ -1,4 +1,5 @@
 shader_type spatial;
+render_mode cull_disabled; // Double sided
 
 //uniform float height_scale = 3;
 //uniform sampler2D noise;
@@ -28,4 +29,5 @@ void fragment() {
 	ALBEDO = texture(texturemap, tex_position).xyz * vec3(0.95, 0.64, 0.15);
 	// Add Normals
 	NORMAL_MAP = texture(normalmap, nor_position).xyz;
+	
 }

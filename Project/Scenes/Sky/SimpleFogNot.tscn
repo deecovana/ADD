@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://du111d7u7hk42" path="res://Scenes/Sky/Images/sky-a.jpg" id="1_m7qmk"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cbbfhrarwrwwt" path="res://Gimbal/Scripts/BluredAttributes.tres" id="2_i450j"]
-[ext_resource type="Script" uid="uid://bayignihfskbk" path="res://Scenes/Sky/timerFog.gd" id="2_wehcd"]
 [ext_resource type="Texture2D" uid="uid://sfejtg4mp0u4" path="res://Scenes/Sky/Images/sun-b.png" id="3_i450j"]
+[ext_resource type="Script" uid="uid://tlbpvgd76sm4" path="res://Scenes/Sky/timerFogNot.gd" id="3_wehcd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jwh8u"]
 panorama = ExtResource("1_m7qmk")
@@ -39,9 +39,7 @@ directional_shadow_max_distance = 200.0
 process_callback = 0
 wait_time = 0.05
 autostart = true
-script = ExtResource("2_wehcd")
-power = 1.5
-intensity = 16000
+script = ExtResource("3_wehcd")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(-2.81462e-08, -0.765101, -0.64391, -3.34436e-08, 0.64391, -0.765101, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -51,7 +49,7 @@ margin = 0.0
 
 [node name="Sun" type="Sprite3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
-pixel_size = 0.5
+pixel_size = 0.25
 texture = ExtResource("3_i450j")
 
 [connection signal="timeout" from="LightTimer" to="LightTimer" method="_on_timeout"]
