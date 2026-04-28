@@ -85,9 +85,9 @@ var rotate_wheel_sens
 @export_category("Suspension")
 ## Next values used for reconfiguring the Wheel3Ds values
 ## Front wheels friction slip ratio ## 0.65
-@export var fric_slip_front = 1.45 ## 60 fps
+@export var fric_slip_front = 1.35 ## 60 fps
 ## Rear wheels friction slip ratio ## 0.65
-@export var fric_slip_rear = 1.55 ## 60 fps
+@export var fric_slip_rear = 1.45 ## 60 fps
 ## Handbrake Rear wheels Friction demultiplier
 @export var fric_slip_rear_hb_mult = 1.75
 ## Relax must higher than Compression

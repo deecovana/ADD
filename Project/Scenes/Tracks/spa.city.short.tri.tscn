@@ -712,14 +712,13 @@ transform = Transform3D(-0.926048, 0, -0.377405, 0, 1, 0, 0.377405, 0, -0.926048
 
 [node name="Vehicle" parent="." instance=ExtResource("50_4jbfl")]
 transform = Transform3D(0.417042, 0, -0.908886, 0, 1, 0, 0.908886, 0, 0.417042, 800, 4, -210)
-vehicle_mass = 1100.0
 CENTER_OF_MASS = Vector3(0, 0.4, 0.2)
 bodySquare = 2.2
 bodySquareFill = 1.0
-bodyDrag = 0.75
-bodyAeroDyn = 0.75
-bodyLinearFricConst = 600.0
-bodyLinearFricLin = 6.0
+bodyDrag = 0.7
+bodyAeroDyn = 0.95
+bodyLinearFricConst = 500.0
+bodyLinearFricLin = 5.0
 SPEED_STEER_CO = 0.14
 steer_control_speed = 1.2
 rotate_wheel_sens_max = 240.0
@@ -742,6 +741,11 @@ max_force_front = 26000
 scale_curve = ExtResource("51_2mdjl")
 
 [node name="CameraGimbal" parent="." instance=ExtResource("52_ukc30")]
-transform = Transform3D(0.906581, 0, 0.422033, 0, 1, 0, -0.422033, 0, 0.906581, 800, 4, -210)
+transform = Transform3D(0.422033, 0, -0.906581, 0, 1, 0, 0.906581, 0, 0.422033, 800, 4, -210)
+
+[node name="Camera3D" parent="CameraGimbal/GimbalInner" index="0"]
+near = 0.001
 
 [node name="SimpleFogNOT" parent="." instance=ExtResource("53_2mdjl")]
+
+[editable path="CameraGimbal"]

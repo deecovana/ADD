@@ -159,10 +159,6 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -0.00174533, 0, 0.00174533,
 [node name="CenterOfAero" type="Node3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -0.00174533, 0, 0.00174533, 0.999998, 0, 1, 0.9)
 
-[node name="Cam" type="Camera3D" parent="."]
-transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
-far = 1000.0
-
 [node name="Wheel3DFL" parent="." instance=ExtResource("12_d8mhe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 1.5494)
 use_as_steering = true
@@ -232,10 +228,14 @@ metadata/FOV = 35.0
 transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0, 1.85, -2)
 metadata/FOV = 40.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Cam" type="Camera3D" parent="."]
+transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
+far = 1000.0
+
+[node name="Divan" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50519e-08, 0.35, -0.903663)
 mesh = SubResource("BoxMesh_g0kej")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Turbin" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
 mesh = SubResource("BoxMesh_lg5sk")
