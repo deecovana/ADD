@@ -36,8 +36,8 @@ func _ready() -> void:
 	wheel_rr = $"../Wheel3DRR"
 	wing_fl = $"../WingFL"
 	wing_fr = $"../WingFR"
-	wing_fl_base_rotation = wing_fl.rotation
-	wing_fr_base_rotation = wing_fr.rotation
+	if wing_fl: wing_fl_base_rotation = wing_fl.rotation
+	if wing_fr: wing_fr_base_rotation = wing_fr.rotation
 	
 	var find_sleep_fl = UI.find_children("SleepFL")
 	var find_sleep_fr= UI.find_children("SleepFR")
@@ -56,8 +56,8 @@ func _physics_process(_delta: float) -> void:
 	sleep_fr_bar.set_value(val_sleep(wheel_fr, sleep_start))
 	sleep_rl_bar.set_value(val_sleep(wheel_rl, sleep_start_rear))
 	sleep_rr_bar.set_value(val_sleep(wheel_rr, sleep_start_rear))
-	wing_fl.rotation.y = wing_fl_base_rotation.y + vehicle.steering
-	wing_fr.rotation.y = wing_fr_base_rotation.y + vehicle.steering
+	if wing_fl: wing_fl.rotation.y = wing_fl_base_rotation.y + vehicle.steering
+	if wing_fr: wing_fr.rotation.y = wing_fr_base_rotation.y + vehicle.steering
 
 func val_sleep(target: VehicleWheel3D, sleep_value) -> float:
 	var val = target.get_skidinfo()

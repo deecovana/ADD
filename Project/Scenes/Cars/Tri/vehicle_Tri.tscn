@@ -48,6 +48,12 @@ continuous_cd = true
 script = ExtResource("1_l6myv")
 scale_curve = ExtResource("2_lj3in")
 
+[node name="Tri Body" parent="." instance=ExtResource("14_u2i4w")]
+transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0, 0.515, 0)
+
+[node name="Tri Wing R" parent="." instance=ExtResource("17_l6myv")]
+transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, -2.43255e-07, 0.248994, -1.63245)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 6.03321e-08, 0.503335, 0.404881)
 shape = SubResource("CapsuleShape3D_lj3in")
@@ -143,23 +149,20 @@ transform = Transform3D(0.936259, -0.351308, 0.000854173, 0.351309, 0.936259, -0
 transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
 far = 1000.0
 
-[node name="Tri Body" parent="." instance=ExtResource("14_u2i4w")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.515, 0)
-
 [node name="Wheel3DFL" parent="." instance=ExtResource("12_d8mhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 1.58636)
 use_as_steering = true
 
 [node name="Wheel3DFR" parent="." instance=ExtResource("13_bi2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 1.58636)
 use_as_steering = true
 
 [node name="Wheel3DRL" parent="." instance=ExtResource("16_o38t7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.07285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0, -1.793)
 use_as_traction = true
 
 [node name="Wheel3DRR" parent="." instance=ExtResource("17_x0uyv")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.5, 0, -2.07285)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.35, 0, -1.793)
 use_as_traction = true
 
 [node name="FarLigh" type="SpotLight3D" parent="."]
@@ -174,7 +177,7 @@ spot_attenuation = 0.5
 spot_angle_attenuation = 2.0
 
 [node name="WingFL" parent="." instance=ExtResource("15_vstp8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0.3, 1.96389)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4, 0.3, 1.55036)
 
 [node name="CloseLightLeft" type="SpotLight3D" parent="WingFL"]
 transform = Transform3D(0.5, -4.37114e-08, 0.866025, -8.74228e-08, -1, 3.90799e-14, 0.866025, -7.57104e-08, -0.5, -0.23611, 0.429052, -0.0182102)
@@ -189,7 +192,7 @@ spot_angle = 60.0
 spot_angle_attenuation = 2.0
 
 [node name="WingFR" parent="." instance=ExtResource("16_l6myv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0.3, 1.96389)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4, 0.3, 1.55025)
 
 [node name="CloseLightRight" type="SpotLight3D" parent="WingFR"]
 transform = Transform3D(-0.5, 4.37114e-08, 0.866025, -8.74228e-08, -1, -4.07379e-14, 0.866025, -7.57104e-08, 0.5, -0.23611, 0.424505, 0.00883985)
@@ -202,9 +205,6 @@ spot_range = 100.0
 spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.0
-
-[node name="Tri Wing R" parent="." instance=ExtResource("17_l6myv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.84963e-07, 0.248994, -1.91235)
 
 [node name="Cam1" type="Marker3D" parent="."]
 transform = Transform3D(-0.999998, -0.00174534, 8.70901e-08, -0.00173869, 0.996193, 0.0871557, -0.000152203, 0.0871556, -0.996194, 0.00387655, 0.779326, 2.54693)
