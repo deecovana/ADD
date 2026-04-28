@@ -1,7 +1,8 @@
 # @deecovana ADD GitHub repo 
 
 ## 26.04.28 New sounds for Tri
-- Test new and check old
+- Tested new
+- Checked old
 
 ## New car Tri, BackSideEngine with 50cm wheels
 - Exported
