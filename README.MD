@@ -1,5 +1,8 @@
 # @deecovana ADD GitHub repo 
 
+## 26.04.30 New SUPER ground shader
+- Created by Google AI RoadLine.gdshader is SUPER!!!
+
 ## 26.04.30 New blank RoadLine to create CrossCountry
 - 5kx1k/500m 10 squares
 - Update Light, Sound and Env. timers
