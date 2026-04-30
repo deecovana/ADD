@@ -35,6 +35,18 @@ float hash(float n) {
     return fract(sin(n) * 43758.5453123);
 }
 
+// Simple hash function for randomness
+vec3 trnd(vec3 triplanar_pos) {
+	// Create random, but consistent offset for this instance
+    vec3 random_offset = vec3(
+        hash(random_seed + 1.0),
+        hash(random_seed + 2.0),
+        hash(random_seed + 3.0)
+    ) * 1000.0 * texture_scale; // Scale offset range
+    
+	return triplanar_pos + random_offset;
+}
+
 void fragment() {
     vec3 n = normalize(v_world_normal);
     float steepness = 1.0 - dot(n, vec3(0.0, 1.0, 0.0)); // 1.0 is vertical, 0.0 is Top
@@ -44,22 +56,13 @@ void fragment() {
     vec3 triplanar_pos = v_world_pos * texture_scale;
     vec3 power_normal = pow(abs(n), vec3(Side_sharpness));
     vec3 weights = power_normal / dot(power_normal, vec3(1.0));
-	
-	// Create random, but consistent offset for this instance
-    vec3 random_offset = vec3(
-        hash(random_seed + 1.0),
-        hash(random_seed + 2.0),
-        hash(random_seed + 3.0)
-    ) * 1000.0 * texture_scale; // Scale offset range
-    
-    triplanar_pos += random_offset;
 
     // Sample and Mix
-    vec4 col_Top = triplanar_texture(albedo_Top, weights, triplanar_pos);
-    vec4 col_Side = triplanar_texture(albedo_Side, weights, triplanar_pos);
+    vec4 col_Top = triplanar_texture(albedo_Top, weights, trnd(triplanar_pos));
+    vec4 col_Side = triplanar_texture(albedo_Side, weights, trnd(triplanar_pos));
     ALBEDO = mix(col_Top.rgb, col_Side.rgb, blend);
 
-    vec4 nrm_Top = triplanar_texture(normal_Top, weights, triplanar_pos);
-    vec4 nrm_Side = triplanar_texture(normal_Side, weights, triplanar_pos);
+    vec4 nrm_Top = triplanar_texture(normal_Top, weights, trnd(triplanar_pos));
+    vec4 nrm_Side = triplanar_texture(normal_Side, weights, trnd(triplanar_pos));
     NORMAL_MAP = mix(nrm_Top.rgb, nrm_Side.rgb, blend);
 }

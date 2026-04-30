@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cih20ihuodkod" path="res://Scenes/Tracks/GLBs/RoadLine/28.glb" id="21_24ce6"]
 [ext_resource type="PackedScene" uid="uid://cxlcjadexaga2" path="res://Scenes/Tracks/GLBs/RoadLine/29.glb" id="22_fa80u"]
 [ext_resource type="Material" uid="uid://flxwqc5q64s0" path="res://Scenes/Tracks/Materials/RoadLine_shader_material.tres" id="23_tl1q7"]
-[ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="26_tl1q7"]
+[ext_resource type="PackedScene" uid="uid://c2daq1pbadc1k" path="res://Scenes/Sky/DarkSkyFogBrown.tscn" id="26_tl1q7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_17fyb"]
 material = ExtResource("23_tl1q7")
@@ -94,4 +94,4 @@ transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 
 [node name="CameraGimbal" parent="." instance=ExtResource("3_ixrak")]
 transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.45, 1.61727, -265.198)
 
-[node name="DarkSkyLight" parent="." instance=ExtResource("26_tl1q7")]
+[node name="DarkSkyFogBrown" parent="." instance=ExtResource("26_tl1q7")]

@@ -61,6 +61,8 @@ collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_p8y6q")
 continuous_cd = true
 script = ExtResource("1_l6myv")
+damp_compr_rear = 2.0
+damp_relax_rear = 2.1
 scale_curve = ExtResource("2_lj3in")
 
 [node name="Tri Body" parent="." instance=ExtResource("14_u2i4w")]
@@ -117,17 +119,17 @@ max_db = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38354, 1.0485, -1.85155)
 stream = ExtResource("7_x0uyv")
 attenuation_model = 2
-unit_size = 32.0
+unit_size = 34.0
 max_polyphony = 2
-panning_strength = 4.0
+panning_strength = 8.0
 
 [node name="PowR" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3842, 1.0485, -1.85155)
 stream = ExtResource("8_g0kej")
 attenuation_model = 2
-unit_size = 32.0
+unit_size = 34.0
 max_polyphony = 2
-panning_strength = 4.0
+panning_strength = 8.0
 
 [node name="Val" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137151, 0.452973, -1.83517)

@@ -2,6 +2,7 @@
 
 ## 26.04.30 New SUPER ground shader
 - Created by Google AI RoadLine.gdshader is SUPER!!!
+- Soften rear susp to awoid jumpin
 
 ## 26.04.30 New blank RoadLine to create CrossCountry
 - 5kx1k/500m 10 squares
