@@ -1,0 +1,8 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://d340eucos3t4w"]
+
+[ext_resource type="Material" uid="uid://logn8hbm7ttb" path="res://Scenes/Tracks/GLBs/Square/Materials/square_1000m_material.tres" id="1_grxsn"]
+
+[resource]
+material = ExtResource("1_grxsn")
+uv2_padding = 1.0
+size = Vector2(1400, 700)

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://csiapxyaiqaed" path="res://Scenes/Cars/Cowl/vehicle_cowl_TRACK_1000.tscn" id="2_fq0kb"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="3_eft4s"]
 [ext_resource type="PackedScene" uid="uid://b2ie4lghu7pv4" path="res://Scenes/Sky/DarkSkyDark.tscn" id="4_ga176"]
-[ext_resource type="PlaneMesh" uid="uid://d340eucos3t4w" path="res://Scenes/Tracks/Square/Materials/sand_landscape_mesh_A.tres" id="5_og1yk"]
+[ext_resource type="PlaneMesh" uid="uid://d340eucos3t4w" path="res://Scenes/Tracks/GLBs/Square/Materials/sand_landscape_mesh_A.tres" id="5_og1yk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jnhu"]
 size = Vector3(4400, 0, 2200)

@@ -1,0 +1,82 @@
+[gd_scene load_steps=26 format=3 uid="uid://bwa8ys2hofd38"]
+
+[ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_acfj4"]
+[ext_resource type="PackedScene" uid="uid://bqs2wcbb4ilbg" path="res://Scenes/Tracks/GLBs/RoadLine/00.glb" id="2_bcqf6"]
+[ext_resource type="PackedScene" uid="uid://ccr4ibblpbema" path="res://Scenes/Cars/Tri/vehicle_Tri.tscn" id="2_c7a6e"]
+[ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="3_ixrak"]
+[ext_resource type="PackedScene" uid="uid://dw17g2guflt2r" path="res://Scenes/Tracks/GLBs/RoadLine/10.glb" id="3_tl1q7"]
+[ext_resource type="PackedScene" uid="uid://b0r80jmqhq67a" path="res://Scenes/Tracks/GLBs/RoadLine/11.glb" id="4_17fyb"]
+[ext_resource type="PackedScene" uid="uid://e5kn4vaxrf4o" path="res://Scenes/Tracks/GLBs/RoadLine/12.glb" id="5_eo1yi"]
+[ext_resource type="PackedScene" uid="uid://cpqan48yt1k5x" path="res://Scenes/Tracks/GLBs/RoadLine/13.glb" id="6_lyixb"]
+[ext_resource type="PackedScene" uid="uid://k8x7xqtux54w" path="res://Scenes/Tracks/GLBs/RoadLine/14.glb" id="7_ikynu"]
+[ext_resource type="PackedScene" uid="uid://b4r7bq88dcf81" path="res://Scenes/Tracks/GLBs/RoadLine/15.glb" id="8_kkie5"]
+[ext_resource type="PackedScene" uid="uid://b5dqcrasbfe4g" path="res://Scenes/Tracks/GLBs/RoadLine/16.glb" id="9_bgp6w"]
+[ext_resource type="PackedScene" uid="uid://b34aciboohqa1" path="res://Scenes/Tracks/GLBs/RoadLine/17.glb" id="10_x7el2"]
+[ext_resource type="PackedScene" uid="uid://diduwqxl6oivm" path="res://Scenes/Tracks/GLBs/RoadLine/18.glb" id="11_2k507"]
+[ext_resource type="PackedScene" uid="uid://b5i1gag80pjky" path="res://Scenes/Tracks/GLBs/RoadLine/19.glb" id="12_co56o"]
+[ext_resource type="PackedScene" uid="uid://d0m2q2bkpk44a" path="res://Scenes/Tracks/GLBs/RoadLine/20.glb" id="13_e2uhe"]
+[ext_resource type="PackedScene" uid="uid://bkwb36cnlm00j" path="res://Scenes/Tracks/GLBs/RoadLine/21.glb" id="14_7f3xn"]
+[ext_resource type="PackedScene" uid="uid://casetsevcyrp8" path="res://Scenes/Tracks/GLBs/RoadLine/22.glb" id="15_ua45y"]
+[ext_resource type="PackedScene" uid="uid://cpviqrpt2it55" path="res://Scenes/Tracks/GLBs/RoadLine/23.glb" id="16_uq1gq"]
+[ext_resource type="PackedScene" uid="uid://ca6c54x07tu7v" path="res://Scenes/Tracks/GLBs/RoadLine/24.glb" id="17_h48p2"]
+[ext_resource type="PackedScene" uid="uid://vvm6w8wf2cj" path="res://Scenes/Tracks/GLBs/RoadLine/25.glb" id="18_i7mdg"]
+[ext_resource type="PackedScene" uid="uid://cglhrxic5usu3" path="res://Scenes/Tracks/GLBs/RoadLine/26.glb" id="19_aos43"]
+[ext_resource type="PackedScene" uid="uid://cf3u2skoak1io" path="res://Scenes/Tracks/GLBs/RoadLine/27.glb" id="20_6xwwo"]
+[ext_resource type="PackedScene" uid="uid://cih20ihuodkod" path="res://Scenes/Tracks/GLBs/RoadLine/28.glb" id="21_24ce6"]
+[ext_resource type="PackedScene" uid="uid://cxlcjadexaga2" path="res://Scenes/Tracks/GLBs/RoadLine/29.glb" id="22_fa80u"]
+[ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="25_bcqf6"]
+
+[node name="RoadLine" type="Node3D"]
+script = ExtResource("1_acfj4")
+
+[node name="5km" type="Node3D" parent="."]
+
+[node name="00" parent="5km" instance=ExtResource("2_bcqf6")]
+
+[node name="10" parent="5km" instance=ExtResource("3_tl1q7")]
+
+[node name="11" parent="5km" instance=ExtResource("4_17fyb")]
+
+[node name="12" parent="5km" instance=ExtResource("5_eo1yi")]
+
+[node name="13" parent="5km" instance=ExtResource("6_lyixb")]
+
+[node name="14" parent="5km" instance=ExtResource("7_ikynu")]
+
+[node name="15" parent="5km" instance=ExtResource("8_kkie5")]
+
+[node name="16" parent="5km" instance=ExtResource("9_bgp6w")]
+
+[node name="17" parent="5km" instance=ExtResource("10_x7el2")]
+
+[node name="18" parent="5km" instance=ExtResource("11_2k507")]
+
+[node name="19" parent="5km" instance=ExtResource("12_co56o")]
+
+[node name="20" parent="5km" instance=ExtResource("13_e2uhe")]
+
+[node name="21" parent="5km" instance=ExtResource("14_7f3xn")]
+
+[node name="22" parent="5km" instance=ExtResource("15_ua45y")]
+
+[node name="23" parent="5km" instance=ExtResource("16_uq1gq")]
+
+[node name="24" parent="5km" instance=ExtResource("17_h48p2")]
+
+[node name="25" parent="5km" instance=ExtResource("18_i7mdg")]
+
+[node name="26" parent="5km" instance=ExtResource("19_aos43")]
+
+[node name="27" parent="5km" instance=ExtResource("20_6xwwo")]
+
+[node name="28" parent="5km" instance=ExtResource("21_24ce6")]
+
+[node name="29" parent="5km" instance=ExtResource("22_fa80u")]
+
+[node name="Vehicle" parent="." instance=ExtResource("2_c7a6e")]
+transform = Transform3D(-0.00448515, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00448515, 5190.45, 1.61727, -265.198)
+
+[node name="CameraGimbal" parent="." instance=ExtResource("3_ixrak")]
+transform = Transform3D(-0.00448515, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00448515, 5190.45, 1.61727, -265.198)
+
+[node name="DarkSkyLight" parent="." instance=ExtResource("25_bcqf6")]

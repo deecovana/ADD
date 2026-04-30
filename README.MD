@@ -1,5 +1,9 @@
 # @deecovana ADD GitHub repo 
 
+## 26.04.30 New blank RoadLine to create CrossCountry
+- 5kx1k/500m 10 squares
+- Update Light, Sound and Env. timers
+
 ## 26.04.28 Some changes over Tri
 - Changed Rendering Device and Environment
 - Scaled Tri body to 0.9

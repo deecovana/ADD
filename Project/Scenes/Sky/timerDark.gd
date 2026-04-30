@@ -1,18 +1,19 @@
 extends Timer ## timerDark
 
-@export var step = 0.0001 # Step Frequency
-@export var wait_time_sec = 0.01 # Step TimeOut
+@export var step_time = 0.001 # Step Frequency
+@export var wait_time_sec = 0.2 # Step TimeOut
 
-@export var power: float = 1.5 ## Affect Light Energy
+@export var power: float = 2 ## Affect Light Energy
 @export var intensity = 16000 ## Affect Env. Background Light Max
 @export var intensity_min = 3200 ## Affect Env. Background Light Min
 
 @export var e_step = 0.1 ## Affect Global Explosure
-@export var e_min = 0.33 ## Affect Explosure Minimum
+@export var e_min = 0.3 ## Affect Explosure Minimum
 
 @export var p_norm: float
 @export var p_min: float = 0.05 ## Affect Global Sky Nigh Power 
 
+var step: float
 var p: float
 var q: float
 var sky: WorldEnvironment
@@ -30,6 +31,7 @@ func _ready() -> void:
 	gimbal = $"../SpringArm3D"
 	sun = $"../SpringArm3D/Sun"
 	wait_time = wait_time_sec
+	step = step_time
 	autostart = true
 	start()
 	p_norm = update_sky(p, p * intensity, p_norm, step)
@@ -45,12 +47,21 @@ func update_sky(_p, _intensity, _p_norm, _step) -> float:
 	sky.environment.adjustment_brightness = _p
 	sky.environment.adjustment_saturation = _p
 	sky.environment.background_energy_multiplier = _p
-	sky.environment.tonemap_exposure = e_min + _p * e_step
+	var p_e = e_min + _p * e_step
+	sky.environment.tonemap_exposure = p_e
+	sky.environment.fog_light_energy = p_e ## @NEW!!!
 	sky.environment.background_intensity = _intensity
 	## Warp P if need
 	_p_norm += _step
 	if  _p_norm >= 1.0:
 		_p_norm = -1.0
+
+	## 4x Faster nights
+	if (_p_norm < 0):
+		step = step_time * 4 
+	else: 
+		step = step_time
+	
 	return _p_norm
 
 func set_light(_p, _q) -> void:
@@ -63,8 +74,8 @@ func set_light(_p, _q) -> void:
 	light.light_indirect_energy = power * sp / 2
 	if cam.position:
 		var tween = create_tween()
-		tween.tween_property(gimbal, "global_position", cam.global_position, wait_time_sec)
-		tween.tween_property(gimbal, "global_rotation", light.global_rotation, wait_time_sec)
+		tween.tween_property(gimbal, "global_position", cam.global_position, wait_time)
+		tween.tween_property(gimbal, "global_rotation", light.global_rotation, wait_time)
 		light.position = sun.position
 
 func _on_timeout() -> void:

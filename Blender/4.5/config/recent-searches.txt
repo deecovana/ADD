@@ -37,14 +37,12 @@ Vertex (Ctrl V) ▸ Smooth Vertices
   Landscape.000
 _snow
 Object ▸ Snap ▸ Cursor to Grid
-Generate ▸ Boolean
 Material.005
 Generate ▸ Array
 Deform ▸ Curve
 Dots Stroke
 Add (Shift A) ▸ Force Field ▸ Texture
 Material
-   Texture
   TextureField
 Texture
 Texture.001
@@ -59,32 +57,18 @@ Segments ▸ Subdivide
 Material.004
 Ground
 Deform ▸ Smooth Corrective
-Water
 Normals ▸ Smooth by Angle
   Landscape_plane.002
   Landscape.001
   Landscape.002
-  Landscape.003
-  Landscape.004
   Landscape.005
-  Landscape.006
-  Landscape.007
-  Landscape.008
-  Landscape.009
 Object ▸ Quick Effects ▸ Quick Smoke
-  Landscape.010
   Landscape.014
-  Landscape.013
-  Landscape.012
-  Landscape.011
   Landscape.015
   Landscape.016
-  Landscape.017
-  Landscape.018
   Landscape_plane.001
 Mesh ▸ Transform ▸ Randomize
   Landscape
-
   1
   2
   3
@@ -93,8 +77,6 @@ Mesh ▸ Transform ▸ Randomize
   6
   0
 Snap (Shift S) ▸ Selection to Cursor
-Object ▸ Shade Flat
-Object ▸ Shade Smooth
   Cube
 Select ▸ Select Linked ▸ Linked Flat Faces
 Mesh ▸ Clean Up ▸ Decimate Geometry
@@ -109,5 +91,59 @@ Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
 Object ▸ Set Origin ▸ Origin to Geometry
 Generate ▸ Mirror
   SubBody
+ 0 Texture.001
+Generate ▸ Subdivision Surface
+Generate ▸ Decimate
+   Texture
+   Texture.001
+ 0 Texture
+   27_150_88_553_12_500_500_16bit.png
+   27_303_88_381_12_500_500_16bit.png
+   27_455_88_553_12_500_500_16bit.png
+   Grass
+Texture ▸ Image Texture
+3D View Pie (Shift F) ▸ Cube Projection
+Texture ▸ Magic Texture
+Vector ▸ Displacement
+   27_150_88_381_12_500_500_16bit.png
 Object ▸ Set Origin ▸ Origin to 3D Cursor
 Object ▸ Set Origin ▸ Geometry to Origin
+ 0 27_150_88_553_12_500_500_16bit.png
+UVMap
+ 0 27_303_88_381_12_500_500_16bit.png
+ 0 27_303_88_553_12_500_500_16bit.png
+ 0 27_455_88_553_12_500_500_16bit.png
+   27_607_88_724_12_500_500_16bit.png
+   27_911_88_724_12_500_500_16bit.png
+   27_607_88_381_12_500_500_16bit.png
+ 0 27_607_88_381_12_500_500_16bit.png
+ 0 27_607_88_553_12_500_500_16bit.png
+ 0 27_607_88_724_12_500_500_16bit.png
+ 0 27_760_88_724_12_500_500_16bit.png
+ 0 27_911_88_724_12_500_500_16bit.png
+Deform ▸ Displace
+Object ▸ Shade Smooth
+Object ▸ Shade Flat
+ 0 27_442_54_874_12_500_500_16bit_tile_02_03.png
+   27_445_54_190_12_500_500_16bit_tile_02_04.png
+ 0 27_445_55_563_12_500_500_16bit_tile_02_01.png
+Water
+Generate ▸ Boolean
+  Landscape.004
+  Landscape.003
+  Landscape.006
+  Landscape.007
+  Landscape.008
+  Landscape.009
+  Landscape.010
+  Landscape.011
+  Landscape.012
+  Landscape.013
+  Landscape.022
+  Water
+  Landscape.021
+  Landscape.020
+  Landscape.018
+  Landscape.017
+  Landscape.019
+

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c70mmk1kdnfeb"]
 
-[ext_resource type="PlaneMesh" uid="uid://d340eucos3t4w" path="res://Scenes/Tracks/Square/Materials/sand_landscape_mesh_A.tres" id="1_vmwxu"]
+[ext_resource type="PlaneMesh" uid="uid://d340eucos3t4w" path="res://Scenes/Tracks/GLBs/Square/Materials/sand_landscape_mesh_A.tres" id="1_vmwxu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jnhu"]
 size = Vector3(4400, 0, 2200)

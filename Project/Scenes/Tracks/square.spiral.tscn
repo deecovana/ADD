@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="2_qrn8k"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="3_63ajs"]
 [ext_resource type="PackedScene" uid="uid://ck05c356pmia4" path="res://Scenes/Cars/Cowl/vehicle_cowl_RALLY_1000.tscn" id="4_h8ntv"]
-[ext_resource type="PackedScene" uid="uid://c4awr8j1qsj2f" path="res://Scenes/Tracks/Square/GLBs/snow.200.00.glb" id="5_8hfdj"]
-[ext_resource type="PackedScene" uid="uid://mskywaff6ld4" path="res://Scenes/Tracks/Square/GLBs/snow.200.0l.glb" id="6_ymjt8"]
-[ext_resource type="Material" uid="uid://by0psqhptlnte" path="res://Scenes/Tracks/Square/Materials/snow_material_3d.tres" id="7_30t3i"]
+[ext_resource type="PackedScene" uid="uid://c4awr8j1qsj2f" path="res://Scenes/Tracks/GLBs/Square/GLBs/snow.200.00.glb" id="5_8hfdj"]
+[ext_resource type="PackedScene" uid="uid://mskywaff6ld4" path="res://Scenes/Tracks/GLBs/Square/GLBs/snow.200.0l.glb" id="6_ymjt8"]
+[ext_resource type="Material" uid="uid://by0psqhptlnte" path="res://Scenes/Tracks/GLBs/Square/Materials/snow_material_3d.tres" id="7_30t3i"]
 [ext_resource type="PackedScene" uid="uid://cd64wki0ryq6s" path="res://Scenes/Utils/flat_objects.tscn" id="8_5uio7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vlvk5"]

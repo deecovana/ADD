@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://btgep8x4r86qi"]
+
+[ext_resource type="Shader" uid="uid://b6hy0ygphsghy" path="res://Scenes/Tracks/GLBs/Square/Materials/landlow_shader_A.gdshader" id="1_hwoav"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hwoav")

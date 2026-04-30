@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bnj10rk4ojq0v" path="res://Scenes/Cars/Fanta/Fanta_Wheel_L.tscn" id="9_fdk0u"]
 [ext_resource type="PackedScene" uid="uid://c4nshb085yca4" path="res://Scenes/Cars/Fanta/Fanta_Wheel_R.tscn" id="10_1ufo7"]
 [ext_resource type="Texture2D" uid="uid://bbyxnybki6h8f" path="res://Scenes/Cars/Fanta/car_UV-sharp.png" id="11_arl01"]
-[ext_resource type="Material" uid="uid://gfnv0rvux3tb" path="res://Scenes/Tracks/Square/Materials/standard_material_3d.tres" id="12_rrlp3"]
+[ext_resource type="Material" uid="uid://gfnv0rvux3tb" path="res://Scenes/Tracks/GLBs/Square/Materials/standard_material_3d.tres" id="12_rrlp3"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="13_dhdfu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74iso"]
