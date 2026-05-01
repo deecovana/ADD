@@ -43,7 +43,7 @@ vec3 trnd(vec3 triplanar_pos) {
         hash(random_seed + 2.0),
         hash(random_seed + 3.0)
     ) * 1000.0 * texture_scale; // Scale offset range
-    
+
 	return triplanar_pos + random_offset;
 }
 

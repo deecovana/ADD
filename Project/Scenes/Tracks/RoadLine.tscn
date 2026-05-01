@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bwa8ys2hofd38"]
+[gd_scene load_steps=29 format=3 uid="uid://bwa8ys2hofd38"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_acfj4"]
 [ext_resource type="PackedScene" uid="uid://bqs2wcbb4ilbg" path="res://Scenes/Tracks/GLBs/RoadLine/00.glb" id="2_bcqf6"]
@@ -24,8 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://cf3u2skoak1io" path="res://Scenes/Tracks/GLBs/RoadLine/27.glb" id="20_6xwwo"]
 [ext_resource type="PackedScene" uid="uid://cih20ihuodkod" path="res://Scenes/Tracks/GLBs/RoadLine/28.glb" id="21_24ce6"]
 [ext_resource type="PackedScene" uid="uid://cxlcjadexaga2" path="res://Scenes/Tracks/GLBs/RoadLine/29.glb" id="22_fa80u"]
+[ext_resource type="PackedScene" uid="uid://bn0qnia3kyxht" path="res://Scenes/Tracks/GLBs/RoadLine/RoadLine000.glb" id="23_17fyb"]
 [ext_resource type="Material" uid="uid://flxwqc5q64s0" path="res://Scenes/Tracks/Materials/RoadLine_shader_material.tres" id="23_tl1q7"]
-[ext_resource type="PackedScene" uid="uid://c2daq1pbadc1k" path="res://Scenes/Sky/DarkSkyFogBrown.tscn" id="26_tl1q7"]
+[ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="26_tl1q7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_17fyb"]
 material = ExtResource("23_tl1q7")
@@ -80,6 +81,8 @@ script = ExtResource("1_acfj4")
 [node name="29" parent="5km" instance=ExtResource("22_fa80u")]
 transform = Transform3D(0.993965, 0, 0, 0, 0.993965, 0, 0, 0, 0.993965, 0, 0, 0)
 
+[node name="RoadLine000" parent="." instance=ExtResource("23_17fyb")]
+
 [node name="Initial" type="Node3D" parent="."]
 transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5173.05, 6.067, -260.687)
 
@@ -89,9 +92,12 @@ mesh = SubResource("CapsuleMesh_17fyb")
 surface_material_override/0 = ExtResource("23_tl1q7")
 
 [node name="Vehicle" parent="." instance=ExtResource("2_c7a6e")]
-transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.45, 1.61727, -265.198)
+transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.17, 1.61727, -294.039)
+CENTER_OF_AERO = Vector3(0, 1, 0.6)
+bodyLinearFricConst = 700.0
+bodyLinearFricLin = 7.0
 
 [node name="CameraGimbal" parent="." instance=ExtResource("3_ixrak")]
-transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.45, 1.61727, -265.198)
+transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.17, 1.61727, -294.039)
 
-[node name="DarkSkyFogBrown" parent="." instance=ExtResource("26_tl1q7")]
+[node name="DarkSkyLight" parent="." instance=ExtResource("26_tl1q7")]

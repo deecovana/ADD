@@ -1,3 +1,6 @@
+C:\Projects\blender\lands\RoadLine\RoadLine000.blend
+C:\Users\cheva\AppData\Local\Temp\Add Road_1224_autosave.blend
+C:\Projects\blender\lands\RoadLine\Add Road.blend
 C:\Projects\blender\lands\RoadLine\Export 5x1km.blend
 C:\Projects\blender\lands\RoadLine\Export 10x1km.blend
 C:\Projects\blender\lands\RoadLine\Add Line 5km.blend
@@ -15,6 +18,3 @@ C:\Projects\blender\lands\Heightmaps\008-Change_Displacement_Strength_Midlevel.b
 C:\Projects\blender\lands\Heightmaps\007-Move-original.blend
 C:\Projects\blender\lands\Heightmaps\006-Load_2nd_texture-Set_View_2000m.blend
 C:\Projects\blender\lands\Heightmaps\005-Duplicate-Move_original-Apply_modifier.blend
-C:\Projects\blender\lands\Heightmaps\004-Displace-Texture-UV-100-EXTEND!!!.blend
-C:\Projects\blender\lands\Heightmaps\006-Duplicate-x500-load_next_texture.blend
-C:\Projects\blender\lands\Heightmaps\005-Texture-Image_select.blend

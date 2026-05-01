@@ -33,7 +33,6 @@ Select ▸ Sharp Edges
 snow.002
 Edge (Ctrl E) ▸ Clear Sharp
 Mesh ▸ Shading ▸ Flat Faces
-Vertex (Ctrl V) ▸ Smooth Vertices
   Landscape.000
 _snow
 Object ▸ Snap ▸ Cursor to Grid
@@ -52,8 +51,6 @@ _snow.004
 Object ▸ Modifiers ▸ Add Modifier ▸ Deform ▸ Smooth
 Object ▸ Modifiers ▸ Add Modifier ▸ Normals ▸ Smooth by Angle
 Mesh ▸ Shading ▸ Smooth Faces
-Mesh ▸ Weights ▸ Smooth
-Segments ▸ Subdivide
 Material.004
 Ground
 Deform ▸ Smooth Corrective
@@ -81,12 +78,9 @@ Snap (Shift S) ▸ Selection to Cursor
 Select ▸ Select Linked ▸ Linked Flat Faces
 Mesh ▸ Clean Up ▸ Decimate Geometry
 Edge (Ctrl E) ▸ Subdivide
-Face (Ctrl F) ▸ Shade Flat
 Blender ▸ System ▸ Clean Up Space Data
-Mesh ▸ Shading ▸ Smooth Edges
 Object ▸ Modifiers ▸ Add Modifier ▸ Generate ▸ Triangulate
   SubBody2
-Face (Ctrl F) ▸ Shade Smooth
 Mesh ▸ Normals (Alt N) ▸ Smooth Vectors
 Object ▸ Set Origin ▸ Origin to Geometry
 Generate ▸ Mirror
@@ -106,8 +100,6 @@ Texture ▸ Image Texture
 Texture ▸ Magic Texture
 Vector ▸ Displacement
    27_150_88_381_12_500_500_16bit.png
-Object ▸ Set Origin ▸ Origin to 3D Cursor
-Object ▸ Set Origin ▸ Geometry to Origin
  0 27_150_88_553_12_500_500_16bit.png
 UVMap
  0 27_303_88_381_12_500_500_16bit.png
@@ -147,3 +139,11 @@ Generate ▸ Boolean
   Landscape.017
   Landscape.019
 
+Segments ▸ Subdivide
+Mesh ▸ Shading ▸ Smooth Edges
+Mesh ▸ Weights ▸ Smooth
+Vertex (Ctrl V) ▸ Smooth Vertices
+Face (Ctrl F) ▸ Shade Flat
+Object ▸ Set Origin ▸ Origin to 3D Cursor
+Object ▸ Set Origin ▸ Geometry to Origin
+Face (Ctrl F) ▸ Shade Smooth

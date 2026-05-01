@@ -38,7 +38,7 @@ var car_angular_damp = 0.0
 
 ## !!!> RALLY verssion
 ## Setup AirDynamic Force
-@export var bodyAeroDyn = 1.0
+@export var bodyAeroDyn = 1.1
 ## Add Linear Friction
 ## Constant and Linear friction 
 @export var bodyLinearFricConst = 750.0
@@ -49,18 +49,18 @@ var car_angular_damp = 0.0
 ## Control's move_toward speed
 # Use 0..10 for keyboard or controller
 # Use 100 for racing wheels
-@export var control_speed = 5
+@export var control_speed = 4
 
 @export_category("Steering")
 ## Maximum Steering angle in Radians
-@export var MAX_STEER  = 0.5
+@export var MAX_STEER  = 0.4
 ## @NEW To Use speed steering value
 @export var SPEED_STEER = true
 ## Speed Steer Koefficient
 @export var SPEED_STEER_CO = 0.125
 ## Maximum Steering speed
-@export var steer_control_speed = 1.4
-@export var steer_restore_speed = 1.6
+@export var steer_control_speed = 1.25
+@export var steer_restore_speed = 1.5
 ## Steering wheel visual rotation: 420deg / MAX_STEER
 @export var rotate_wheel_sens_max = 320.0
 var rotate_wheel_sens
@@ -141,14 +141,14 @@ enum Indices { Rear, Neutral,
 	
 ## 1. Short for 200 on 6th (Tri Proto) City Short 
 var engine_index_up = [-1.0, 0.0, 1.0, 
-	50.0, 90.0, 130.0, 160.0, 185.0, 200.0, 
-	215.0, 230.0, 240.0, 300.0, 300.0, 300.0]
+	50.0, 90.0, 130.0, 160.0, 180.0, 190.0, 
+	200.0, 205.0, 210.0, 300.0, 300.0, 300.0]
 var engine_index_down = [-1.0, 0.0, 1.0, 
-	40.0, 80.0, 120.0, 150.0, 175.0, 195.0, 
-	210.0, 225.0, 235.0, 300.0, 300.0, 300.0]
-var eng_min_rpm = [         0.30, 0.0,
-	0.30, 0.40, 0.50, 0.60, 0.62, 0.64, 
-	0.65, 0.65, 0.65, 0.99, 0.99, 0.99]
+	40.0, 80.0, 120.0, 150.0, 170.0, 185.0, 
+	195.0, 202.0, 208.0, 300.0, 300.0, 300.0]
+var eng_min_rpm = [         0.20, 0.0,
+	0.20, 0.35, 0.42, 0.47, 0.50, 0.52, 
+	0.53, 0.54, 0.55, 0.99, 0.99, 0.99]
 	
 ## 3. Short for 240 6 gears (rally)
 #var engine_index_up = [-1.0, 0.0, 1.0, 
@@ -556,9 +556,8 @@ func _physics_process(delta: float) -> void:
 		#Limit REVERSE
 		if abs(speed_cur) > engine_index_down[3]:
 			engine_force = 0
-		## Else Rear Gear has 50% of maximum power
 		else:
-			engine_force = - clamp(abs(engine_force), 0, MAX_POWER * 0.5)
+			engine_force = - clamp(abs(engine_force), 0, MAX_POWER)
 
 	elif engine_index == 1:
 		engine_index_text = 'N'

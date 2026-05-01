@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ccr4ibblpbema"]
+[gd_scene load_steps=31 format=3 uid="uid://ccr4ibblpbema"]
 
 [ext_resource type="Script" uid="uid://c47dv3s35d1dr" path="res://Scenes/Cars/Tri/Scripts/TriRally1000.gd" id="1_l6myv"]
 [ext_resource type="Curve" uid="uid://dymes3fx1ud5s" path="res://Scenes/Cars/Tri/Scripts/TriRallyCurve.tres" id="2_lj3in"]
@@ -6,11 +6,11 @@
 [ext_resource type="AudioStream" uid="uid://ceo5ct75l7a67" path="res://Sounds/NewCars/overpower2Gear.wav" id="4_x0uyv"]
 [ext_resource type="AudioStream" uid="uid://c33tsgo024fc7" path="res://Sounds/NewCars/overpower2GearAir.wav" id="5_g0kej"]
 [ext_resource type="AudioStream" uid="uid://d4y0k24gvhwr" path="res://Sounds/NewCars/overpower2lo.wav" id="6_lg5sk"]
-[ext_resource type="AudioStream" uid="uid://cmoi4p5iu6rh" path="res://Sounds/NewCars/overpower2hiL.wav" id="7_x0uyv"]
 [ext_resource type="AudioStream" uid="uid://b55itg1b286hv" path="res://Sounds/NewCars/overpower2val.wav" id="8_d8mhe"]
-[ext_resource type="AudioStream" uid="uid://df4agout2hlge" path="res://Sounds/NewCars/overpower2hiR.wav" id="8_g0kej"]
 [ext_resource type="AudioStream" uid="uid://bs18n8xr22toi" path="res://Sounds/Cars/Scrap.wav" id="8_x0uyv"]
 [ext_resource type="Script" uid="uid://cojt8fkxmka7t" path="res://Scenes/Cars/Cowl/Scripts/CowlEngine.gd" id="9_g0kej"]
+[ext_resource type="AudioStream" uid="uid://mmi8ybuyxxis" path="res://Sounds/NewCars/overpower2hiLDd.wav" id="9_lg5sk"]
+[ext_resource type="AudioStream" uid="uid://bwbyc87o4go0u" path="res://Sounds/NewCars/overpower2hiRDd.wav" id="10_38ik1"]
 [ext_resource type="Script" uid="uid://dth1pyid6yfyu" path="res://Scenes/Cars/Cowl/Scripts/CowlWheels.gd" id="10_lg5sk"]
 [ext_resource type="PackedScene" uid="uid://c2u3c52wwav41" path="res://Scenes/UI/ui.tscn" id="11_38ik1"]
 [ext_resource type="PackedScene" uid="uid://dv0es5y0pekj" path="res://Scenes/Cars/Tri/Tri_Wheel_FL_50cm.tscn" id="12_d8mhe"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://b5x6bnq4m1vg" path="res://Scenes/Cars/Tri/Tri Wing R.glb" id="17_l6myv"]
 [ext_resource type="PackedScene" uid="uid://7oal7fib4dsy" path="res://Scenes/Cars/Tri/Tri_Wheel_RR_50W.tscn" id="17_x0uyv"]
 [ext_resource type="Material" uid="uid://xgr653rn1npu" path="res://Scenes/Cars/Tri/Materials/GreenBumped/divan_material_3d.tres" id="22_g0kej"]
-[ext_resource type="Material" uid="uid://bb377umihlduj" path="res://Scenes/Cars/Tri/Materials/GreenBumped/metal_material_3d.tres" id="22_lg5sk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8y6q"]
 
@@ -45,15 +44,15 @@ size = Vector3(3.333, 1.95, 0.95)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g0kej"]
 lightmap_size_hint = Vector2i(21, 28)
-material = ExtResource("22_lg5sk")
+material = ExtResource("22_g0kej")
 add_uv2 = true
 size = Vector3(1, 1, 2.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lg5sk"]
-lightmap_size_hint = Vector2i(19, 18)
+lightmap_size_hint = Vector2i(20, 20)
 material = ExtResource("22_g0kej")
 add_uv2 = true
-size = Vector3(1, 0.3, 2)
+size = Vector3(1, 0.3, 2.32)
 
 [node name="Vehicle Tri" type="VehicleBody3D"]
 transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0, 0, 0)
@@ -117,7 +116,7 @@ max_db = 0.0
 
 [node name="Pow" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38354, 1.0485, -1.85155)
-stream = ExtResource("7_x0uyv")
+stream = ExtResource("9_lg5sk")
 attenuation_model = 2
 unit_size = 34.0
 max_polyphony = 2
@@ -125,7 +124,7 @@ panning_strength = 8.0
 
 [node name="PowR" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3842, 1.0485, -1.85155)
-stream = ExtResource("8_g0kej")
+stream = ExtResource("10_38ik1")
 attenuation_model = 2
 unit_size = 34.0
 max_polyphony = 2
@@ -243,6 +242,6 @@ far = 1000.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50519e-08, 0.35, -0.903663)
 mesh = SubResource("BoxMesh_g0kej")
 
-[node name="Turbin" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
+[node name="Plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40245e-08, 0, 0.588775)
 mesh = SubResource("BoxMesh_lg5sk")

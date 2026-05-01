@@ -16,7 +16,6 @@ light_indirect_energy = 2.0
 light_volumetric_fog_energy = 1.5
 light_specular = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_max_distance = 200.0
 
