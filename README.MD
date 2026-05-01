@@ -2,6 +2,7 @@
 
 ## New Road on RoadLine 5+ km 
 - Fixed gears to reach 200kph
+- Ready to begin RallyLine (Backward, Noth side)
 
 ## 26.04.30 New SUPER ground shader
 - Created by Google AI RoadLine.gdshader is SUPER!!!

@@ -92,12 +92,15 @@ mesh = SubResource("CapsuleMesh_17fyb")
 surface_material_override/0 = ExtResource("23_tl1q7")
 
 [node name="Vehicle" parent="." instance=ExtResource("2_c7a6e")]
-transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.17, 1.61727, -294.039)
+transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5202.51, 3.24674, -272.885)
+MAX_SPEED = 60.0
 CENTER_OF_AERO = Vector3(0, 1, 0.6)
-bodyLinearFricConst = 700.0
-bodyLinearFricLin = 7.0
+bodySquareFill = 0.75
+bodyLinearFricConst = 500.0
+bodyLinearFricLin = 10.0
+rotate_wheel_sens_max = 240.0
 
 [node name="CameraGimbal" parent="." instance=ExtResource("3_ixrak")]
-transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5190.17, 1.61727, -294.039)
+transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5202.51, 3.24674, -272.885)
 
 [node name="DarkSkyLight" parent="." instance=ExtResource("26_tl1q7")]

@@ -11,8 +11,6 @@ var car_friction = 0.0
 
 @export_category("Vehicle Constants")
 ## Values for curve Fanta_Curve_1000
-## @NEW Add 100kg plste in the front. Mass 1100
-## Mass distribution 20cm to the front.
 @export var vehicle_mass = 1000.0
 @export var MAX_POWER = 6600.0
 @export var MAX_SPEED = 64.0
@@ -20,8 +18,6 @@ var car_friction = 0.0
 
 @export_category("Vector3 Centers")
 ## (-Z) value (meters) - Move Center Of Mass backward, (-Y): up
-## @NEW Add 100kg plste in the front. 
-## Mass distribution 20cm to the front.
 @export var CENTER_OF_MASS = Vector3(0.0, 0.1,-0.3)
 @export var CENTER_OF_AERO = Vector3(0.0, 1.0, 0.9)
 
@@ -54,7 +50,7 @@ var car_angular_damp = 0.0
 @export_category("Steering")
 ## Maximum Steering angle in Radians
 @export var MAX_STEER  = 0.4
-## @NEW To Use speed steering value
+## Using speed steering value
 @export var SPEED_STEER = true
 ## Speed Steer Koefficient
 @export var SPEED_STEER_CO = 0.125
@@ -140,15 +136,24 @@ enum Indices { Rear, Neutral,
 ## Arrays for Settings
 	
 ## 1. Short for 200 on 6th (Tri Proto) City Short 
-var engine_index_up = [-1.0, 0.0, 1.0, 
-	50.0, 90.0, 130.0, 160.0, 180.0, 190.0, 
-	200.0, 205.0, 210.0, 300.0, 300.0, 300.0]
-var engine_index_down = [-1.0, 0.0, 1.0, 
-	40.0, 80.0, 120.0, 150.0, 170.0, 185.0, 
-	195.0, 202.0, 208.0, 300.0, 300.0, 300.0]
-var eng_min_rpm = [         0.20, 0.0,
-	0.20, 0.35, 0.42, 0.47, 0.50, 0.52, 
-	0.53, 0.54, 0.55, 0.99, 0.99, 0.99]
+var engine_index_up = [
+	-1.0, 0.0, 1.0, 
+	75.0, 125.0, 155.0, 
+	170.0, 190.0, 200.0, 
+	210.0, 220.0, 230.0, 
+	300.0, 300.0, 300.0]
+var engine_index_down = [
+	-1.0, 0.0, 1.0, 
+	70.0, 120.0, 150.0, 
+	168.0, 188.0, 198.0, 
+	208.0, 218.0, 228.0, 
+	300.0, 300.0, 300.0]
+var eng_min_rpm = [         
+		  0.20, 0.0,
+	0.20, 0.35, 0.42, 
+	0.46, 0.50, 0.50, 
+	0.50, 0.50, 0.50, 
+	0.99, 0.99, 0.99]
 	
 ## 3. Short for 240 6 gears (rally)
 #var engine_index_up = [-1.0, 0.0, 1.0, 
@@ -199,7 +204,7 @@ var eng_min_rpm = [         0.20, 0.0,
 ## -- FROM THIS LINE must be imlpemented as CLASS -- ##
 #############################################
 
-var eng_ind_rpm = [] ## calculated from engine_index.max()
+var eng_ind_rpm = [] ## calculated from engine_index_up.max()
 var s_scale_rpm = 1.0
 
 ## OnReady variables
@@ -222,6 +227,9 @@ var cam_state: CamStates
 
 var close_light_Left: Light3D
 var close_light_Right: Light3D
+
+var alt_control: bool
+var shift_control: bool
 
 func _ready() -> void:
 	scene = get_parent()
@@ -299,7 +307,7 @@ func _ready() -> void:
 	## Set Continuous Collision Detection
 	continuous_cd = true
 	
-	## @NEW Engine Index RPM to use
+	## Using Engine Index RPM
 	for rpm in engine_index_up:
 		var calc_rpm = MAX_SPEED * 3.6 / rpm
 		if calc_rpm > 1 and calc_rpm < 10:
@@ -364,8 +372,8 @@ func _physics_process(delta: float) -> void:
 			gimbal.camera.current = true
 			
 	linear_vel = abs(get_local_velocity().z)
-	var alt_control = Input.is_action_pressed("alt_control")
-	var shift_control = Input.is_action_pressed("shift_control")
+	alt_control = Input.is_action_pressed("alt_control")
+	shift_control = Input.is_action_pressed("shift_control")
 	var steer_control_speed_ = steer_control_speed
 	if alt_control:
 		steer_control_speed_ = steer_control_speed / 2
@@ -377,14 +385,15 @@ func _physics_process(delta: float) -> void:
 		REVERSE = !REVERSE
 	
 	## To Use speed steering value 
-	## @NEW with Alternative Control
+	## Driving with Alternative Control
+	## Driving with Shift Control
 	var m_MAX_STEER = MAX_STEER
 	if SPEED_STEER and not (alt_control or shift_control):
 		m_MAX_STEER = (MAX_SPEED / linear_vel) \
 						* SPEED_STEER_CO * MAX_STEER
 		m_MAX_STEER = clamp(m_MAX_STEER, 0.0, MAX_STEER)
-	## @NEW add m_MAX steering speed modifier
-	var m_MAX = m_MAX_STEER / MAX_STEER
+	## Added m_MAX steering speed modifier
+	var m_MAX: float = m_MAX_STEER / MAX_STEER
 	
 	## Use controller's axes, joy or key input
 	var _steering = Input.get_axis("steer_right", "steer_left") * m_MAX_STEER
@@ -394,7 +403,7 @@ func _physics_process(delta: float) -> void:
 		or Input.is_action_pressed("steer_left"):
 			steering = move_toward(steering, _steering, 
 			steer_control_speed_ * delta * m_MAX)
-	## @NEW Using Alt Control
+	## Driving Using Alt Control
 	elif not alt_control: 
 		## Move linearly
 		steering = move_toward(steering, 0.0 , 
@@ -502,28 +511,29 @@ func _physics_process(delta: float) -> void:
 		set_fric_slip_rear(fric_slip_rear)
 		
 	## @TODO move to function!!! GearBox switcher
-	## If not playing switching sound
-	engine_index = get_engine_index((linear_vel))
-	## @NEW engine's gearbox coefficients applied to curve's values
-	## Prepare vars
-	## For current index, get curve's Y value using RPM as X
-	## Speed evaluates in (0 < (speed - ind_low) < (speed - ind_cur) < 1)
+	# If not playing switching sound
+	engine_index = get_engine_index(linear_vel)
+	## Using engine's gearbox coefficients 
+	# Applying to curve's values
+	# Prepare vars
+	# For current index, get curve's Y value using RPM as X
+	# Speed evaluates in (0 < (speed - ind_low) < (speed - ind_cur) < 1)
 	var speed_cur = linear_vel * 3.6 ## kph
 	var s_start = engine_index_up[engine_index]
 	var s_final = engine_index_up[engine_index + 1]
-	## @NEW s_scale_rpm to use new scaled values and curves
+	## Using new scaled values and curves
 	var s_scale_rpm_normal = (
 		speed_cur - s_start) / (s_final - s_start) ## up from 0 to 1
-	## Get final RPM from normalized
+	# Get final RPM from normalized
 	## First get minimum RPM for the current gear
-	## Calculate Min.RPM OR use predefined array
+	# Calculate Min.RPM OR use predefined array
 	#var s_scale_rpm_min = (eng_min_rpm.max() + eng_min_rpm[eng_ind]) / \
 		#(eng_min_rpm.max() * 2)
 	var s_scale_rpm_min = eng_min_rpm[engine_index]
 	## Second calculate scale_RPM
-	## Using inertial moving
+	# Using inertial moving
 	var s_scale_rpm_moving = s_scale_rpm_min + s_scale_rpm_normal * (1.0 - s_scale_rpm_min)
-	## Fix Inf bug
+	## Fix Inf error
 	s_scale_rpm_moving = clamp(s_scale_rpm_moving, 0.0, 1.0)
 	s_scale_rpm = lerp(s_scale_rpm, s_scale_rpm_moving, engine_inertia_value)
 	## @FINAL Update engine_force using RPM
@@ -532,7 +542,7 @@ func _physics_process(delta: float) -> void:
 
 	## Update UI visuals
 	UI.set_speedometer_label(
-		"%8s:%8s" % [
+		"%-8s:%8s" % [
 			States.keys()[engine_state], 
 			Indices.keys()[engine_index]]
 		)
@@ -608,21 +618,29 @@ func get_engine_index(current_speed: float) -> int:
 	var current_index = engine_index
 	var speed_index := 0
 	var i := 0
+	## Reversing
 	if engine_state == States.REVERSING:
 		speed_index = 0
+	## Accelerating
 	elif engine_state == States.ACCELERATING:
 		for spd in engine_index_up:
 			if (current_speed * 3.6) > spd: 
 				speed_index = i
 			i += 1
+	## Downshift
 	else:
 		for spd in engine_index_down:
 			if (current_speed * 3.6) > spd: 
 				speed_index = i
 			i += 1
-	## If GearBox switching sound is not playing
-	if $Gear.playing:
+			
+	## @NEW Shifting (Speed Boost)
+	if shift_control:
+		speed_index = 1
+	## Fix Gearbox shake using audioplayer
+	elif $Gear.playing: 
 		speed_index = current_index
+		
 	return speed_index
 
 func rotate_speed_pt(speedf: float) -> void:
