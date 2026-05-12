@@ -142,8 +142,8 @@ Generate ▸ Boolean
 Segments ▸ Subdivide
 Mesh ▸ Shading ▸ Smooth Edges
 Mesh ▸ Weights ▸ Smooth
-Vertex (Ctrl V) ▸ Smooth Vertices
 Face (Ctrl F) ▸ Shade Flat
 Object ▸ Set Origin ▸ Origin to 3D Cursor
 Object ▸ Set Origin ▸ Geometry to Origin
 Face (Ctrl F) ▸ Shade Smooth
+Vertex (Ctrl V) ▸ Smooth Vertices
