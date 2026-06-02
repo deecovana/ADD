@@ -1,0 +1,41 @@
+Обзор от ИИ               To create a 3D firing turret in Godot 4, use look_at() to rotate toward targets and instantiate() a bullet scene from a Marker3D muzzle. Rotate the base on the Y-axis and the barrel vertically, then apply velocity to the bullet's global_transform.basis.z vector.1. Turret Tracking ScriptAttach this script to your top-level Turret node. It tracks enemies using independent horizontal (base) and vertical (barrel) rotation.gdscriptextends Node3D
+
+@export var target: Node3D = null
+@export var rotation_speed: float = 5.0
+@export var bullet_scene: PackedScene
+
+@onready var base: Node3D = $Base
+@onready var barrel: Node3D = $Base/Barrel
+@onready var muzzle: Marker3D = $Base/Barrel/Muzzle
+@onready var fire_timer: Timer = $FireTimer
+
+func _process(delta: float) -> void:
+	if target:
+		# Track horizontally (Y-axis)
+		var target_pos = target.global_position
+		target_pos.y = base.global_position.y # Keep Y level for the base
+		base.look_at(target_pos, Vector3.UP)
+		
+		# Track vertically (X-axis)
+		# We look at the target from the barrel's local space to get the X rotation
+		var local_target_pos = barrel.to_local(target.global_position)
+		var target_angle = atan2(-local_target_pos.y, local_target_pos.z)
+		barrel.rotation.x = move_toward(barrel.rotation.x, target_angle, rotation_speed * delta)
+
+func _on_fire_timer_timeout() -> void:
+	if target and bullet_scene:
+		var b = bullet_scene.instantiate()
+		muzzle.add_child(b) # Or add to world root to avoid bullet spinning with turret
+		b.global_transform = muzzle.global_transform
+Используйте код с осторожностью.2. Bullet ScriptAttach this to your projectile (e.g., an Area3D or CharacterBody3D) to send it flying forward.gdscriptextends Area3D
+
+@export var speed: float = 20.0
+
+func _physics_process(delta: float) -> void:
+	# Move forward in the direction the muzzle is facing
+	global_translate(-global_transform.basis.z * speed * delta)
+
+func _on_body_entered(body: Node3D) -> void:
+	# Deal damage, play impact effect, then queue_free()
+	queue_free()
+Используйте код с осторожностью.3. Scene Tree SetupTurret (Node3D)Base (Node3D) (Contains Base Mesh)Barrel (Node3D) (Contains Barrel Mesh)Muzzle (Marker3D) (Where bullets spawn)FireTimer (Timer) (Set wait_time, autostart, and connect timeout() to _on_fire_timer_timeout)For a visual guide on setting up your turret's enemy detection, collision layers, and masks:17:10Godot 4.X Tower Defense Tutorial - Part 07 (Collision ...Wide Arch SharkYouTube · 25 окт. 2023 г.
