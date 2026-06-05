@@ -1,6 +1,7 @@
 Обзор от ИИ              
 
-To create a functioning 3D firing turret in Godot 4, structure your node hierarchy into a base (for horizontal rotation), a top or barrel (for vertical elevation), and a muzzle/spawn point. 
+To create a functioning 3D firing turret in Godot 4, structure your node hierarchy into a base 
+(for horizontal rotation), a top or barrel (for vertical elevation), and a muzzle/spawn point. 
 The script will track targets, rotate the nodes using look_at(), and instance projectiles.
 
 1. Node Hierarchy
@@ -86,3 +87,15 @@ func _on_body_entered(body: Node) -> void:
 		body.queue_free() # Or call a take_damage() function
 	queue_free()
 =================================================
+
+For tips on how to handle the physics and proper line-of-sight setups:
+4:40 Turret AI In Godot Made Simple! | Godot TutorialsFun Noober CodesYouTube · 7 апр. 2022 г.
+https://www.youtube.com/watch?v=PU0f9TaXP2s
+
+If you want me to expand on any of the following, please let me know:
+Adding "lead the target" logic
+Setting up limits so the turret has dead zones (e.g., cannot shoot through its own ship/wall)
+Converting this to a RayCast3D weapon instead of instancing projectiles
+
+SOURCE: 
+https://www.google.com/search?client=opera&q=godot+4+3d+firing+turret&sourceid=opera&ie=UTF-8&oe=UTF-8&udm=50&fbs=ADc_l-YxK3swBjTDQHhZTLkQayPpzL-fCgvQJdVsjLM3XmPXz_Q8TTdRdCKSRBDXflEWowKpkAi2NjMIhJlh12JkKV76XyCmhNiwaf7TAT1ZqF4YidTopNvrHOvmhPCAcv9_rnrVD80cev4rb9u2pGRB_pdBesYvJjNpXZ9nZJ01rruBSbBc520W3gjYdRDJgPF4sgOyKlUkJckhXOblnmciCpUd0v8C4uyzrDAifY8mz1hdq1DI9jJa3QfvPtHw-lrA0uO6MGXbiJWI2FonfVU_4dqDzhiUmw&aep=10&ntc=1&mstk=AUtExfCkD1g1OKkoP1prQxBBfIavFv25xYz3ybFVYNvnr0fxMFtrNtQ46K7L7Tpcx0YH9JdfDBkQn2WNcnR_KMhz8uBL8n08aQRzaoB4g_DxDvQiC2DTS7di5qjWbZPEiG8SZtio2emKww5GQGoiC3KSYtiwNu2X_O-6E2H1PJvrfvRxkrhFDFNG_yHsn8BC2iMFKuD7hhFSYDRGzQDFB_VYnCSff2T4PXJGhADfJ2QD0EhkSu6IPRW61B6UBek9t0WTKhqJ-2VdUZ-RW_IOdr_FOPAj8rglNgzqSexAVLSF0PCZtOaijh5vLoBhribSlJLktcvk8plLiYtcxA&aioh=3&csuir=1&mtid=I3QiasvYLPu3xc8Pwcz7qAc
