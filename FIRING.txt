@@ -1,48 +1,88 @@
-Обзор от ИИ          
-     
-To create a 3D firing turret in Godot 4, use look_at() to rotate toward targets and instantiate() a bullet scene from a Marker3D muzzle. Rotate the base on the Y-axis and the barrel vertically, then apply velocity to the bullet's global_transform.basis.z vector.
+Обзор от ИИ              
 
-1. Turret Tracking ScriptAttach this script to your top-level Turret node. It tracks enemies using independent horizontal (base) and vertical (barrel) rotation.gdscriptextends Node3D
+To create a functioning 3D firing turret in Godot 4, structure your node hierarchy into a base (for horizontal rotation), a top or barrel (for vertical elevation), and a muzzle/spawn point. 
+The script will track targets, rotate the nodes using look_at(), and instance projectiles.
 
-@export var target: Node3D = null
+1. Node Hierarchy
+Set up your scene tree using Node3D nodes:
+
+	Turret (Node3D): Holds the main script.
+		Base (Node3D): Rotates strictly along the \(Y\)-axis.
+			Top/Barrel (Node3D): Rotates strictly along the \(X\)-axis.
+				Muzzle (Marker3D): The exact point where projectiles spawn.
+
+2. Turret Tracking and Firing ScriptAttach this script to your root Turret node.
+
+=================================================
+extends Node3D
+
+@export var projectile: PackedScene
 @export var rotation_speed: float = 5.0
-@export var bullet_scene: PackedScene
+@export var fire_rate: float = 1.0
 
 @onready var base: Node3D = $Base
-@onready var barrel: Node3D = $Base/Barrel
-@onready var muzzle: Marker3D = $Base/Barrel/Muzzle
-@onready var fire_timer: Timer = $FireTimer
+@onready var top: Node3D = $Top
+@onready var muzzle: Marker3D = $Base/Top/Muzzle
+@onready var timer: Timer = $Timer
 
-func _process(delta: float) -> void:
-	if target:
-		# Track horizontally (Y-axis)
-		var target_pos = target.global_position
-		target_pos.y = base.global_position.y # Keep Y level for the base
-		base.look_at(target_pos, Vector3.UP)
+var current_target: Node3D = null
+
+func _ready() -> void:
+	timer.wait_time = fire_rate
+	timer.timeout.connect(_on_fire_timer_timeout)
+	timer.start()
+
+func _physics_process(delta: float) -> void:
+	current_target = get_closest_target()
+	
+	if current_target:
+		# Calculate direction to target
+		var target_pos = current_target.global_position
 		
-		# Track vertically (X-axis)
-		# We look at the target from the barrel's local space to get the X rotation
-		var local_target_pos = barrel.to_local(target.global_position)
-		var target_angle = atan2(-local_target_pos.y, local_target_pos.z)
-		barrel.rotation.x = move_toward(barrel.rotation.x, target_angle, rotation_speed * delta)
+		# Rotate base (Yaw)
+		var base_target_pos = Vector3(target_pos.x, base.global_position.y, target_pos.z)
+		base.look_at(base_target_pos, Vector3.UP)
+		
+		# Rotate top/barrel (Pitch)
+		var top_target_pos = Vector3(base.global_position.x, target_pos.y, base.global_position.z)
+		top.look_at(top_target_pos, Vector3.UP)
+
+func get_closest_target() -> Node3D:
+	# Replace this with your own logic to scan/find enemies in an area
+	var potential_targets = get_tree().get_nodes_in_group("enemies")
+	var closest: Node3D = null
+	var min_distance: float = 9999.0
+	
+	for target in potential_targets:
+		var distance = global_position.distance_to(target.global_position)
+		if distance < min_distance:
+			min_distance = distance
+			closest = target
+			
+	return closest
 
 func _on_fire_timer_timeout() -> void:
-	if target and bullet_scene:
-		var b = bullet_scene.instantiate()
-		muzzle.add_child(b) # Or add to world root to avoid bullet spinning with turret
+	if current_target and projectile:
+		var b = projectile.instantiate()
+		get_tree().root.add_child(b)
 		b.global_transform = muzzle.global_transform
-		
-2. Bullet ScriptAttach this to your projectile (e.g., an Area3D or CharacterBody3D) to send it flying forward.gdscriptextends Area3D
+=================================================
+
+3. Basic Projectile Script
+Create a separate scene for your bullet or projectile. Attach a script to make it travel forward:
+
+=================================================
+extends Node3D
 
 @export var speed: float = 20.0
 
 func _physics_process(delta: float) -> void:
-	# Move forward in the direction the muzzle is facing
-	global_translate(-global_transform.basis.z * speed * delta)
+	# Move forward in the direction the muzzle is pointing
+	position -= transform.basis.z * speed * delta
 
-func _on_body_entered(body: Node3D) -> void:
-	# Deal damage, play impact effect, then queue_free()
+func _on_body_entered(body: Node) -> void:
+	# Deal damage to enemy
+	if body.is_in_group("enemies"):
+		body.queue_free() # Or call a take_damage() function
 	queue_free()
-
-3. Scene Tree Setup Turret (Node3D)Base (Node3D) (Contains Base Mesh)Barrel (Node3D) (Contains Barrel Mesh)Muzzle (Marker3D) (Where bullets spawn)FireTimer (Timer) (Set wait_time, autostart, and connect timeout() to _on_fire_timer_timeout)For a visual guide on setting up your turret's enemy detection, collision layers, and masks:
-Godot 4.X Tower Defense Tutorial - Part 07 (Collision ...Wide Arch SharkYouTube · 25 окт. 2023 г.
+=================================================

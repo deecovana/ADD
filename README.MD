@@ -1,5 +1,7 @@
 # @deecovana ADD GitHub repo 
 
+## Add Firing? Îבחמנ מע ÈÈ
+
 ## Continue with latest Godot 4.6.1
 - Re-Imported, ok
 - Some audio and visual improvements 
