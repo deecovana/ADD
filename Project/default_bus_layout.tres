@@ -1,17 +1,4 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://vb0aq1f7daii"]
 
-[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
-resource_name = "Reverb"
-dry = 0.75
-wet = 0.75
-
 [resource]
 bus/0/volume_db = -6.2510104
-bus/1/name = &"Echo"
-bus/1/solo = false
-bus/1/mute = false
-bus/1/bypass_fx = false
-bus/1/volume_db = -6.2473907
-bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
-bus/1/effect/0/enabled = true

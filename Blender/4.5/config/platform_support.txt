@@ -8,3 +8,4 @@
 {Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.1.1 (AMD proprietary shader compiler)}=SUPPORTED
 {Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.2.2 (AMD proprietary shader compiler)}=SUPPORTED
 {Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.3.1 (AMD proprietary shader compiler)}=SUPPORTED
+{Advanced Micro Devices/AMD Radeon(TM) Graphics/AMD proprietary driver 26.5.2 (AMD proprietary shader compiler)}=SUPPORTED

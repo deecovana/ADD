@@ -1,0 +1,6 @@
+[gd_resource type="Curve" format=3 uid="uid://d1b2brkjmis1m"]
+
+[resource]
+_limits = [0.0, 1.05, 0.0, 1.0]
+_data = [Vector2(0, 0.24775279), 0.0, 0.0, 0, 0, Vector2(0.7468355, 0.8494381), 0.0, 0.0, 0, 0, Vector2(1, 0.7786516), -1.0941124, 0.0, 0, 0]
+point_count = 3

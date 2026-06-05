@@ -1,19 +1,19 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://flxwqc5q64s0"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://flxwqc5q64s0"]
 
 [ext_resource type="Shader" uid="uid://c3smmnr6vyv3g" path="res://Scenes/Tracks/Materials/RoadLine.gdshader" id="1_oxkvx"]
 [ext_resource type="Texture2D" uid="uid://3b05ycplp3mt" path="res://Scenes/Tracks/Materials/Textures/rock_combined.png" id="2_i0sgi"]
-[ext_resource type="Texture2D" uid="uid://6mpmhryedjg7" path="res://Scenes/Tracks/Materials/Textures/grass_combined.png" id="3_1q2q0"]
+[ext_resource type="Texture2D" uid="uid://d0tmj2hfwgplw" path="res://Scenes/Tracks/Materials/Textures/road_combined.png" id="3_i0sgi"]
 [ext_resource type="Texture2D" uid="uid://b8e1ny032ncse" path="res://Scenes/Tracks/Materials/Textures/rock_combined_normal.png" id="4_0rls3"]
 [ext_resource type="Texture2D" uid="uid://bwe86shq7mhoa" path="res://Scenes/Tracks/Materials/Textures/grass_combined_normal.png" id="5_0rls3"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_oxkvx")
-shader_parameter/albedo_Top = ExtResource("3_1q2q0")
+shader_parameter/albedo_Top = ExtResource("3_i0sgi")
 shader_parameter/albedo_Side = ExtResource("2_i0sgi")
 shader_parameter/normal_Top = ExtResource("5_0rls3")
 shader_parameter/normal_Side = ExtResource("4_0rls3")
-shader_parameter/Side_sharpness = 0.25
-shader_parameter/Side_angle = 0.125
-shader_parameter/texture_scale = 0.125
-shader_parameter/random_seed = 6.9
+shader_parameter/Side_sharpness = 1.0000000475
+shader_parameter/Side_angle = 0.010000000475
+shader_parameter/texture_scale = 0.115
+shader_parameter/random_seed = 6.785

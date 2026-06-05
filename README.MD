@@ -1,6 +1,7 @@
 # @deecovana ADD GitHub repo 
 
-## Add Firing? Îבחמנ מע ÈÈ
+## Start Rally segments
+- Tested first "8" segment - 1 and half squares used
 
 ## Continue with latest Godot 4.6.1
 - Re-Imported, ok

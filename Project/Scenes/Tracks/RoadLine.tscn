@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://bwa8ys2hofd38"]
+[gd_scene format=3 uid="uid://bwa8ys2hofd38"]
 
 [ext_resource type="Script" uid="uid://dv8ykfntlf1at" path="res://Scenes/Script/MainSceneScript.gd" id="1_acfj4"]
 [ext_resource type="PackedScene" uid="uid://bqs2wcbb4ilbg" path="res://Scenes/Tracks/GLBs/RoadLine/00.glb" id="2_bcqf6"]
-[ext_resource type="PackedScene" uid="uid://ccr4ibblpbema" path="res://Scenes/Cars/Tri/vehicle_Tri.tscn" id="2_c7a6e"]
 [ext_resource type="PackedScene" uid="uid://b5hxbo26pr6uh" path="res://Gimbal/CameraGimbal.tscn" id="3_ixrak"]
 [ext_resource type="PackedScene" uid="uid://dw17g2guflt2r" path="res://Scenes/Tracks/GLBs/RoadLine/10.glb" id="3_tl1q7"]
 [ext_resource type="PackedScene" uid="uid://b0r80jmqhq67a" path="res://Scenes/Tracks/GLBs/RoadLine/11.glb" id="4_17fyb"]
@@ -26,81 +25,85 @@
 [ext_resource type="PackedScene" uid="uid://cxlcjadexaga2" path="res://Scenes/Tracks/GLBs/RoadLine/29.glb" id="22_fa80u"]
 [ext_resource type="PackedScene" uid="uid://bn0qnia3kyxht" path="res://Scenes/Tracks/GLBs/RoadLine/RoadLine000.glb" id="23_17fyb"]
 [ext_resource type="Material" uid="uid://flxwqc5q64s0" path="res://Scenes/Tracks/Materials/RoadLine_shader_material.tres" id="23_tl1q7"]
+[ext_resource type="Material" uid="uid://dony5laq7vl01" path="res://Scenes/Tracks/Materials/RoadRally_shader_material.tres" id="25_eo1yi"]
 [ext_resource type="PackedScene" uid="uid://wlrkty8ak8k7" path="res://Scenes/Sky/DarkSkyLight.tscn" id="26_tl1q7"]
+[ext_resource type="PackedScene" uid="uid://dpmfmwey3gmmv" path="res://Scenes/Cars/Tri/vehicle_TriRallyLine.tscn" id="28_eo1yi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_17fyb"]
-material = ExtResource("23_tl1q7")
+material = ExtResource("25_eo1yi")
 radius = 2.0
 height = 6.0
 
-[node name="RoadLine" type="Node3D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eo1yi"]
+material = ExtResource("23_tl1q7")
+radius = 2.477
+height = 7.229
+
+[node name="RoadLine" type="Node3D" unique_id=884718721]
 script = ExtResource("1_acfj4")
 
-[node name="5km" type="Node3D" parent="."]
+[node name="5km" type="Node3D" parent="." unique_id=1095791380]
 
-[node name="00" parent="5km" instance=ExtResource("2_bcqf6")]
+[node name="00" parent="5km" unique_id=504513585 instance=ExtResource("2_bcqf6")]
 
-[node name="10" parent="5km" instance=ExtResource("3_tl1q7")]
+[node name="10" parent="5km" unique_id=1583730233 instance=ExtResource("3_tl1q7")]
 
-[node name="11" parent="5km" instance=ExtResource("4_17fyb")]
+[node name="11" parent="5km" unique_id=1694590514 instance=ExtResource("4_17fyb")]
 
-[node name="12" parent="5km" instance=ExtResource("5_eo1yi")]
+[node name="12" parent="5km" unique_id=1778690012 instance=ExtResource("5_eo1yi")]
 
-[node name="13" parent="5km" instance=ExtResource("6_lyixb")]
+[node name="13" parent="5km" unique_id=1593242939 instance=ExtResource("6_lyixb")]
 
-[node name="14" parent="5km" instance=ExtResource("7_ikynu")]
+[node name="14" parent="5km" unique_id=1633384264 instance=ExtResource("7_ikynu")]
 
-[node name="15" parent="5km" instance=ExtResource("8_kkie5")]
+[node name="15" parent="5km" unique_id=1735505588 instance=ExtResource("8_kkie5")]
 
-[node name="16" parent="5km" instance=ExtResource("9_bgp6w")]
+[node name="16" parent="5km" unique_id=1057299538 instance=ExtResource("9_bgp6w")]
 
-[node name="17" parent="5km" instance=ExtResource("10_x7el2")]
+[node name="17" parent="5km" unique_id=1489360121 instance=ExtResource("10_x7el2")]
 
-[node name="18" parent="5km" instance=ExtResource("11_2k507")]
+[node name="18" parent="5km" unique_id=1048521783 instance=ExtResource("11_2k507")]
 
-[node name="19" parent="5km" instance=ExtResource("12_co56o")]
+[node name="19" parent="5km" unique_id=252018809 instance=ExtResource("12_co56o")]
 
-[node name="20" parent="5km" instance=ExtResource("13_e2uhe")]
+[node name="20" parent="5km" unique_id=625841479 instance=ExtResource("13_e2uhe")]
 
-[node name="21" parent="5km" instance=ExtResource("14_7f3xn")]
+[node name="21" parent="5km" unique_id=1561367652 instance=ExtResource("14_7f3xn")]
 
-[node name="22" parent="5km" instance=ExtResource("15_ua45y")]
+[node name="22" parent="5km" unique_id=605163539 instance=ExtResource("15_ua45y")]
 
-[node name="23" parent="5km" instance=ExtResource("16_uq1gq")]
+[node name="23" parent="5km" unique_id=921237668 instance=ExtResource("16_uq1gq")]
 
-[node name="24" parent="5km" instance=ExtResource("17_h48p2")]
+[node name="24" parent="5km" unique_id=1230830951 instance=ExtResource("17_h48p2")]
 
-[node name="25" parent="5km" instance=ExtResource("18_i7mdg")]
+[node name="25" parent="5km" unique_id=202521480 instance=ExtResource("18_i7mdg")]
 
-[node name="26" parent="5km" instance=ExtResource("19_aos43")]
+[node name="26" parent="5km" unique_id=2037384956 instance=ExtResource("19_aos43")]
 
-[node name="27" parent="5km" instance=ExtResource("20_6xwwo")]
+[node name="27" parent="5km" unique_id=1760357726 instance=ExtResource("20_6xwwo")]
 
-[node name="28" parent="5km" instance=ExtResource("21_24ce6")]
+[node name="28" parent="5km" unique_id=1589208224 instance=ExtResource("21_24ce6")]
 
-[node name="29" parent="5km" instance=ExtResource("22_fa80u")]
-transform = Transform3D(0.993965, 0, 0, 0, 0.993965, 0, 0, 0, 0.993965, 0, 0, 0)
+[node name="29" parent="5km" unique_id=1122010624 instance=ExtResource("22_fa80u")]
 
-[node name="RoadLine000" parent="." instance=ExtResource("23_17fyb")]
+[node name="RoadLine000" parent="." unique_id=138664875 instance=ExtResource("23_17fyb")]
 
-[node name="Initial" type="Node3D" parent="."]
+[node name="Initial" type="Node3D" parent="." unique_id=348697328]
 transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5173.05, 6.067, -260.687)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Initial"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 10.298, -3.3277, 8.85498)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Initial" unique_id=268557822]
+transform = Transform3D(0.7071069, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, 0.7071069, 19.539185, -3.3277, -9.745605)
 mesh = SubResource("CapsuleMesh_17fyb")
 surface_material_override/0 = ExtResource("23_tl1q7")
 
-[node name="Vehicle" parent="." instance=ExtResource("2_c7a6e")]
-transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5202.51, 3.24674, -272.885)
-MAX_SPEED = 60.0
-CENTER_OF_AERO = Vector3(0, 1, 0.6)
-bodySquareFill = 0.75
-bodyLinearFricConst = 500.0
-bodyLinearFricLin = 10.0
-rotate_wheel_sens_max = 240.0
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Initial" unique_id=1741903355]
+transform = Transform3D(1.1863197, 0.33551177, 0.32511902, -0.33551154, -0.0056299935, 1.2300509, 0.32511926, -1.2300508, 0.083050296, 17.348145, -8.844855, -4.4418945)
+mesh = SubResource("CapsuleMesh_eo1yi")
 
-[node name="CameraGimbal" parent="." instance=ExtResource("3_ixrak")]
+[node name="CameraGimbal" parent="." unique_id=911270710 instance=ExtResource("3_ixrak")]
 transform = Transform3D(0.263149, 0, -0.964755, 0, 1, 0, 0.964755, 0, 0.263149, 5202.51, 3.24674, -272.885)
 
-[node name="DarkSkyLight" parent="." instance=ExtResource("26_tl1q7")]
+[node name="DarkSkyLight" parent="." unique_id=2035165375 instance=ExtResource("26_tl1q7")]
+
+[node name="Vehicle" parent="." unique_id=1226896943 instance=ExtResource("28_eo1yi")]
+transform = Transform3D(0.49595872, 0, -0.8683461, 0, 1, 0, 0.8683461, 0, 0.49595872, 5199.9033, 0.43692064, -263.58704)
