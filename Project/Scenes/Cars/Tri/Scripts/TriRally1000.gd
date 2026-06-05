@@ -136,8 +136,7 @@ enum Indices { Rear, Neutral,
 ## Arrays for Settings
 	
 ## 1. Short for 200 on 6th (Tri Proto) City Short 
-#var engine_index_up = [
-	#-1.0, 0.0, 1.0, 
+#-1.0, 0.0, 1.0, 
 	#75.0, 125.0, 155.0, 
 	#170.0, 190.0, 200.0, 
 	#210.0, 220.0, 230.0, 

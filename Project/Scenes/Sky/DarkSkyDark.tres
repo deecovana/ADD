@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=4 format=3 uid="uid://b2q2831c430vc"]
+[gd_resource type="Environment" format=3 uid="uid://b2q2831c430vc"]
 
 [ext_resource type="Texture2D" uid="uid://dvlma1f123240" path="res://Scenes/Sky/Images/armazones-road-7200.jpg" id="1_ecpid"]
 

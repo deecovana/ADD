@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=58 format=3 uid="uid://c8m6i742fxd8v"]
+[gd_resource type="Theme" format=3 uid="uid://c8m6i742fxd8v"]
 
 [ext_resource type="FontFile" uid="uid://dlgkspckhvbp4" path="res://Themes/Fonts/Xolonium-Regular.ttf" id="1_36dla"]
 [ext_resource type="Texture2D" uid="uid://bh5a4ur3aa7ln" path="res://Themes/MinimalUI44/icons.svg" id="2_2bmas"]
@@ -284,6 +284,15 @@ corner_radius_bottom_left = 2
 
 [sub_resource type="FontFile" id="21"]
 fallbacks = Array[Font]([ExtResource("3_vcgyt")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

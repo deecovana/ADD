@@ -97,13 +97,13 @@ func _physics_process(_delta: float) -> void:
 			-twenty_four, -_pow.volume_db), d_eleven)
 	
 	## Randomise loops
-	if randf() > 0.9 or not _idle.playing:
+	if randf() > 0.975 or not _idle.playing:
 		_idle.play()
-	if randf() > 0.9 or not _pow.playing:
+	if randf() > 0.975 or not _pow.playing:
 		_pow.play()
-	if randf() > 0.9 or not _powR.playing:
+	if randf() > 0.975 or not _powR.playing:
 		_powR.play()
-	if randf() > 0.9 or not _val.playing:
+	if randf() > 0.975 or not _val.playing:
 		_val.play()
 
 func on_timer_timeout():

@@ -1,5 +1,10 @@
 # @deecovana ADD GitHub repo 
 
+## Continue with latest Godot 4.6.1
+- Re-Imported, ok
+- Some audio and visual improvements 
+- Some front-wheells geometry (5cm wider each)
+
 ## New Road on RoadLine 5+ km 
 - Fixed gears to reach 200kph
 - Ready to begin RallyLine (Backward, Noth side)

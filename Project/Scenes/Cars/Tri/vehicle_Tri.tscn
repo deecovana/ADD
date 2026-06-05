@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ccr4ibblpbema"]
+[gd_scene format=3 uid="uid://ccr4ibblpbema"]
 
 [ext_resource type="Script" uid="uid://c47dv3s35d1dr" path="res://Scenes/Cars/Tri/Scripts/TriRally1000.gd" id="1_l6myv"]
 [ext_resource type="Curve" uid="uid://dymes3fx1ud5s" path="res://Scenes/Cars/Tri/Scripts/TriRallyCurve.tres" id="2_lj3in"]
@@ -50,7 +50,7 @@ material = ExtResource("22_g0kej")
 add_uv2 = true
 size = Vector3(1, 0.3, 2.32)
 
-[node name="Vehicle Tri" type="VehicleBody3D"]
+[node name="Vehicle Tri" type="VehicleBody3D" unique_id=1226896943]
 transform = Transform3D(-1.49012e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0, 0, 0)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_p8y6q")
@@ -60,119 +60,122 @@ damp_compr_rear = 2.0
 damp_relax_rear = 2.1
 scale_curve = ExtResource("2_lj3in")
 
-[node name="Tri Body" parent="." instance=ExtResource("14_u2i4w")]
+[node name="Tri Body" parent="." unique_id=1994890311 instance=ExtResource("14_u2i4w")]
 transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0, 0.515, 0)
 
-[node name="Tri Wing R" parent="." instance=ExtResource("17_l6myv")]
+[node name="Tri Wing R" parent="." unique_id=1514492340 instance=ExtResource("17_l6myv")]
 transform = Transform3D(-3.71547e-08, 0, 0.95, 0, 1, 0, -0.85, 0, -4.15258e-08, -2.53658e-07, 0.248994, -1.70226)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1448770495]
 transform = Transform3D(1, 1.49012e-07, -1.49012e-07, -1.49012e-07, -4.37114e-08, -1, -1.49012e-07, 1, -4.37114e-08, 6.03321e-08, 0.505891, 0.404881)
 shape = SubResource("CapsuleShape3D_lj3in")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1286234628]
 transform = Transform3D(1, 1.33689e-07, -9.69912e-08, -1.37482e-07, 0.348294, -0.937385, -9.15359e-08, 0.937385, 0.348294, 2.9137e-07, 0.342022, 1.9434)
 shape = SubResource("CapsuleShape3D_noewx")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=120846768]
 transform = Transform3D(1, -2.77304e-08, -2.60297e-09, 2.77304e-08, 0.982532, 0.186095, -2.60299e-09, -0.186095, 0.982532, 2.51326e-07, 0.14702, 1.51161)
 shape = SubResource("BoxShape3D_x0uyv")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1429492657]
 transform = Transform3D(1, 1.48997e-07, -1.51121e-07, -1.48997e-07, -0.0141542, -0.9999, -1.51121e-07, 0.9999, -0.0141542, -1.05257e-07, 0.250917, -0.706368)
 shape = SubResource("BoxShape3D_g0kej")
 
-[node name="Start" type="AudioStreamPlayer3D" parent="."]
+[node name="Start" type="AudioStreamPlayer3D" parent="." unique_id=293558673]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12311e-07, 0.595543, -2.09588)
 stream = ExtResource("3_o38t7")
 attenuation_model = 2
+bus = &"Echo"
 
-[node name="Gear" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26972e-07, 0.86545, -1.52318)
+[node name="Gear" type="AudioStreamPlayer3D" parent="." unique_id=250869733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19585e-07, -0.03138864, -0.8025198)
 stream = ExtResource("4_x0uyv")
 attenuation_model = 2
+unit_size = 12.0
+max_db = 0.0
+panning_strength = 2.0
 
-[node name="GearAir" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32186e-07, 0.840582, -1.55817)
+[node name="GearAir" type="AudioStreamPlayer3D" parent="." unique_id=182177314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3378876e-07, 0.840582, -2.2400126)
 stream = ExtResource("5_g0kej")
 attenuation_model = 2
-volume_db = 6.0
-max_db = 6.0
+volume_db = 3.0
+unit_size = 12.0
+bus = &"Echo"
 
-[node name="Idle" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75309e-07, 1.04034, -1.17648)
+[node name="Idle" type="AudioStreamPlayer3D" parent="." unique_id=1314421986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75309e-07, 0.8885677, -1.17648)
 stream = ExtResource("6_lg5sk")
 attenuation_model = 2
 unit_size = 24.0
 max_db = 0.0
+bus = &"Echo"
 
-[node name="Pow" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38354, 1.0485, -1.85155)
+[node name="Pow" type="AudioStreamPlayer3D" parent="." unique_id=1177161172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3835399, 0.9097439, -2.0800898)
 stream = ExtResource("9_lg5sk")
 attenuation_model = 2
 unit_size = 34.0
 max_polyphony = 2
 panning_strength = 8.0
+bus = &"Echo"
 
-[node name="PowR" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3842, 1.0485, -1.85155)
+[node name="PowR" type="AudioStreamPlayer3D" parent="." unique_id=1806402806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3842001, 0.9097439, -2.0800898)
 stream = ExtResource("10_38ik1")
 attenuation_model = 2
 unit_size = 34.0
 max_polyphony = 2
 panning_strength = 8.0
+bus = &"Echo"
 
-[node name="Val" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137152, -0.24488, -1.17657)
+[node name="Val" type="AudioStreamPlayer3D" parent="." unique_id=1303640488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013715103, -0.006359026, -1.8253466)
 stream = ExtResource("8_d8mhe")
 attenuation_model = 2
+unit_size = 8.0
+max_db = 0.0
 
-[node name="Scrap" type="AudioStreamPlayer3D" parent="."]
+[node name="Scrap" type="AudioStreamPlayer3D" parent="." unique_id=149452160]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29889e-07, -0.28214, -2.21384)
 stream = ExtResource("8_x0uyv")
 attenuation_model = 2
 pitch_scale = 2.0
 max_polyphony = 4
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1849293618]
 wait_time = 2.0
 one_shot = true
 
-[node name="EngineController" type="Node" parent="."]
+[node name="EngineController" type="Node" parent="." unique_id=1124071418]
 script = ExtResource("9_g0kej")
 
-[node name="WheelsController" type="Node" parent="."]
+[node name="WheelsController" type="Node" parent="." unique_id=1413635427]
 script = ExtResource("10_lg5sk")
 
-[node name="UI" parent="." instance=ExtResource("11_38ik1")]
+[node name="UI" parent="." unique_id=386386361 instance=ExtResource("11_38ik1")]
 metadata/_edit_vertical_guides_ = [433.0]
 
-[node name="CenterOfMass" type="Node3D" parent="."]
+[node name="CenterOfMass" type="Node3D" parent="." unique_id=1656093659]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -0.00174533, 0, 0.00174533, 0.999998, 0, 0.1, -0.275)
 
-[node name="CenterOfAero" type="Node3D" parent="."]
+[node name="CenterOfAero" type="Node3D" parent="." unique_id=2076032541]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -0.00174533, 0, 0.00174533, 0.999998, 0, 1, 0.6)
 
-[node name="Wheel3DFL" parent="." instance=ExtResource("12_d8mhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 1.59665)
-use_as_steering = true
-
-[node name="Wheel3DFR" parent="." instance=ExtResource("13_bi2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 1.59665)
-use_as_steering = true
-
-[node name="Wheel3DRL" parent="." instance=ExtResource("16_o38t7")]
+[node name="Wheel3DRL" parent="." unique_id=116067649 instance=ExtResource("16_o38t7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45, 0, -1.85)
 use_as_traction = true
 
-[node name="Wheel3DRR" parent="." instance=ExtResource("17_x0uyv")]
+[node name="Wheel3DRR" parent="." unique_id=134498802 instance=ExtResource("17_x0uyv")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.45, 0, -1.85)
 use_as_traction = true
 
-[node name="FarLigh" type="SpotLight3D" parent="."]
+[node name="FarLigh" type="SpotLight3D" parent="." unique_id=280457074]
 transform = Transform3D(1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, -5.0822e-21, 8.74228e-08, -7.64274e-15, -1, 8.33359e-08, 0.417542, 2.65926)
 light_energy = 4.0
 light_bake_mode = 1
+shadow_enabled = true
 shadow_bias = 0.25
 shadow_blur = 2.0
 distance_fade_enabled = true
@@ -180,10 +183,10 @@ spot_range = 200.0
 spot_attenuation = 0.25
 spot_angle_attenuation = 2.0
 
-[node name="WingFL" parent="." instance=ExtResource("15_vstp8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4, 0.352621, 1.55036)
+[node name="WingFL" parent="." unique_id=1074412477 instance=ExtResource("15_vstp8")]
+transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, 1.45, 0.352621, 1.6016746)
 
-[node name="CloseLightLeft" type="SpotLight3D" parent="WingFL"]
+[node name="CloseLightLeft" type="SpotLight3D" parent="WingFL" unique_id=1590639826]
 transform = Transform3D(0.23667, -1.89197e-08, 0.97159, -7.99413e-08, -1, -4.415e-15, 0.883264, -7.06093e-08, -0.215154, -0.260471, 0.429052, -0.0182099)
 light_energy = 3.0
 light_indirect_energy = 2.0
@@ -197,10 +200,10 @@ spot_attenuation = 0.5
 spot_angle = 40.0
 spot_angle_attenuation = 2.0
 
-[node name="WingFR" parent="." instance=ExtResource("16_l6myv")]
-transform = Transform3D(-4.37114e-08, 0, 1.1, 0, 1, 0, -1, 0, -4.80825e-08, -1.4, 0.352621, 1.55025)
+[node name="WingFR" parent="." unique_id=824411522 instance=ExtResource("16_l6myv")]
+transform = Transform3D(-4.3711395e-08, 0, 1.1, 0, 1, 0, -1, 0, -4.8082498e-08, -1.45, 0.352621, 1.6015646)
 
-[node name="CloseLightRight" type="SpotLight3D" parent="WingFR"]
+[node name="CloseLightRight" type="SpotLight3D" parent="WingFR" unique_id=1616064671]
 transform = Transform3D(-0.23667, 1.89197e-08, 0.97159, -7.99413e-08, -1, 4.415e-15, 0.883264, -7.06093e-08, 0.215154, -0.260471, 0.424505, 0.00883985)
 light_energy = 3.0
 light_indirect_energy = 2.0
@@ -214,26 +217,34 @@ spot_attenuation = 0.5
 spot_angle = 40.0
 spot_angle_attenuation = 2.0
 
-[node name="Cam1" type="Marker3D" parent="."]
+[node name="Wheel3DFL" parent="." unique_id=896866113 instance=ExtResource("12_d8mhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45, 0, 1.6479646)
+use_as_steering = true
+
+[node name="Wheel3DFR" parent="." unique_id=1692465776 instance=ExtResource("13_bi2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45, 0, 1.6479646)
+use_as_steering = true
+
+[node name="Cam1" type="Marker3D" parent="." unique_id=1853050927]
 transform = Transform3D(-0.999998, -0.00174534, 8.70901e-08, -0.00173869, 0.996193, 0.0871557, -0.000152203, 0.0871556, -0.996194, 0, 0.78, 2.55)
 metadata/FOV = 30.0
 
-[node name="Cam2" type="Marker3D" parent="."]
-transform = Transform3D(-0.999998, -0.00174534, 8.69439e-08, -0.00173577, 0.99452, 0.104528, -0.000182524, 0.104528, -0.994522, 0, 1.24, 0.344)
+[node name="Cam2" type="Marker3D" parent="." unique_id=393924150]
+transform = Transform3D(-0.999998, -0.00174534, 8.69439e-08, -0.00173577, 0.99452, 0.104528, -0.000182524, 0.104528, -0.994522, 0, 1.225, 0.23)
 metadata/FOV = 35.0
 
-[node name="Cam3" type="Marker3D" parent="."]
-transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0, 1.85, -2)
+[node name="Cam3" type="Marker3D" parent="." unique_id=1768141750]
+transform = Transform3D(-0.999998, -0.00174532, -8.67711e-08, -0.00173232, 0.992545, 0.121869, -0.000212615, 0.121869, -0.992546, 0, 1.7, -1.8)
 metadata/FOV = 40.0
 
-[node name="Cam" type="Camera3D" parent="."]
+[node name="Cam" type="Camera3D" parent="." unique_id=1047916812]
 transform = Transform3D(-0.999998, -0.00196127, -0.000387948, -0.00196181, 0.999997, 0.00140439, 0.000385192, 0.00140515, -0.999999, 0.00644424, 1.14409, -0.148652)
 far = 1000.0
 
-[node name="Divan" type="MeshInstance3D" parent="."]
+[node name="Divan" type="MeshInstance3D" parent="." unique_id=291643718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50519e-08, 0.35, -0.903663)
 mesh = SubResource("BoxMesh_g0kej")
 
-[node name="Plate" type="MeshInstance3D" parent="."]
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=1804861581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40245e-08, 0, 0.588775)
 mesh = SubResource("BoxMesh_lg5sk")
