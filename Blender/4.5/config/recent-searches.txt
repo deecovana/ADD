@@ -52,11 +52,9 @@ Object ▸ Modifiers ▸ Add Modifier ▸ Deform ▸ Smooth
 Object ▸ Modifiers ▸ Add Modifier ▸ Normals ▸ Smooth by Angle
 Mesh ▸ Shading ▸ Smooth Faces
 Material.004
-Ground
 Deform ▸ Smooth Corrective
 Normals ▸ Smooth by Angle
   Landscape_plane.002
-  Landscape.001
   Landscape.002
   Landscape.005
 Object ▸ Quick Effects ▸ Quick Smoke
@@ -65,7 +63,6 @@ Object ▸ Quick Effects ▸ Quick Smoke
   Landscape.016
   Landscape_plane.001
 Mesh ▸ Transform ▸ Randomize
-  Landscape
   1
   2
   3
@@ -147,3 +144,6 @@ Object ▸ Set Origin ▸ Origin to 3D Cursor
 Object ▸ Set Origin ▸ Geometry to Origin
 Face (Ctrl F) ▸ Shade Smooth
 Vertex (Ctrl V) ▸ Smooth Vertices
+Ground
+  Landscape
+  Landscape.001
